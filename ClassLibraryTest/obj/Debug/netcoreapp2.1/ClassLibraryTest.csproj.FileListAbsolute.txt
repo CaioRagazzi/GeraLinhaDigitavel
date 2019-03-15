@@ -1,0 +1,9 @@
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\bin\Debug\netcoreapp2.1\ClassLibraryTest.deps.json
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\bin\Debug\netcoreapp2.1\ClassLibraryTest.dll
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\bin\Debug\netcoreapp2.1\ClassLibraryTest.pdb
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.1\ClassLibraryTest.csproj.CoreCompileInputs.cache
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.1\ClassLibraryTest.AssemblyInfoInputs.cache
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.1\ClassLibraryTest.AssemblyInfo.cs
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.1\ClassLibraryTest.dll
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.1\ClassLibraryTest.pdb
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.1\ClassLibraryTest.csprojAssemblyReference.cache
