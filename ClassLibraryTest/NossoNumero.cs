@@ -22,7 +22,7 @@ namespace ClassLibraryTest
             set { carteira = value; }
         }
 
-        public string GetNossNumero()
+        public string GetNossoNumero()
         {
             string numeroCompleto = carteira + nossoNumeroSemDigito;
             int somatoria = 0;

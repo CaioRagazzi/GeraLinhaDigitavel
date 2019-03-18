@@ -26,11 +26,11 @@ namespace ClassLibraryTest
 
         public string GetLinhaDigitavel()
         {
-            StringBuilder primeiroCampo = new StringBuilder();
-            StringBuilder segundoCampo = new StringBuilder();
-            StringBuilder terceiroCampo = new StringBuilder();
-            StringBuilder quartoCampo = new StringBuilder();
-            StringBuilder quintoCampo = new StringBuilder();
+            StringBuilder primeiroCampo = new StringBuilder(10);
+            StringBuilder segundoCampo = new StringBuilder(11);
+            StringBuilder terceiroCampo = new StringBuilder(11);
+            StringBuilder quartoCampo = new StringBuilder(1);
+            StringBuilder quintoCampo = new StringBuilder(5);
             StringBuilder linhaDigitavel = new StringBuilder();
 
             primeiroCampo.Insert(0, banco.Codigo); //Código do banco
@@ -114,11 +114,17 @@ namespace ClassLibraryTest
 
         private int GetProximoMultiploDeDez(int somatoria)
         {
+            var proximo = 0;
             var resto = somatoria % 10;
 
-            var proximo = (somatoria - resto) + 10;
-
-            return proximo;
+            if (resto == 0)
+            {
+                return somatoria;
+            }
+            else
+            {
+                return (somatoria - resto) + 10;
+            }
         }
     }
 }

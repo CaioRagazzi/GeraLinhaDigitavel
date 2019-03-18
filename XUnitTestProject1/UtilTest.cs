@@ -7,10 +7,6 @@ namespace XUnitTestProject1
 {
     public class UtilTest
     {
-        public UtilTest()
-        {
-        }
-
         [Fact]
         public void TestaMetodoFormataCampoComEspacosDireitaComStringPreenchida()
         {
@@ -66,17 +62,17 @@ namespace XUnitTestProject1
                 Nome = "Real"
             };
 
-            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("0031", "04", "00317720028", "0095279", "0");
+            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "90740000047", "0000340", "0");
 
-            CodigoDeBarras codigoDeBarras = new CodigoDeBarras(banco.Codigo, moeda.Codigo, "1001", "0000000000", campoLivre);
+            CodigoDeBarras codigoDeBarras = new CodigoDeBarras(banco.Codigo, moeda.Codigo, "1903", "0000001073", campoLivre);
 
             LinhaDigitavel linha = new LinhaDigitavel(moeda, banco, campoLivre, codigoDeBarras);
 
             var resultado = linha.GetLinhaDigitavel();
-            var stringEsperada = "23790031024003177200328009527905710010000000000";
+            var stringEsperada = "23793392099907400000347000034000219030000001073";
 
             Assert.Equal(resultado, stringEsperada);
 
         }
-    } 
+    }
 }
