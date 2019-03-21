@@ -62,9 +62,9 @@ namespace XUnitTestProject1
                 Nome = "Real"
             };
 
-            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "90740000047", "0000340", "0");
+            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "90740000039", "0000340", "0");
 
-            CodigoDeBarras codigoDeBarras = new CodigoDeBarras(banco.Codigo, moeda.Codigo, "1903", "0000001073", campoLivre);
+            CodigoDeBarras codigoDeBarras = new CodigoDeBarras(banco.Codigo, moeda.Codigo, "1903", "0000001809", campoLivre);
 
             LinhaDigitavel linha = new LinhaDigitavel(moeda, banco, campoLivre, codigoDeBarras);
 

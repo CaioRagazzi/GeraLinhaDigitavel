@@ -5,7 +5,9 @@ namespace ClassLibraryTest
     class Header
     {
         private string identificacaoRegistro;
-
+        /// <summary>
+        /// Identificação do registro
+        /// </summary>
         public string IdentificacaoRegistro
         {
             get { return identificacaoRegistro; }
@@ -13,7 +15,9 @@ namespace ClassLibraryTest
         }
 
         private string identificacaoArquivoRemessa;
-
+        /// <summary>
+        /// Identificação do arquivo remessa
+        /// </summary>
         public string IdentificacaoArquivoRemessa
         {
             get { return identificacaoArquivoRemessa; }
@@ -21,7 +25,9 @@ namespace ClassLibraryTest
         }
 
         private string literalRemessa;
-
+        /// <summary>
+        /// Literal remessa
+        /// </summary>
         public string LiteralRemessa
         {
             get { return literalRemessa; }
@@ -29,7 +35,9 @@ namespace ClassLibraryTest
         }
 
         private string codigoServico;
-
+        /// <summary>
+        /// Código serviço
+        /// </summary>
         public string CodigoServico
         {
             get { return codigoServico; }
@@ -37,7 +45,9 @@ namespace ClassLibraryTest
         }
 
         private string literalServico;
-
+        /// <summary>
+        /// Literal serviço
+        /// </summary>
         public string LiteralServico
         {
             get { return literalServico; }
@@ -45,7 +55,9 @@ namespace ClassLibraryTest
         }
 
         private string codEmpresa;
-
+        /// <summary>
+        /// Código da empresa. Será informado pelo Bradesco, quando do cadastramento da Conta beneficiário na sua Agência. Esse código deve ser alinhado à direita com Zeros à esquerda.
+        /// </summary>
         public string CodEmpresa
         {
             get { return codEmpresa; }
@@ -53,7 +65,9 @@ namespace ClassLibraryTest
         }
 
         private string nomeEmpresa;
-
+        /// <summary>
+        /// Nome da empresa. Razão social.
+        /// </summary>
         public string NomeEmpresa
         {
             
@@ -62,7 +76,9 @@ namespace ClassLibraryTest
         }
 
         private string numeroBradesco;
-
+        /// <summary>
+        /// Número do Bradesco na Câmara de Compensação
+        /// </summary>
         public string NumeroBradesco
         {
             get { return numeroBradesco; }
@@ -70,7 +86,9 @@ namespace ClassLibraryTest
         }
 
         private string nomeBanco;
-
+        /// <summary>
+        /// Nome do Banco por Extenso.
+        /// </summary>
         public string NomeBanco
         {
             get { return nomeBanco; }
@@ -78,7 +96,9 @@ namespace ClassLibraryTest
         }
 
         private string dataGravacaoArquivo;
-
+        /// <summary>
+        /// Data da Gravação do Arquivo. Para a retransmissão de um Arquivo Remessa rejeitado, será necessário alterar a data constante desse campo, bem como atualizar o número de remessa na posição 111 a 117 (número sequencial de remessa).
+        /// </summary>
         public string DataGravacaoArquivo
         {
             get { return dataGravacaoArquivo; }
@@ -86,7 +106,9 @@ namespace ClassLibraryTest
         }
 
         private string branco;
-
+        /// <summary>
+        /// Branco
+        /// </summary>
         public string Branco
         {
             get { return branco; }
@@ -99,6 +121,17 @@ namespace ClassLibraryTest
         {
             get { return identSistema; }
             set { identSistema = Util.FormataCampoComEspacosDireita(value, 2); }
+        }
+
+        /// <summary>
+        /// O número de remessa deve iniciar de 0000001 e incrementado de + 1 a cada NOVO Arquivo Remessa, com o objetivo de evitar que ocorra duplicidade de arquivo não podendo, em hipótese alguma, ser repetida ou zerada.
+        /// </summary>
+        private string numSeqRemessa;
+
+        public string NumSeqRemessa
+        {
+            get { return numSeqRemessa; }
+            set { numSeqRemessa = value; }
         }
 
         private string branco2;
@@ -126,7 +159,7 @@ namespace ClassLibraryTest
             header.Insert(94, stringHeader.dataGravacaoArquivo);
             header.Insert(100, stringHeader.branco);
             header.Insert(108, stringHeader.identSistema);
-            header.Insert(110, numSequencial.PadLeft(7, '0'));
+            header.Insert(110, numSeqRemessa);
             header.Insert(117, stringHeader.branco2);
             header.Insert(394, numSequencial);
 

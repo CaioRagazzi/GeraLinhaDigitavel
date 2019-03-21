@@ -45,7 +45,9 @@ namespace ClassLibraryTest
         }
 
         private string dataLimiteDesconto2;
-
+        /// <summary>
+        /// DDMMAA
+        /// </summary>
         public string DataLimiteDesconto2
         {
             get { return dataLimiteDesconto2; }
@@ -61,7 +63,9 @@ namespace ClassLibraryTest
         }
 
         private string dataLimiteDesconto3;
-
+        /// <summary>
+        /// DDMMAA
+        /// </summary>
         public string DataLimiteDesconto3
         {
             get { return dataLimiteDesconto3; }
@@ -77,7 +81,9 @@ namespace ClassLibraryTest
         }
 
         private string reserva;
-
+        /// <summary>
+        /// Filler
+        /// </summary>
         public string Reserva
         {
             get { return reserva; }
@@ -85,7 +91,9 @@ namespace ClassLibraryTest
         }
 
         private string carteira;
-
+        /// <summary>
+        /// Nº da Carteira
+        /// </summary>
         public string Carteira
         {
             get { return carteira; }
@@ -93,7 +101,9 @@ namespace ClassLibraryTest
         }
 
         private string agencia;
-
+        /// <summary>
+        /// Código da Agência Beneficiário
+        /// </summary>
         public string Agencia
         {
             get { return agencia; }
@@ -101,7 +111,9 @@ namespace ClassLibraryTest
         }
 
         private string contaCorrente;
-
+        /// <summary>
+        /// Nº da Conta Corrente
+        /// </summary>
         public string ContaCorrente
         {
             get { return contaCorrente; }
@@ -109,7 +121,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoCC;
-
+        /// <summary>
+        /// DAC C/C
+        /// </summary>
         public string DigitoCC
         {
             get { return digitoCC; }
@@ -117,7 +131,9 @@ namespace ClassLibraryTest
         }
 
         private string nossoNumero;
-
+        /// <summary>
+        /// Número Bancário. Esses campos deverão ser preenchidos, de acordo com a posição 71 a 82 do registro de transação - tipo 1.
+        /// </summary>
         public string NossoNumero
         {
             get { return nossoNumero; }

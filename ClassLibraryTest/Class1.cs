@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
@@ -10,7 +11,7 @@ namespace ClassLibraryTest
 
         private string GetFileName(bool test)
         {
-            string fileName = "CB" + System.DateTime.Now.ToString("dd") + System.DateTime.Now.ToString("MM") + System.DateTime.Now.ToString("ss");
+            string fileName = "COBN" + System.DateTime.Now.ToString("dd") + System.DateTime.Now.ToString("MM") + System.DateTime.Now.ToString("ss");
             if (test)
             {
                 fileName += ".TST";
@@ -25,22 +26,23 @@ namespace ClassLibraryTest
 
         public void WriteFile(bool test)
         {
+            //TODO: Ver codigo remessa
             Header stringHeader = new Header
             {
-                Branco = "",
-                Branco2 = "",
-                CodEmpresa = "5118770",
-                CodigoServico = "01",
-                DataGravacaoArquivo = "130319",
-                IdentificacaoArquivoRemessa = "1",
                 IdentificacaoRegistro = "0",
-                IdentSistema = "MX",
+                IdentificacaoArquivoRemessa = "1",
                 LiteralRemessa = "REMESSA",
+                CodigoServico = "01",
                 LiteralServico = "COBRANCA",
-                NomeBanco = "BRADESCO",
+                CodEmpresa = "5118770",
                 NomeEmpresa = "INTERMEIO SOLUCOES EM PAGA",
-                NumeroBradesco = "237"
-                
+                NumeroBradesco = "237",
+                NomeBanco = "BRADESCO",
+                DataGravacaoArquivo = DateTime.Today.ToString("ddMMyy"),
+                Branco = "",
+                IdentSistema = "MX",
+                NumSeqRemessa = "",
+                Branco2 = ""
             };
 
             TransacaoTipo1 stringTransacaoTipo1 = new TransacaoTipo1
@@ -51,44 +53,141 @@ namespace ClassLibraryTest
                 RazaoConta = "00000",
                 ContaCorrente = "0000000",
                 DigitoContaCorrente = "",
+                //TODO: Ajustar valores por questões dos zeros a esquerda
                 IdentificacaoEmpresaBeneficiaria = "00090339200003409",
-                NumeroControleParticipante = "100",
+                NumeroControleParticipante = "444",
                 CodigoBancoDebito = "000",
                 Multa = "0",
                 PercentualMulta = "0000",
-                IdentificacaoTituloBanco = "11345",
-                DigitoAutoConferencia = "2",
+                IdentificacaoTituloBanco = "00000000000",
+                DigitoAutoConferencia = "0",
                 DescontoBonificacaoDia = "0000000000",
-                CondicaoEmissaoBoletoCobranca = "1",
+                CondicaoEmissaoBoletoCobranca = "2",
                 CondicaoRegistroDebitoAutomatico = "N",
                 IdentificacaoOperacaoBanco = "",
                 IndicadorRateioCredito = "",
                 EnderecamentoAvisoDebitoAutomatico = "2",
                 PagamentoParcial = "",
-                IdentificacaoOcorrencia = "02",
-                NumeroDocumento = "1234567890",
+                IdentificacaoOcorrencia = "01",
+                NumeroDocumento = "0000000001",
                 DataVencimentoTitulo = "230319",
-                ValorTitulo = "5000",
-                BancoEncarregadoCobranca = "000",
+                ValorTitulo = "0832",
+                BancoEncarregadoCobranca = "237",
                 AgenciaDepositaria = "00000",
                 EspecieTitulo = "12",
                 Identificacao = "N",
-                DataEmissaoTitulo = "130319",
+                DataEmissaoTitulo = "220319",
                 PrimeiraInstrucao = "00",
                 SegundaInstrucao = "00",
-                ValorCobrarDiaAtraso = "0000000000000",
-                DataLimiteConcessaoDesconto = "000000",
-                ValorDesconto = "0000000000000",
+                ValorCobrarDiaAtraso = "0000000001378",
+                DataLimiteConcessaoDesconto = "250319",
+                ValorDesconto = "0000000000263",
                 ValorIOF = "0000000000000",
                 ValorAbatimento = "0000000000000",
                 IdentificacaoTipoInscricao = "01",
-                NumeroInscricaoPagador = "00014031730012",
-                NomePagador = "TESTE SACADO",
-                EnderecoCompleto = "AV JABAQUARA, 2819",
-                PrimeiraMensagem = "",
+                NumeroInscricaoPagador = "33531106821",
+                NomePagador = "Fabio Gonçálvés",
+                EnderecoCompleto = "Rua Ney Mascarenhas, 130",
+                PrimeiraMensagem = "Teste primeira mensagem Boleto Fabio",
+                Cep = "08542",
+                SufixoCep = "120",
+                SegundaMensagem = "Teste segunda mensagem Boleto Fabio"
+            };
+
+            TransacaoTipo1 stringTransacaoTipo12 = new TransacaoTipo1
+            {
+                IdentificacaoRegistro = "1",
+                AgenciaPagador = "00000",
+                DigitoAgencia = "",
+                RazaoConta = "00000",
+                ContaCorrente = "0000000",
+                DigitoContaCorrente = "",
+                IdentificacaoEmpresaBeneficiaria = "00090339200003409",
+                NumeroControleParticipante = "444",
+                CodigoBancoDebito = "000",
+                Multa = "2",
+                PercentualMulta = "2000",
+                IdentificacaoTituloBanco = "00000000000",
+                DigitoAutoConferencia = "0",
+                DescontoBonificacaoDia = "0000000000",
+                CondicaoEmissaoBoletoCobranca = "2",
+                CondicaoRegistroDebitoAutomatico = "N",
+                IdentificacaoOperacaoBanco = "",
+                IndicadorRateioCredito = "",
+                EnderecamentoAvisoDebitoAutomatico = "2",
+                PagamentoParcial = "",
+                IdentificacaoOcorrencia = "01",
+                NumeroDocumento = "0000000002",
+                DataVencimentoTitulo = "260319",
+                ValorTitulo = "0956",
+                BancoEncarregadoCobranca = "237",
+                AgenciaDepositaria = "00000",
+                EspecieTitulo = "12",
+                Identificacao = "N",
+                DataEmissaoTitulo = "210319",
+                PrimeiraInstrucao = "00",
+                SegundaInstrucao = "00",
+                ValorCobrarDiaAtraso = "0000000002354",
+                DataLimiteConcessaoDesconto = "270319",
+                ValorDesconto = "0000000000326",
+                ValorIOF = "0000000000000",
+                ValorAbatimento = "0000000000000",
+                IdentificacaoTipoInscricao = "01",
+                NumeroInscricaoPagador = "36190841813",
+                NomePagador = "Caio Ragazzi",
+                EnderecoCompleto = "Rua Monlevade, 128",
+                PrimeiraMensagem = "Teste primeira mensagem Boleto Caio",
+                Cep = "04679",
+                SufixoCep = "345",
+                SegundaMensagem = "Teste segunda mensagem Boleto Caio"
+            };
+
+            TransacaoTipo1 stringTransacaoTipo13 = new TransacaoTipo1
+            {
+                IdentificacaoRegistro = "1",
+                AgenciaPagador = "00000",
+                DigitoAgencia = "",
+                RazaoConta = "00000",
+                ContaCorrente = "0000000",
+                DigitoContaCorrente = "",
+                IdentificacaoEmpresaBeneficiaria = "00090339200003409",
+                NumeroControleParticipante = "444",
+                CodigoBancoDebito = "000",
+                Multa = "2",
+                PercentualMulta = "4000",
+                IdentificacaoTituloBanco = "00000000000",
+                DigitoAutoConferencia = "0",
+                DescontoBonificacaoDia = "0000000000",
+                CondicaoEmissaoBoletoCobranca = "2",
+                CondicaoRegistroDebitoAutomatico = "N",
+                IdentificacaoOperacaoBanco = "",
+                IndicadorRateioCredito = "",
+                EnderecamentoAvisoDebitoAutomatico = "2",
+                PagamentoParcial = "",
+                IdentificacaoOcorrencia = "01",
+                NumeroDocumento = "5555555555",
+                DataVencimentoTitulo = "210319",
+                ValorTitulo = "0763",
+                BancoEncarregadoCobranca = "237",
+                AgenciaDepositaria = "00000",
+                EspecieTitulo = "12",
+                Identificacao = "N",
+                DataEmissaoTitulo = "200319",
+                PrimeiraInstrucao = "00",
+                SegundaInstrucao = "00",
+                ValorCobrarDiaAtraso = "0000000005423",
+                DataLimiteConcessaoDesconto = "300319",
+                ValorDesconto = "0000000000654",
+                ValorIOF = "0000000000000",
+                ValorAbatimento = "0000000000000",
+                IdentificacaoTipoInscricao = "02",
+                NumeroInscricaoPagador = "23322675000152",
+                NomePagador = "Intermeio",
+                EnderecoCompleto = "Avenida Jabaquara, 2819",
+                PrimeiraMensagem = "Teste primeira mensagem Boleto Intermeio",
                 Cep = "04045",
                 SufixoCep = "004",
-                SegundaMensagem = ""
+                SegundaMensagem = "Teste segunda mensagem Boleto Intermeio"
             };
 
             TransacaoTipo2 stringTransacaoTipo2 = new TransacaoTipo2
@@ -187,14 +286,14 @@ namespace ClassLibraryTest
 
             List<StringBuilder> listaTransacoes = new List<StringBuilder>
             {
-                stringTransacaoTipo1.GetTransacao(stringTransacaoTipo1)
-                //stringTransacaoTipo2.GetTransacao(stringTransacaoTipo2),
-                //stringTransacaoTipo3.GetTransacao(stringTransacaoTipo3),
+                stringTransacaoTipo1.GetTransacao(stringTransacaoTipo1),
+                stringTransacaoTipo12.GetTransacao(stringTransacaoTipo12),
+                stringTransacaoTipo13.GetTransacao(stringTransacaoTipo13),
                 //stringTransacaoTipo6.GetTransacao(stringTransacaoTipo6),
                 //stringTransacaoTipo7.GetTransacao(stringTransacaoTipo7)
             };
 
-            using (StreamWriter sw = new StreamWriter("C:\\TesteGravacao\\" + GetFileName(test)))
+            using (StreamWriter sw = new StreamWriter("C:\\TesteGravacao\\" + GetFileName(false)))
             {
                 sw.WriteLine(stringHeader.GetHeader(stringHeader, GetNumSequencial()));
 

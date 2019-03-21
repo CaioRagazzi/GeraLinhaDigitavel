@@ -114,7 +114,6 @@ namespace ClassLibraryTest
 
         private int GetProximoMultiploDeDez(int somatoria)
         {
-            var proximo = 0;
             var resto = somatoria % 10;
 
             if (resto == 0)

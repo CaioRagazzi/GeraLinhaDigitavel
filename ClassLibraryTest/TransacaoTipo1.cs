@@ -7,7 +7,9 @@ namespace ClassLibraryTest
     class TransacaoTipo1
     {
         private string identificacaoRegistro;
-
+        /// <summary>
+        /// Identificação do registro
+        /// </summary>
         public string IdentificacaoRegistro
         {
             get { return identificacaoRegistro; }
@@ -15,7 +17,9 @@ namespace ClassLibraryTest
         }
 
         private string agenciaPagador;
-
+        /// <summary>
+        /// Agência de débito (opcional). nº da Agência do pagador a ser debitada
+        /// </summary>
         public string AgenciaPagador
         {
             get { return agenciaPagador; }
@@ -23,7 +27,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoAgencia;
-
+        /// <summary>
+        /// Dígito da Agência de Débito (opcional) . Dígito da Agência
+        /// </summary>
         public string DigitoAgencia
         {
             get { return digitoAgencia; }
@@ -31,7 +37,9 @@ namespace ClassLibraryTest
         }
 
         private string razaoConta;
-
+        /// <summary>
+        /// Razão da Conta Corrente (opcional). razão da Conta - Ex. 07050
+        /// </summary>
         public string RazaoConta
         {
             get { return razaoConta; }
@@ -39,7 +47,9 @@ namespace ClassLibraryTest
         }
 
         private string contaCorrente;
-
+        /// <summary>
+        /// Conta Corrente (opcional). nº da Conta Corrente do Pagador 
+        /// </summary>
         public string ContaCorrente
         {
             get { return contaCorrente; }
@@ -47,7 +57,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoContaCorrente;
-
+        /// <summary>
+        /// Dígito da Conta do Pagador. Digito da Conta Corrente. 
+        /// </summary>
         public string DigitoContaCorrente
         {
             get { return digitoContaCorrente; }
@@ -55,7 +67,9 @@ namespace ClassLibraryTest
         }
 
         private string identificacaoEmpresaBeneficiaria;
-
+        /// <summary>
+        /// 21 a 21 - Zero, 22 a 24 - códigos da carteira, 25 a 29 - códigos da Agência Beneficiários, sem o dígito, 30 a 36 - Contas Corrente, 37 a 37 - dígitos da Conta
+        /// </summary>
         public string IdentificacaoEmpresaBeneficiaria
         {
             get { return identificacaoEmpresaBeneficiaria; }
@@ -63,7 +77,9 @@ namespace ClassLibraryTest
         }
 
         private string numeroControleParticipante;
-
+        /// <summary>
+        /// Nº Controle do Participante. Campo destinado para uso da Empresa, A informação que constar do Arquivo Remessa será confirmada no Arquivo Retorno, Não será impresso nos boletos de cobrança.
+        /// </summary>
         public string NumeroControleParticipante
         {
             get { return numeroControleParticipante; }
@@ -71,7 +87,13 @@ namespace ClassLibraryTest
         }
 
         private string codigoBancoDebito;
-
+        /// <summary>
+        /// Código do Banco a ser debitado na Câmara de Compensação. 
+        /// Deverão ser informados 237, caso o cliente Beneficiário tenha optado pelo débito automático em
+        /// Conta do Pagador.
+        /// Para Títulos em que não deve ser aplicado o débito automático, este campo deverá ser preenchido
+        /// com Zeros.
+        /// </summary>
         public string CodigoBancoDebito
         {
             get { return codigoBancoDebito; }
@@ -79,7 +101,9 @@ namespace ClassLibraryTest
         }
 
         private string multa;
-
+        /// <summary>
+        /// Se = 0 (sem multa) Se = 2 (tem multa). Se = 2 considerar percentual de multa.Se = 0, sem multa.
+        /// </summary>
         public string Multa
         {
             get { return multa; }
@@ -87,7 +111,9 @@ namespace ClassLibraryTest
         }
 
         private string percentualMulta;
-
+        /// <summary>
+        /// Percentual de multa a ser considerado. Se campo 66 a 66 = 0, preencher com zeros. Se campo 66 a 66 = 2, preencher com percentual da multa com 2 decimais
+        /// </summary>
         public string PercentualMulta
         {
             get { return percentualMulta; }
@@ -96,7 +122,10 @@ namespace ClassLibraryTest
 
         //TODO: efetuar o calculo do digito
         private string identificacaoTituloBanco;
-
+        /// <summary>
+        /// Número Bancário para Cobrança Com e Sem Registro. 
+        /// Campo reservado para o Nosso Número do Título (Número Bancário), cujo procedimento a ser adotado deve obedecer aos itens a seguir:
+        /// </summary>
         public string IdentificacaoTituloBanco
         {
             get { return identificacaoTituloBanco; }
@@ -112,7 +141,9 @@ namespace ClassLibraryTest
         }
 
         private string descontoBonificacaoDia;
-
+        /// <summary>
+        /// Valor do desconto bonif./dia.
+        /// </summary>
         public string DescontoBonificacaoDia
         {
             get { return descontoBonificacaoDia; }
@@ -120,7 +151,9 @@ namespace ClassLibraryTest
         }
 
         private string condicaoEmissaoBoletoCobranca;
-
+        /// <summary>
+        /// 1 = Banco emite e Processa o registro. 2 = Cliente emite e o Banco somente processa o registro
+        /// </summary>
         public string CondicaoEmissaoBoletoCobranca
         {
             get { return condicaoEmissaoBoletoCobranca; }
@@ -128,7 +161,10 @@ namespace ClassLibraryTest
         }
 
         private string condicaoRegistroDebitoAutomatico;
-
+        /// <summary>
+        /// Quando igual a “N” e os dados do débito estiverem incorretos, rejeita o registro na cobrança e não emite Boleto de cobrança;
+        /// Quando diferente de “N” e os dados do débito estiverem incorretos, registra na cobrança e emite Boleto de cobrança.Nesta condição, não ocorrerá o agendamento do debito.
+        /// </summary>
         public string CondicaoRegistroDebitoAutomatico
         {
             get { return condicaoRegistroDebitoAutomatico; }
@@ -136,7 +172,9 @@ namespace ClassLibraryTest
         }
 
         private string identificacaoOperacaoBanco;
-
+        /// <summary>
+        /// Brancos
+        /// </summary>
         public string IdentificacaoOperacaoBanco
         {
             get { return identificacaoOperacaoBanco; }
@@ -144,7 +182,9 @@ namespace ClassLibraryTest
         }
 
         private string indicadorRateioCredito;
-
+        /// <summary>
+        /// Indicador Rateio Crédito (opcional). “R”. Somente deverá ser preenchido com a Letra “R”, se a Empresa contratou o serviço de rateio de crédito, caso não, informar Branco
+        /// </summary>
         public string IndicadorRateioCredito
         {
             get { return indicadorRateioCredito; }
@@ -152,7 +192,11 @@ namespace ClassLibraryTest
         }
 
         private string enderecamentoAvisoDebitoAutomatico;
-
+        /// <summary>
+        /// 1 = emite aviso, e assume o endereço do Pagador constante do Arquivo-Remessa;
+        /// 2 = não emite aviso;
+        ///Diferente de 1 ou 2 = emite e assume o endereço do cliente debitado, constante do cadastro do Banco.
+        /// </summary>
         public string EnderecamentoAvisoDebitoAutomatico
         {
             get { return enderecamentoAvisoDebitoAutomatico; }
@@ -160,7 +204,9 @@ namespace ClassLibraryTest
         }
 
         private string pagamentoParcial;
-
+        /// <summary>
+        /// Somente deverá ser preenchido com a quantidade de parcelas para pagamento, se a Empresa contratou o serviço Pagamento Parcial, caso não, informar Branco. Quantidade mínima de parcelas = 01 Quantidade máxima de parcelas = 99.
+        /// </summary>
         public string PagamentoParcial
         {
             get { return pagamentoParcial; }
@@ -168,41 +214,40 @@ namespace ClassLibraryTest
         }
 
         private string identificacaoOcorrencia;
-
+        /// <summary>
+        /// 01..Remessa
+        ///02..Pedido de baixa
+        ///03..Pedido de Protesto Falimentar
+        ///04..Concessão de abatimento
+        ///05..Cancelamento de abatimento concedido
+        ///06..Alteração de vencimento
+        ///07..Alteração do controle do participante
+        ///08..Alteração de seu número
+        ///09..Pedido de protesto
+        ///18..Sustar protesto e baixar Título
+        ///19..Sustar protesto e manter em carteira
+        ///20 Alteração de valor*
+        ///21 Alteração de valor com emissão de Boleto(quando a emissão é pelo Banco)*
+        ///22..Transferência Cessão crédito ID.Prod.10
+        ///23..Transferência entre Carteiras
+        ///24..Dev.Transferência entre Carteiras
+        ///31..Alteração de outros dados
+        ///045..Pedido de Negativação
+        ///046..Excluir Negativação com baixa
+        ///047..Excluir negativação e manter pendente
+        ///68..Acerto nos dados do rateio de Crédito
+        ///69..Cancelamento do rateio de crédito (uso futuro).
+        /// </summary>
         public string IdentificacaoOcorrencia
         {
             get { return identificacaoOcorrencia; }
             set { identificacaoOcorrencia = Util.FormataCampoComEspacosDireita(value, 2); }
         }
 
-        //public Dictionary<string, string> IdentificacaoOcorrencia = new Dictionary<string, string>()
-        //{
-        //    { "Remessa", "01" },
-        //    { "PedidoBaixa", "02" },
-        //    { "PedidoProtestoFalimentar", "03" },
-        //    { "ConcessaoAbatimento", "04" },
-        //    { "CancelamentoAbatimentoConcedido", "05" },
-        //    { "AlteracaoVencimento", "06" },
-        //    { "AlteracaoControleParticipante", "07" },
-        //    { "AlteracaoSeuNumero", "08" },
-        //    { "PedidoProtesto", "09" },
-        //    { "SustarProtestoBaixarTitulo", "18" },
-        //    { "SustarProtestoManterCarteira", "19" },
-        //    { "AlteracaoValor", "20" },
-        //    { "AlteracaoValorComEmissaoBoleto", "21" },
-        //    { "TransferenciaCessaoCreditoID", "22" },
-        //    { "TransferenciaEntreCarteiras", "23" },
-        //    { "DevTransferenciaEntreCarteiras", "24" },
-        //    { "AlteracaoDeOutrosDados", "31" },
-        //    { "PedidoNegativacao", "45" },
-        //    { "ExcluirNegativacaoManterPendente", "46" },
-        //    { "ExcluirNegativacaoManterPendente", "47" },
-        //    { "AcertoDadosRateioCredito", "68" },
-        //    { "CancelamentoRateioCredito", "69" }
-        //};
-
         private string numeroDocumento;
-
+        /// <summary>
+        /// Documento
+        /// </summary>
         public string NumeroDocumento
         {
             get { return numeroDocumento; }
@@ -210,7 +255,9 @@ namespace ClassLibraryTest
         }
 
         private string dataVencimentoTitulo;
-
+        /// <summary>
+        /// DDMMAA
+        /// </summary>
         public string DataVencimentoTitulo
         {
             get { return dataVencimentoTitulo; }
@@ -218,7 +265,9 @@ namespace ClassLibraryTest
         }
 
         private string valorTitulo;
-
+        /// <summary>
+        /// Valor do Título (preencher sem ponto e sem vírgula) 
+        /// </summary>
         public string ValorTitulo
         {
             get { return valorTitulo; }
@@ -226,7 +275,9 @@ namespace ClassLibraryTest
         }
 
         private string bancoEncarregadoCobranca;
-
+        /// <summary>
+        /// Preencher com zeros
+        /// </summary>
         public string BancoEncarregadoCobranca
         {
             get { return bancoEncarregadoCobranca; }
@@ -234,7 +285,9 @@ namespace ClassLibraryTest
         }
 
         private string agenciaDepositaria;
-
+        /// <summary>
+        /// Preencher com zeros 
+        /// </summary>
         public string AgenciaDepositaria
         {
             get { return agenciaDepositaria; }
@@ -242,7 +295,19 @@ namespace ClassLibraryTest
         }
 
         private string especieTitulo;
-
+        /// <summary>
+        /// 01-Duplicata
+        ///02-Nota Promissória
+        ///03-Nota de Seguro
+        ///04-Cobrança Seriada
+        ///05-Recibo
+        ///10-Letras de Câmbio
+        ///11-Nota de Débito
+        ///12-Duplicata de Serv.
+        ///31-Cartão de Crédito
+        ///32-Boleto de Proposta
+        ///99-Outros
+        /// </summary>
         public string EspecieTitulo
         {
             get { return especieTitulo; }
@@ -250,7 +315,9 @@ namespace ClassLibraryTest
         }
 
         private string identificacao;
-
+        /// <summary>
+        /// Sempre = N 
+        /// </summary>
         public string Identificacao
         {
             get { return identificacao; }
@@ -258,7 +325,9 @@ namespace ClassLibraryTest
         }
 
         private string dataEmissaoTitulo;
-
+        /// <summary>
+        /// DDMMAA
+        /// </summary>
         public string DataEmissaoTitulo
         {
             get { return dataEmissaoTitulo; }
@@ -266,7 +335,10 @@ namespace ClassLibraryTest
         }
 
         private string primeiraInstrucao;
-
+        /// <summary>
+        /// Campo destinado para pré-determinar o protesto do Título ou a baixa por decurso de prazo, quando do registro. Não havendo interesse, preencher com Zeros. Porém, caso a Empresa deseje se utilizar da instrução automática de protesto ou da baixa por
+        ///decurso de prazo, abaixo os procedimentos:
+        /// </summary>
         public string PrimeiraInstrucao
         {
             get { return primeiraInstrucao; }
@@ -274,7 +346,10 @@ namespace ClassLibraryTest
         }
 
         private string segundaInstrucao;
-
+        /// <summary>
+        /// Campo destinado para pré-determinar o protesto do Título ou a baixa por decurso de prazo, quando do registro. Não havendo interesse, preencher com Zeros. Porém, caso a Empresa deseje se utilizar da instrução automática de protesto ou da baixa por
+        ///decurso de prazo, abaixo os procedimentos:
+        /// </summary>
         public string SegundaInstrucao
         {
             get { return segundaInstrucao; }
@@ -282,7 +357,15 @@ namespace ClassLibraryTest
         }
 
         private string valorCobrarDiaAtraso;
-
+        /// <summary>
+        /// Campo destinado para o Beneficiário informar o valor da mora dia a ser cobrado do Pagador, no
+        ///caso de pagamento com atraso(somente valor).
+        ///Porém, caso o Beneficiário não queira informar o valor da mora dia, no Arquivo Remessa,
+        ///poderemos calculá-lo e imprimi-lo, contudo torna-se necessário informar o valor de sua taxa de juros
+        ///mensal, através de carta, a qual deverá ser encaminhada para a nossa Agência, para o efetivo cadastramento.
+        ///Nota: Emissão dos boletos pelo próprio cliente. Quando houver Comissão de Permanência a ser
+        ///cobrado por dia de atraso, será obrigatória a informação desse valor no arquivo remessa.
+        /// </summary>
         public string ValorCobrarDiaAtraso
         {
             get { return valorCobrarDiaAtraso; }
@@ -290,7 +373,9 @@ namespace ClassLibraryTest
         }
 
         private string dataLimiteConcessaoDesconto;
-
+        /// <summary>
+        /// DDMMAA
+        /// </summary>
         public string DataLimiteConcessaoDesconto
         {
             get { return dataLimiteConcessaoDesconto; }
@@ -298,7 +383,9 @@ namespace ClassLibraryTest
         }
 
         private string valorDesconto;
-
+        /// <summary>
+        /// Valor Desconto 
+        /// </summary>
         public string ValorDesconto
         {
             get { return valorDesconto; }
@@ -306,7 +393,9 @@ namespace ClassLibraryTest
         }
 
         private string valorIOF;
-
+        /// <summary>
+        /// Este campo somente deverá ser preenchido pelas Empresas Beneficiários, cujo ramo de atividade seja Administradora de Seguros. O beneficiário deve informar o valor do IOF a ser recolhido. O recolhimento é realizado automaticamente pelo sistema do Banco.
+        /// </summary>
         public string ValorIOF
         {
             get { return valorIOF; }
@@ -314,7 +403,9 @@ namespace ClassLibraryTest
         }
 
         private string valorAbatimento;
-
+        /// <summary>
+        /// Valor Abatimento 
+        /// </summary>
         public string ValorAbatimento
         {
             get { return valorAbatimento; }
@@ -322,7 +413,10 @@ namespace ClassLibraryTest
         }
 
         private string identificacaoTipoInscricao;
-
+        /// <summary>
+        /// 01-CPF
+        /// 02-CNPJ
+        /// </summary>
         public string IdentificacaoTipoInscricao
         {
             get { return identificacaoTipoInscricao; }
@@ -330,7 +424,10 @@ namespace ClassLibraryTest
         }
 
         private string numeroInscricaoPagador;
-
+        /// <summary>
+        /// CNPJ/ CPF - Vide Obs. Pág. 21
+        /// (Preenchimento obrigatório)
+        /// </summary>
         public string NumeroInscricaoPagador
         {
             get { return numeroInscricaoPagador; }
@@ -338,15 +435,25 @@ namespace ClassLibraryTest
         }
 
         private string nomePagador;
-
+        //TODO: Tratar nome quando existir caractere especial
+        /// <summary>
+        /// Nome pagador.
+        /// </summary>
         public string NomePagador
         {
             get { return nomePagador; }
-            set { nomePagador = Util.FormataCampoComEspacosDireita(value, 40); }
+            set
+            {
+                var stringTratada = Util.FormataCampoCaracteresEspeciais(value);
+                stringTratada = Util.FormataCampoComEspacosDireita(stringTratada, 40);
+                nomePagador = stringTratada;
+            }
         }
 
         private string enderecoCompleto;
-
+        /// <summary>
+        /// Endereço do Pagador
+        /// </summary>
         public string EnderecoCompleto
         {
             get { return enderecoCompleto; }
@@ -354,7 +461,9 @@ namespace ClassLibraryTest
         }
 
         private string primeiraMensagem;
-
+        /// <summary>
+        /// Campo livre para uso da Empresa. A mensagem enviada nesse campo será impressa somente no boleto e não será confirmada no Arquivo Retorno.
+        /// </summary>
         public string PrimeiraMensagem
         {
             get { return primeiraMensagem; }
@@ -362,7 +471,9 @@ namespace ClassLibraryTest
         }
 
         private string cep;
-
+        /// <summary>
+        /// CEP Pagador
+        /// </summary>
         public string Cep
         {
             get { return cep; }
@@ -370,7 +481,9 @@ namespace ClassLibraryTest
         }
 
         private string sufixoCep;
-
+        /// <summary>
+        /// Sufixo CEP
+        /// </summary>
         public string SufixoCep
         {
             get { return sufixoCep; }
@@ -378,7 +491,12 @@ namespace ClassLibraryTest
         }
 
         private string segundaMensagem;
-
+        /// <summary>
+        /// Decomposição.
+        /// Este campo poderá ser utilizado para informar:
+        /// Somente Sacador/Avalista, ou Somente Mensagem.
+        /// Não utilizar as expressões “taxa bancária” ou “tarifa bancária” nos boletos de cobrança, pois essa tarifa refere-se à negociada pelo Banco com seu cliente beneficiário. Orientação da FEBRABAN (Comunicado FB-170/2005).
+        /// </summary>
         public string SegundaMensagem
         {
             get { return segundaMensagem; }
