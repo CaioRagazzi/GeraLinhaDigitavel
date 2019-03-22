@@ -519,7 +519,12 @@ namespace ClassLibraryTest
             transacao.Insert(65, stringTransacao.multa);
             transacao.Insert(66, stringTransacao.percentualMulta);
             transacao.Insert(70, stringTransacao.identificacaoTituloBanco);
-            transacao.Insert(81, stringTransacao.digitoAutoConferencia);
+            NossoNumero NN = new NossoNumero
+            {
+                Carteira = "09",
+                NossoNumeroSemDigito = stringTransacao.IdentificacaoTituloBanco
+            };
+            transacao.Insert(81, NN.GetDigitoNossoNumero());
             transacao.Insert(82, stringTransacao.descontoBonificacaoDia);
             transacao.Insert(92, stringTransacao.condicaoEmissaoBoletoCobranca);
             transacao.Insert(93, stringTransacao.condicaoRegistroDebitoAutomatico);

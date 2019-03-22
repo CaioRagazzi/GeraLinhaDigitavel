@@ -22,7 +22,7 @@ namespace ClassLibraryTest
             set { carteira = value; }
         }
 
-        public string GetNossoNumero()
+        public string GetDigitoNossoNumero()
         {
             string numeroCompleto = carteira + nossoNumeroSemDigito;
             int somatoria = 0;
@@ -50,7 +50,7 @@ namespace ClassLibraryTest
                 digito = (11 - restoDivisao).ToString();
             }
 
-            return nossoNumeroSemDigito + digito;
+            return digito;
         }
     }
 }
