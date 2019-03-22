@@ -142,6 +142,12 @@ namespace ClassLibraryTest
             set { branco2 = Util.FormataCampoComEspacosDireita(value, 277); }
         }
 
+        /// <summary>
+        /// Método responsável por montar a linha do Header do arquivo de remessa.
+        /// </summary>
+        /// <param name="stringHeader">Objeto do tipo Header</param>
+        /// <param name="numSequencial">Numero sequencial para colocar na linha do boleto.</param>
+        /// <returns>Retorna um StringBuilder com a linha do Header completa.</returns>
         public StringBuilder GetHeader(Header stringHeader, string numSequencial)
         {
 

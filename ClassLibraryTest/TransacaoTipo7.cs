@@ -126,6 +126,11 @@ namespace ClassLibraryTest
             set { dacNossoNumero = Util.FormataCampoComEspacosDireita(value, 1); }
         }
 
+        /// <summary>
+        /// Método responsável por montar a linha do Trailler.
+        /// </summary>
+        /// <param name="stringTransacao">Recebe um objeto do tipo TransacaoTipo7</param>
+        /// <returns>Retorna um StringBuilder com a linha completa da transação do tipo 7.</returns>
         public StringBuilder GetTransacao(TransacaoTipo7 stringTransacao)
         {
             StringBuilder transacao = new StringBuilder(400);
