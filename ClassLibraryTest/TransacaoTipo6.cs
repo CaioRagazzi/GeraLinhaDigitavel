@@ -5,7 +5,9 @@ namespace ClassLibraryTest
     class TransacaoTipo6
     {
         private string identificacaoRegistro;
-
+        /// <summary>
+        /// Fixo “6”
+        /// </summary>
         public string IdentificacaoRegistro
         {
             get { return identificacaoRegistro; }
@@ -13,7 +15,9 @@ namespace ClassLibraryTest
         }
 
         private string carteira;
-
+        /// <summary>
+        /// Nº da Carteira
+        /// </summary>
         public string Carteira
         {
             get { return carteira; }
@@ -21,7 +25,9 @@ namespace ClassLibraryTest
         }
 
         private string agencia;
-
+        /// <summary>
+        /// Código da Agencia do Beneficiário
+        /// </summary>
         public string Agencia
         {
             get { return agencia; }
@@ -29,7 +35,9 @@ namespace ClassLibraryTest
         }
 
         private string contaCorrente;
-
+        /// <summary>
+        /// Numero da Conta Corrente
+        /// </summary>
         public string ContaCorrente
         {
             get { return contaCorrente; }
@@ -37,7 +45,9 @@ namespace ClassLibraryTest
         }
 
         private string nossoNumero;
-
+        /// <summary>
+        /// Nosso Número
+        /// </summary>
         public string NossoNumero
         {
             get { return nossoNumero; }
@@ -45,7 +55,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoNossoNumero;
-
+        /// <summary>
+        /// Dígito do Nosso Número 
+        /// </summary>
         public string DigitoNossoNumero
         {
             get { return digitoNossoNumero; }
@@ -53,7 +65,9 @@ namespace ClassLibraryTest
         }
 
         private string brancos;
-
+        /// <summary>
+        /// Brancos
+        /// </summary>
         public string Brancos
         {
             get { return brancos; }

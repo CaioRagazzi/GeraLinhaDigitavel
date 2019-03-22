@@ -5,7 +5,9 @@ namespace ClassLibraryTest
     class TransacaoTipo3
     {
         private string identificacaoRegistro;
-
+        /// <summary>
+        /// Fixo “3”
+        /// </summary>
         public string IdentificacaoRegistro
         {
             get { return identificacaoRegistro; }
@@ -13,7 +15,13 @@ namespace ClassLibraryTest
         }
 
         private string identificacaoEmpresaBanco;
-
+        /// <summary>
+        /// Deverá ser preenchido (esquerda para direita), conforme a seguir:
+        ///02 a 04 - Código da carteira.
+        ///05 a 09 - Código da Agência Beneficiário, sem o dígito.
+        ///10 a 16 - Conta Corrente.
+        ///17 a 17 - Dígito da Conta Corrente.
+        /// </summary>
         public string IdentificacaoEmpresaBanco
         {
             get { return identificacaoEmpresaBanco; }
@@ -21,7 +29,9 @@ namespace ClassLibraryTest
         }
 
         private string identificacaoTituloBanco;
-
+        /// <summary>
+        /// Esse campo deverá ser informado com Zeros, quando a emissão do Boleto de Cobrança for pelo Banco; quando for pela Empresa, esse campo deverá ser preenchido conforme os critérios apresentados nas páginas 18 a 20.
+        /// </summary>
         public string IdentificacaoTituloBanco
         {
             get { return identificacaoTituloBanco; }
@@ -29,7 +39,11 @@ namespace ClassLibraryTest
         }
 
         private string codigoCalculoRateio;
-
+        /// <summary>
+        /// 1- Valor cobrado
+        ///2- Valor do registro
+        ///3- Rateio pelo menor valor(registrado ou pago)
+        /// </summary>
         public string CodigoCalculoRateio
         {
             get { return codigoCalculoRateio; }
@@ -37,7 +51,12 @@ namespace ClassLibraryTest
         }
 
         private string tipoValorInformado;
-
+        /// <summary>
+        /// 1- Percentual
+        ///2- Valor
+        ///Para um mesmo Título, o Beneficiário deverá optar pelo valor ou percentual, nunca os dois tipos.
+        ///Importante: A Empresa que optar rateio pelo valor cobrado, deverá obrigatoriamente, informar o rateio em percentual.
+        /// </summary>
         public string TipoValorInformado
         {
             get { return tipoValorInformado; }
@@ -45,7 +64,9 @@ namespace ClassLibraryTest
         }
 
         private string filler;
-
+        /// <summary>
+        /// Brancos
+        /// </summary>
         public string Filler
         {
             get { return filler; }
@@ -53,7 +74,9 @@ namespace ClassLibraryTest
         }
 
         private string codigoBancoCreditoPrimeiroBeneficiario;
-
+        /// <summary>
+        /// Fixo “237”
+        /// </summary>
         public string CodigoBancoCreditoPrimeiroBeneficiario
         {
             get { return codigoBancoCreditoPrimeiroBeneficiario; }
@@ -61,7 +84,9 @@ namespace ClassLibraryTest
         }
 
         private string codigoAgenciaCreditoPrimeiroBeneficiario;
-
+        /// <summary>
+        /// Código da Agência
+        /// </summary>
         public string CodigoAgenciaCreditoPrimeiroBeneficiario
         {
             get { return codigoAgenciaCreditoPrimeiroBeneficiario; }
@@ -69,7 +94,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoAgenciaCreditoPrimeiroBeneficiario;
-
+        /// <summary>
+        /// Dígito da Agência
+        /// </summary>
         public string DigitoAgenciaCreditoPrimeiroBeneficiario
         {
             get { return digitoAgenciaCreditoPrimeiroBeneficiario; }
@@ -77,7 +104,9 @@ namespace ClassLibraryTest
         }
 
         private string numeroContaCorrenteCreditoPrimeiroBeneficiario;
-
+        /// <summary>
+        /// Número da Conta Corrente do Beneficiário
+        /// </summary>
         public string NumeroContaCorrenteCreditoPrimeiroBeneficiario
         {
             get { return numeroContaCorrenteCreditoPrimeiroBeneficiario; }
@@ -85,7 +114,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoContaCorrenteCreditoPrimeiroBeneficiario;
-
+        /// <summary>
+        /// Dígito da Conta Corrente
+        /// </summary>
         public string DigitoContaCorrenteCreditoPrimeiroBeneficiario
         {
             get { return digitoContaCorrenteCreditoPrimeiroBeneficiario; }
@@ -93,7 +124,12 @@ namespace ClassLibraryTest
         }
 
         private string valorOuParcelamentoRateio;
-
+        /// <summary>
+        /// Valor do rateio, de acordo com o tipo(percentual ou valor).
+        /// Moeda corrente - Deverá ser informado com 2 (duas) decimais.
+        /// Moeda indexada - Deverá ser informado com 5 (cinco) decimais.
+        /// Percentual - deverá ser informado com 3 (três) decimais.
+        /// </summary>
         public string ValorOuParcelamentoRateio
         {
             get { return valorOuParcelamentoRateio; }
@@ -101,7 +137,9 @@ namespace ClassLibraryTest
         }
 
         private string nomePrimeiroBeneficiario;
-
+        /// <summary>
+        /// Para cada Título, serão permitidos no máximo 90 beneficiários, isto é, no máximo 30 registros tipo 3. para cada Título. (Registro Tipo 1)
+        /// </summary>
         public string NomePrimeiroBeneficiario
         {
             get { return nomePrimeiroBeneficiario; }
@@ -109,7 +147,9 @@ namespace ClassLibraryTest
         }
 
         private string filler2;
-
+        /// <summary>
+        /// Brancos
+        /// </summary>
         public string Filler2
         {
             get { return filler2; }
@@ -117,7 +157,10 @@ namespace ClassLibraryTest
         }
 
         private string parcela;
-
+        /// <summary>
+        /// Identificação da Parcela
+        /// Para diferenciar rateios de um mesmo Título, para o mesmo beneficiário várias vezes.
+        /// </summary>
         public string Parcela
         {
             get { return parcela; }
@@ -125,7 +168,9 @@ namespace ClassLibraryTest
         }
 
         private string floatingPrimeiroBeneficiario;
-
+        /// <summary>
+        /// Informar a quantidade de dias para rateio, após a data do crédito da cobrança na Conta Corrente do beneficiário. Essa quantidade está limitada a 30 (trinta) dias.
+        /// </summary>
         public string FloatingPrimeiroBeneficiario
         {
             get { return floatingPrimeiroBeneficiario; }
@@ -133,7 +178,9 @@ namespace ClassLibraryTest
         }
 
         private string codigoBancoCreditoSegundoBeneficiario;
-
+        /// <summary>
+        /// Fixo “237”
+        /// </summary>
         public string CodigoBancoCreditoSegundoBeneficiario
         {
             get { return codigoBancoCreditoSegundoBeneficiario; }
@@ -141,7 +188,9 @@ namespace ClassLibraryTest
         }
 
         private string codigoAgenciaCreditoSegundoBeneficiario;
-
+        /// <summary>
+        /// Código da Agência do Beneficiário
+        /// </summary>
         public string CodigoAgenciaCreditoSegundoBeneficiario
         {
             get { return codigoAgenciaCreditoSegundoBeneficiario; }
@@ -149,7 +198,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoAgenciaCreditoSegundoBeneficiario;
-
+        /// <summary>
+        /// Dígito da Agência 
+        /// </summary>
         public string DigitoAgenciaCreditoSegundoBeneficiario
         {
             get { return digitoAgenciaCreditoSegundoBeneficiario; }
@@ -157,7 +208,9 @@ namespace ClassLibraryTest
         }
 
         private string numeroContaCorrenteCreditoSegundoBeneficiario;
-
+        /// <summary>
+        /// Número da Conta Corrente do Beneficiário
+        /// </summary>
         public string NumeroContaCorrenteCreditoSegundoBeneficiario
         {
             get { return numeroContaCorrenteCreditoSegundoBeneficiario; }
@@ -165,7 +218,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoContaCorrenteCreditoSegundoBeneficiario;
-
+        /// <summary>
+        /// Dígito da Conta Corrente
+        /// </summary>
         public string DigitoContaCorrenteCreditoSegundoBeneficiario
         {
             get { return digitoContaCorrenteCreditoSegundoBeneficiario; }
@@ -173,7 +228,12 @@ namespace ClassLibraryTest
         }
 
         private string valorOuParcelamentoRateio2;
-
+        /// <summary>
+        /// Valor do rateio, de acordo com o tipo(percentual ou valor).
+        /// Moeda corrente - Deverá ser informado com 2 (duas) decimais.
+        /// Moeda indexada - Deverá ser informado com 5 (cinco) decimais.
+        /// Percentual - deverá ser informado com 3 (três) decimais.
+        /// </summary>
         public string ValorOuParcelamentoRateio2
         {
             get { return valorOuParcelamentoRateio2; }
@@ -181,7 +241,9 @@ namespace ClassLibraryTest
         }
 
         private string nomeSegundoBeneficiario;
-
+        /// <summary>
+        /// Nome do Beneficiário
+        /// </summary>
         public string NomeSegundoBeneficiario
         {
             get { return nomeSegundoBeneficiario; }
@@ -189,7 +251,9 @@ namespace ClassLibraryTest
         }
 
         private string filler3;
-
+        /// <summary>
+        /// Brancos
+        /// </summary>
         public string Filler3
         {
             get { return filler3; }
@@ -197,7 +261,9 @@ namespace ClassLibraryTest
         }
 
         private string parcela2;
-
+        /// <summary>
+        /// Identificação da Parcela
+        /// </summary>
         public string Parcela2
         {
             get { return parcela2; }
@@ -205,7 +271,9 @@ namespace ClassLibraryTest
         }
 
         private string floatingSegundoBeneficiario;
-
+        /// <summary>
+        /// Quantidade de dias para Crédito do Beneficiário
+        /// </summary>
         public string FloatingSegundoBeneficiario
         {
             get { return floatingSegundoBeneficiario; }
@@ -213,7 +281,9 @@ namespace ClassLibraryTest
         }
 
         private string codigoBancoCreditoTerceiroBeneficiario;
-
+        /// <summary>
+        /// Fixo “237”
+        /// </summary>
         public string CodigoBancoCreditoTerceiroBeneficiario
         {
             get { return codigoBancoCreditoTerceiroBeneficiario; }
@@ -221,7 +291,9 @@ namespace ClassLibraryTest
         }
 
         private string codigoAgenciaCreditoTerceiroBeneficiario;
-
+        /// <summary>
+        /// Código da Agência do Beneficiário
+        /// </summary>
         public string CodigoAgenciaCreditoTerceiroBeneficiario
         {
             get { return codigoAgenciaCreditoTerceiroBeneficiario; }
@@ -229,7 +301,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoAgenciaCreditoTerceiroBeneficiario;
-
+        /// <summary>
+        /// Dígito da Agência
+        /// </summary>
         public string DigitoAgenciaCreditoTerceiroBeneficiario
         {
             get { return digitoAgenciaCreditoTerceiroBeneficiario; }
@@ -237,7 +311,9 @@ namespace ClassLibraryTest
         }
 
         private string numeroContaCorrenteCreditoTerceiroBeneficiario;
-
+        /// <summary>
+        /// Número da Conta Corrente do Beneficiário
+        /// </summary>
         public string NumeroContaCorrenteCreditoTerceiroBeneficiario
         {
             get { return numeroContaCorrenteCreditoTerceiroBeneficiario; }
@@ -245,7 +321,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoContaCorrenteCreditoTerceiroBeneficiario;
-
+        /// <summary>
+        /// Dígito da Conta Corrente
+        /// </summary>
         public string DigitoContaCorrenteCreditoTerceiroBeneficiario
         {
             get { return digitoContaCorrenteCreditoTerceiroBeneficiario; }
@@ -253,7 +331,12 @@ namespace ClassLibraryTest
         }
 
         private string valorOuParcelamentoRateio3;
-
+        /// <summary>
+        /// Valor do rateio, de acordo com o tipo(percentual ou valor).
+        /// Moeda corrente - Deverá ser informado com 2 (duas) decimais.
+        /// Moeda indexada - Deverá ser informado com 5 (cinco) decimais.
+        /// Percentual - deverá ser informado com 3 (três) decimais.
+        /// </summary>
         public string ValorOuParcelamentoRateio3
         {
             get { return valorOuParcelamentoRateio3; }
@@ -261,7 +344,9 @@ namespace ClassLibraryTest
         }
 
         private string nomeTerceiroBeneficiario;
-
+        /// <summary>
+        /// Nome do 3º Beneficiário
+        /// </summary>
         public string NomeTerceiroBeneficiario
         {
             get { return nomeTerceiroBeneficiario; }
@@ -269,7 +354,9 @@ namespace ClassLibraryTest
         }
 
         private string filler4;
-
+        /// <summary>
+        /// Brancos
+        /// </summary>
         public string Filler4
         {
             get { return filler4; }
@@ -277,7 +364,9 @@ namespace ClassLibraryTest
         }
 
         private string parcela3;
-
+        /// <summary>
+        /// Identificação da Parcela
+        /// </summary>
         public string Parcela3
         {
             get { return parcela3; }
@@ -285,7 +374,9 @@ namespace ClassLibraryTest
         }
 
         private string floatingTerceiroBeneficiario;
-
+        /// <summary>
+        /// Quantidade de Dias para Crédito do Beneficiário
+        /// </summary>
         public string FloatingTerceiroBeneficiario
         {
             get { return floatingTerceiroBeneficiario; }

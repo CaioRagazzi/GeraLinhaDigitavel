@@ -5,7 +5,9 @@ namespace ClassLibraryTest
     class TransacaoTipo7
     {
         private string tipoRegistro;
-
+        /// <summary>
+        /// Fixo 7
+        /// </summary>
         public string TipoRegistro
         {
             get { return tipoRegistro; }
@@ -13,7 +15,9 @@ namespace ClassLibraryTest
         }
 
         private string enderecoSacadorAvalista;
-
+        /// <summary>
+        /// Endereço Sacador/Avalista
+        /// </summary>
         public string EnderecoSacadorAvalista
         {
             get { return enderecoSacadorAvalista; }
@@ -53,7 +57,9 @@ namespace ClassLibraryTest
         }
 
         private string reserva;
-
+        /// <summary>
+        /// Filler
+        /// </summary>
         public string Reserva
         {
             get { return reserva; }
@@ -61,7 +67,9 @@ namespace ClassLibraryTest
         }
 
         private string carteira;
-
+        /// <summary>
+        /// Nº da Carteira 
+        /// </summary>
         public string Carteira
         {
             get { return carteira; }
@@ -69,7 +77,9 @@ namespace ClassLibraryTest
         }
 
         private string agencia;
-
+        /// <summary>
+        /// Código da Agência Beneficiário
+        /// </summary>
         public string Agencia
         {
             get { return agencia; }
@@ -77,7 +87,9 @@ namespace ClassLibraryTest
         }
 
         private string contaCorrente;
-
+        /// <summary>
+        /// Nº da Conta Corrente
+        /// </summary>
         public string ContaCorrente
         {
             get { return contaCorrente; }
@@ -85,7 +97,9 @@ namespace ClassLibraryTest
         }
 
         private string digitoCC;
-
+        /// <summary>
+        /// DAC C/C
+        /// </summary>
         public string DigitoCC
         {
             get { return digitoCC; }
@@ -93,7 +107,9 @@ namespace ClassLibraryTest
         }
 
         private string nossoNumero;
-
+        /// <summary>
+        /// Número Bancário
+        /// </summary>
         public string NossoNumero
         {
             get { return nossoNumero; }
@@ -101,7 +117,9 @@ namespace ClassLibraryTest
         }
 
         private string dacNossoNumero;
-
+        /// <summary>
+        /// Dígito N/N
+        /// </summary>
         public string DacNossoNumero
         {
             get { return dacNossoNumero; }
