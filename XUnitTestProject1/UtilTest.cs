@@ -78,24 +78,23 @@ namespace XUnitTestProject1
         [Fact]
         public void TestaSubtracao()
         {
-            DateTime data1 = new DateTime(2025, 02, 23);
-            DateTime data2 = new DateTime(1997, 10, 07);
-            //DateTime data3;
+            //DateTime data1 = new DateTime(2025, 02, 23);
+            //DateTime data2 = new DateTime(1997, 10, 07);
+            ////DateTime data3;
 
-            var data3 = data1.Subtract(data2).TotalDays.ToString();
+            //var data3 = data1.Subtract(data2).TotalDays.ToString();
 
-            if (data3.Length > 4)
-            {
-                data3 = data3.Substring(0, 4);
-                var newdata = (Convert.ToInt64(data3) + 1).ToString();
-                //return newdata;
-            }
-            else
-            {
-                //return data3.Substring(0, 4);
-            }
+            //if (data3.Length > 4)
+            //{
+            //    data2 = new DateTime(2022, 05, 29);
+            //    return data3 = data1.Subtract(data2).TotalDays.ToString().Substring(0, 4);
+            //}
+            //else
+            //{
+            //    return data3.Substring(0, 4);
+            //}
 
-            string teste = data3.ToString().Substring(0, 4);
+            //string teste = data3.ToString().Substring(0, 4);
 
         }
     }

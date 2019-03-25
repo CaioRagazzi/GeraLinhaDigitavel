@@ -45,9 +45,8 @@ namespace ClassLibraryTest
 
             if (data3.Length > 4)
             {
-                data3 = data3.Substring(0, 4);
-                var newdata = (Convert.ToInt64(data3) + 1).ToString();
-                return newdata;
+                data2 = new DateTime(2022, 05, 29);
+                return data3 = dataDeVencimento.Subtract(data2).TotalDays.ToString().Substring(0, 4);
             }
             else
             {
