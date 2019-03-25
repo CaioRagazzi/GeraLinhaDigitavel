@@ -70,7 +70,7 @@ namespace ClassLibraryTest
                 IdentificacaoOcorrencia = "01",
                 NumeroDocumento = "0000000001",
                 DataVencimentoTitulo = "260319",
-                ValorTitulo = "1500",
+                ValorTitulo = "1444",
                 BancoEncarregadoCobranca = "000",
                 AgenciaDepositaria = "00000",
                 EspecieTitulo = "12",
@@ -191,18 +191,18 @@ namespace ClassLibraryTest
 
             TransacaoTipo2 stringTransacaoTipo2 = new TransacaoTipo2
             {
-                Agencia = "",
-                Carteira = "",
-                ContaCorrente = "",
+                Agencia = "03392",
+                Carteira = "009",
+                ContaCorrente = "0000340",
                 DacNossoNumero = "",
                 DataLimiteDesconto2 = "",
                 DataLimiteDesconto3 = "",
-                DigitoCC = "",
+                DigitoCC = "9",
                 Mensagem1 = "Mensagem 1 teste",
-                Mensagem2 = "",
-                Mensagem3 = "Mensagem 3 teste 2",
-                Mensagem4 = "",
-                NossoNumero = "",
+                Mensagem2 = "Mensagem 2 teste",
+                Mensagem3 = "Mensagem 3 teste",
+                Mensagem4 = "Mensagem 4 teste",
+                NossoNumero = "00000000000",
                 Reserva = "",
                 TipoRegistro = "2",
                 ValorDesconto2 = "",
@@ -285,8 +285,8 @@ namespace ClassLibraryTest
 
             List<StringBuilder> listaTransacoes = new List<StringBuilder>
             {
-                stringTransacaoTipo1.GetTransacao(stringTransacaoTipo1)
-                //stringTransacaoTipo12.GetTransacao(stringTransacaoTipo12),
+                stringTransacaoTipo1.GetTransacao(stringTransacaoTipo1),
+                stringTransacaoTipo2.GetTransacao(stringTransacaoTipo2)
                 //stringTransacaoTipo13.GetTransacao(stringTransacaoTipo13),
                 //stringTransacaoTipo6.GetTransacao(stringTransacaoTipo6),
                 //stringTransacaoTipo7.GetTransacao(stringTransacaoTipo7)

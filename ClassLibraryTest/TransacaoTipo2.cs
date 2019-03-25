@@ -51,7 +51,7 @@ namespace ClassLibraryTest
         public string DataLimiteDesconto2
         {
             get { return dataLimiteDesconto2; }
-            set { dataLimiteDesconto2 = Util.FormataCampoComEspacosDireita(value, 6); }
+            set { dataLimiteDesconto2 = Util.FormataCampoComZerosEsquerda(value, 6); }
         }
 
         private string valorDesconto2;
@@ -59,7 +59,7 @@ namespace ClassLibraryTest
         public string ValorDesconto2
         {
             get { return valorDesconto2; }
-            set { valorDesconto2 = Util.FormataCampoComEspacosDireita(value, 13); }
+            set { valorDesconto2 = Util.FormataCampoComZerosEsquerda(value, 13); }
         }
 
         private string dataLimiteDesconto3;
@@ -77,7 +77,7 @@ namespace ClassLibraryTest
         public string ValorDesconto3
         {
             get { return valorDesconto3; }
-            set { valorDesconto3 = Util.FormataCampoComEspacosDireita(value, 13); }
+            set { valorDesconto3 = Util.FormataCampoComZerosEsquerda(value, 13); }
         }
 
         private string reserva;
@@ -167,7 +167,12 @@ namespace ClassLibraryTest
             transacao.Insert(374, stringTransacao.contaCorrente);
             transacao.Insert(381, stringTransacao.digitoCC);
             transacao.Insert(382, stringTransacao.nossoNumero);
-            transacao.Insert(393, stringTransacao.dacNossoNumero);
+            NossoNumero NN = new NossoNumero
+            {
+                Carteira = "09",
+                NossoNumeroSemDigito = stringTransacao.nossoNumero
+            };
+            transacao.Insert(393, NN.GetDigitoNossoNumero());
 
             return transacao;
         }
