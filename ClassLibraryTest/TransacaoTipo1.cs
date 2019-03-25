@@ -431,7 +431,7 @@ namespace ClassLibraryTest
         public string NumeroInscricaoPagador
         {
             get { return numeroInscricaoPagador; }
-            set { numeroInscricaoPagador = Util.FormataCampoComEspacosDireita(value, 14); }
+            set { numeroInscricaoPagador = Util.FormataCampoComZerosEsquerda(value, 14); }
         }
 
         private string nomePagador;

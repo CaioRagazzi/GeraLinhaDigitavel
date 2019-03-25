@@ -71,7 +71,7 @@ namespace ClassLibraryTest
                 NumeroDocumento = "0000000001",
                 DataVencimentoTitulo = "260319",
                 ValorTitulo = "1500",
-                BancoEncarregadoCobranca = "237",
+                BancoEncarregadoCobranca = "000",
                 AgenciaDepositaria = "00000",
                 EspecieTitulo = "12",
                 Identificacao = "N",

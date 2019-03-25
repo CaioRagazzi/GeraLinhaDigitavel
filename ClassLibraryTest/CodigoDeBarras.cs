@@ -13,11 +13,11 @@ namespace ClassLibraryTest
         public readonly string valor;
         private readonly CampoLivreCodigoDeBarras campoLivre;
 
-        public CodigoDeBarras(string codigoDoBanco, string codigoDaMoeda, string fatorVencimento, string valor, CampoLivreCodigoDeBarras campoLivre)
+        public CodigoDeBarras(string codigoDoBanco, string codigoDaMoeda, DateTime fatorVencimento, string valor, CampoLivreCodigoDeBarras campoLivre)
         {
             this.codigoDoBanco = codigoDoBanco;
             this.codigoDaMoeda = codigoDaMoeda;
-            this.fatorVencimento = fatorVencimento;
+            this.fatorVencimento = GetFatorVencimento(fatorVencimento);
             this.valor = valor;
             this.campoLivre = campoLivre;
             this.digitoVerificadorCodigoDeBarras = GetDigitoVerificadorCodigoDeBarras();
@@ -35,6 +35,24 @@ namespace ClassLibraryTest
             stringDadosCodigoDeBarras.Insert(19, campoLivre); //Campo Livre
 
             return stringDadosCodigoDeBarras;
+        }
+
+        private string GetFatorVencimento(DateTime dataDeVencimento)
+        {
+            DateTime data2 = new DateTime(1997, 10, 07);
+
+            var data3 = dataDeVencimento.Subtract(data2).TotalDays.ToString();
+
+            if (data3.Length > 4)
+            {
+                data3 = data3.Substring(0, 4);
+                var newdata = (Convert.ToInt64(data3) + 1).ToString();
+                return newdata;
+            }
+            else
+            {
+                return data3.Substring(0, 4);
+            }
         }
 
         private string GetDigitoVerificadorCodigoDeBarras()
