@@ -69,8 +69,8 @@ namespace ClassLibraryTest
                 PagamentoParcial = "",
                 IdentificacaoOcorrencia = "01",
                 NumeroDocumento = "0000000001",
-                DataVencimentoTitulo = "230319",
-                ValorTitulo = "1050",
+                DataVencimentoTitulo = "260319",
+                ValorTitulo = "1500",
                 BancoEncarregadoCobranca = "237",
                 AgenciaDepositaria = "00000",
                 EspecieTitulo = "12",
@@ -285,9 +285,9 @@ namespace ClassLibraryTest
 
             List<StringBuilder> listaTransacoes = new List<StringBuilder>
             {
-                stringTransacaoTipo1.GetTransacao(stringTransacaoTipo1),
-                stringTransacaoTipo12.GetTransacao(stringTransacaoTipo12),
-                stringTransacaoTipo13.GetTransacao(stringTransacaoTipo13),
+                stringTransacaoTipo1.GetTransacao(stringTransacaoTipo1)
+                //stringTransacaoTipo12.GetTransacao(stringTransacaoTipo12),
+                //stringTransacaoTipo13.GetTransacao(stringTransacaoTipo13),
                 //stringTransacaoTipo6.GetTransacao(stringTransacaoTipo6),
                 //stringTransacaoTipo7.GetTransacao(stringTransacaoTipo7)
             };

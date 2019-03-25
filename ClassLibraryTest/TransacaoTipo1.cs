@@ -524,7 +524,8 @@ namespace ClassLibraryTest
                 Carteira = "09",
                 NossoNumeroSemDigito = stringTransacao.IdentificacaoTituloBanco
             };
-            transacao.Insert(81, NN.GetDigitoNossoNumero());
+            //transacao.Insert(81, NN.GetDigitoNossoNumero());
+            transacao.Insert(81, "0");
             transacao.Insert(82, stringTransacao.descontoBonificacaoDia);
             transacao.Insert(92, stringTransacao.condicaoEmissaoBoletoCobranca);
             transacao.Insert(93, stringTransacao.condicaoRegistroDebitoAutomatico);

@@ -58,7 +58,7 @@ namespace ClassLibraryTest
         {
             string campoParaCalculo = campo.ToString();
             int somatoria = 0;
-            string numeroMultiplicador = "212121212";
+            const string numeroMultiplicador = "212121212";
 
             for (int i = 0; i < campoParaCalculo.Length; i++)
             {
