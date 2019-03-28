@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibraryTest.Utils;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -58,7 +59,14 @@ namespace ClassLibraryTest.TransacaoDoTipo1
         public string IdentificacaoTituloBanco
         {
             get { return identificacaoTituloBanco; }
-            set { identificacaoTituloBanco = Util.FormataCampoComZerosEsquerda(value, 11); }
+            set
+            {
+                if (value.Length != 11)
+                {
+                    throw new Exception("Nosso número deve conter 11 dígitos");
+                }
+                identificacaoTituloBanco = Util.FormataCampoComZerosEsquerda(value, 11);
+            }
         }
 
         private string digitoAutoConferencia;
@@ -72,6 +80,7 @@ namespace ClassLibraryTest.TransacaoDoTipo1
         private decimal descontoBonificacaoDia;
         /// <summary>
         /// Valor do desconto bonif./dia.
+        /// Exemplos de multas: [[90% = 90.00m], [37,5% = 37.50m], [15,96% = 15.96m]]
         /// </summary>
         public decimal DescontoBonificacaoDia
         {
@@ -151,6 +160,7 @@ namespace ClassLibraryTest.TransacaoDoTipo1
         private decimal valorTitulo;
         /// <summary>
         /// Valor do Título (preencher sem ponto e sem vírgula) 
+        /// Exemplos de multas: [[90% = 90.00m], [37,5% = 37.50m], [15,96% = 15.96m]]
         /// </summary>
         public decimal ValorTitulo
         {
@@ -192,16 +202,7 @@ namespace ClassLibraryTest.TransacaoDoTipo1
             set { dataEmissaoTitulo = value; }
         }
 
-        private string primeiraInstrucao;
-        /// <summary>
-        /// Campo destinado para pré-determinar o protesto do Título ou a baixa por decurso de prazo, quando do registro. Não havendo interesse, preencher com Zeros. Porém, caso a Empresa deseje se utilizar da instrução automática de protesto ou da baixa por
-        ///decurso de prazo, abaixo os procedimentos:
-        /// </summary>
-        public string PrimeiraInstrucao
-        {
-            get { return primeiraInstrucao; }
-            set { primeiraInstrucao = Util.FormataCampoComEspacosDireita(value, 2); }
-        }
+        public Protestos primeiraInstrucao;
 
         private string segundaInstrucao;
         /// <summary>
@@ -214,7 +215,7 @@ namespace ClassLibraryTest.TransacaoDoTipo1
             set { segundaInstrucao = Util.FormataCampoComEspacosDireita(value, 2); }
         }
 
-        private string valorCobrarDiaAtraso;
+        private decimal valorCobrarDiaAtraso;
         /// <summary>
         /// Campo destinado para o Beneficiário informar o valor da mora dia a ser cobrado do Pagador, no
         ///caso de pagamento com atraso(somente valor).
@@ -224,10 +225,10 @@ namespace ClassLibraryTest.TransacaoDoTipo1
         ///Nota: Emissão dos boletos pelo próprio cliente. Quando houver Comissão de Permanência a ser
         ///cobrado por dia de atraso, será obrigatória a informação desse valor no arquivo remessa.
         /// </summary>
-        public string ValorCobrarDiaAtraso
+        public decimal ValorCobrarDiaAtraso
         {
             get { return valorCobrarDiaAtraso; }
-            set { valorCobrarDiaAtraso = Util.FormataCampoComEspacosDireita(value, 13); }
+            set { valorCobrarDiaAtraso = value; }
         }
 
         private DateTime dataLimiteConcessaoDesconto;
@@ -243,6 +244,7 @@ namespace ClassLibraryTest.TransacaoDoTipo1
         private decimal valorDesconto;
         /// <summary>
         /// Valor Desconto 
+        /// Exemplos de multas: [[90% = 90.00m], [37,5% = 37.50m], [15,96% = 15.96m]]
         /// </summary>
         public decimal ValorDesconto
         {
@@ -253,6 +255,7 @@ namespace ClassLibraryTest.TransacaoDoTipo1
         private decimal valorIOF;
         /// <summary>
         /// Este campo somente deverá ser preenchido pelas Empresas Beneficiários, cujo ramo de atividade seja Administradora de Seguros. O beneficiário deve informar o valor do IOF a ser recolhido. O recolhimento é realizado automaticamente pelo sistema do Banco.
+        /// Exemplos de multas: [[90% = 90.00m], [37,5% = 37.50m], [15,96% = 15.96m]]
         /// </summary>
         public decimal ValorIOF
         {
@@ -263,6 +266,7 @@ namespace ClassLibraryTest.TransacaoDoTipo1
         private decimal valorAbatimento;
         /// <summary>
         /// Valor Abatimento 
+        /// Exemplos de multas: [[90% = 90.00m], [37,5% = 37.50m], [15,96% = 15.96m]]
         /// </summary>
         public decimal ValorAbatimento
         {
@@ -368,7 +372,7 @@ namespace ClassLibraryTest.TransacaoDoTipo1
             transacao.Insert(7, stringTransacao.DebitoAutomatico.RazaoConta);
             transacao.Insert(12, stringTransacao.DebitoAutomatico.ContaCorrente);
             transacao.Insert(19, stringTransacao.DebitoAutomatico.DigitoContaCorrente);
-            transacao.Insert(20, stringTransacao.BeneficiariaBanco.ToString());
+            transacao.Insert(20, stringTransacao.BeneficiariaBanco.ToStringTransacaoTipo1());
             transacao.Insert(37, stringTransacao.numeroControleParticipante);
             transacao.Insert(62, stringTransacao.codigoBancoDebito);
             transacao.Insert(65, (int)stringTransacao.multa);
@@ -396,9 +400,9 @@ namespace ClassLibraryTest.TransacaoDoTipo1
             transacao.Insert(147, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.especieTitulo), 2));
             transacao.Insert(149, identificacao);
             transacao.Insert(150, Util.FormataCampoComZerosEsquerda(stringTransacao.dataEmissaoTitulo.ToString("ddMMyy"), 6));
-            transacao.Insert(156, stringTransacao.primeiraInstrucao);
+            transacao.Insert(156, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.primeiraInstrucao), 2));
             transacao.Insert(158, stringTransacao.segundaInstrucao);
-            transacao.Insert(160, stringTransacao.valorCobrarDiaAtraso);
+            transacao.Insert(160, Util.FormataCampoComZerosEsquerda(stringTransacao.valorCobrarDiaAtraso.ToString().Replace(",", ""), 13));
             if (dataLimiteConcessaoDesconto == new DateTime(0001,01,01))
             {
                 transacao.Insert(173, "000000");

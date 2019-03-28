@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using ClassLibraryTest.TransacaoDoTipo1;
+using ClassLibraryTest.TransacaoDoTipo3;
 
 namespace ClassLibraryTest
 {
@@ -62,9 +63,9 @@ namespace ClassLibraryTest
                 AgenciaDepositaria = "00000",
                 especieTitulo = EspecieTitulo.DuplicataDeServ,
                 DataEmissaoTitulo = DateTime.Now,
-                PrimeiraInstrucao = "00",
+                primeiraInstrucao = Protestos.SemInteresse,
                 SegundaInstrucao = "00",
-                ValorCobrarDiaAtraso = "0000000000000",
+                ValorCobrarDiaAtraso = 75.43m,
                 DataLimiteConcessaoDesconto = new DateTime(),
                 ValorDesconto = 0.00m,
                 ValorIOF = 0.00m,
@@ -102,9 +103,9 @@ namespace ClassLibraryTest
                 AgenciaDepositaria = "00000",
                 especieTitulo = EspecieTitulo.DuplicataDeServ,
                 DataEmissaoTitulo = DateTime.Now,
-                PrimeiraInstrucao = "00",
+                primeiraInstrucao = Protestos.SemInteresse,
                 SegundaInstrucao = "00",
-                ValorCobrarDiaAtraso = "0000000001633",
+                ValorCobrarDiaAtraso = 16.33m,
                 DataLimiteConcessaoDesconto = new DateTime(),
                 ValorDesconto = 3.26m,
                 ValorIOF = 0.00m,
@@ -141,9 +142,9 @@ namespace ClassLibraryTest
                 AgenciaDepositaria = "00000",
                 especieTitulo = EspecieTitulo.DuplicataDeServ,
                 DataEmissaoTitulo = DateTime.Now,
-                PrimeiraInstrucao = "00",
+                primeiraInstrucao = Protestos.SemInteresse,
                 SegundaInstrucao = "00",
-                ValorCobrarDiaAtraso = "0000000005423",
+                ValorCobrarDiaAtraso = 54.23m,
                 DataLimiteConcessaoDesconto = new DateTime(),
                 ValorDesconto = 6.56m,
                 ValorIOF = 0.00m,
@@ -160,47 +161,39 @@ namespace ClassLibraryTest
 
             TransacaoTipo2 stringTransacaoTipo2 = new TransacaoTipo2
             {
-                Agencia = "03392",
-                Carteira = "009",
-                ContaCorrente = "0000340",
-                DacNossoNumero = "",
-                DataLimiteDesconto2 = DateTime.Now,
-                DataLimiteDesconto3 = DateTime.Now,
-                DigitoCC = "9",
                 Mensagem1 = "teste mensagem 1",
                 Mensagem2 = "teste mensagem 2",
                 Mensagem3 = "teste mensagem 3",
                 Mensagem4 = "teste mensagem 4",
+                DataLimiteDesconto2 = DateTime.Now,
+                ValorDesconto2 = 0.00m,
+                DataLimiteDesconto3 = DateTime.Now,
+                ValorDesconto3 = 0.00m,
                 NossoNumero = "00000000000",
-                Reserva = "",
-                ValorDesconto2 = "",
-                ValorDesconto3 = ""
             };
 
             TransacaoTipo3 stringTransacaoTipo3 = new TransacaoTipo3
             {
+                IdentificacaoTituloBanco = "",
+                codigoCalculoRateio = CodigosCalculoRateio.ValorCobrado,
+                tipoValorInformado = TiposDeValorInformado.Valor,
                 CodigoAgenciaCreditoPrimeiroBeneficiario = "12345",
                 CodigoAgenciaCreditoSegundoBeneficiario = "",
                 CodigoAgenciaCreditoTerceiroBeneficiario = "",
-                CodigoBancoCreditoPrimeiroBeneficiario = "",
                 CodigoBancoCreditoSegundoBeneficiario = "",
                 CodigoBancoCreditoTerceiroBeneficiario = "",
-                CodigoCalculoRateio = "",
                 DigitoAgenciaCreditoPrimeiroBeneficiario = "",
                 DigitoAgenciaCreditoSegundoBeneficiario = "",
                 DigitoAgenciaCreditoTerceiroBeneficiario = "",
                 DigitoContaCorrenteCreditoPrimeiroBeneficiario = "",
                 DigitoContaCorrenteCreditoSegundoBeneficiario = "",
                 DigitoContaCorrenteCreditoTerceiroBeneficiario = "",
-                Filler = "",
                 Filler2 = "",
                 Filler3 = "",
                 Filler4 = "",
                 FloatingPrimeiroBeneficiario = "",
                 FloatingSegundoBeneficiario = "",
                 FloatingTerceiroBeneficiario = "",
-                IdentificacaoEmpresaBanco = "",
-                IdentificacaoTituloBanco = "",
                 NomePrimeiroBeneficiario = "",
                 NomeSegundoBeneficiario = "",
                 NomeTerceiroBeneficiario = "",
@@ -210,7 +203,6 @@ namespace ClassLibraryTest
                 Parcela = "",
                 Parcela2 = "",
                 Parcela3 = "",
-                TipoValorInformado = "",
                 ValorOuParcelamentoRateio = "",
                 ValorOuParcelamentoRateio2 = "",
                 ValorOuParcelamentoRateio3 = ""
@@ -250,7 +242,7 @@ namespace ClassLibraryTest
             List<StringBuilder> listaTransacoes = new List<StringBuilder>
             {
                 stringTransacaoTipo1.GetTransacao(stringTransacaoTipo1),
-                //stringTransacaoTipo2.GetTransacao(stringTransacaoTipo2)
+                stringTransacaoTipo2.GetTransacao(stringTransacaoTipo2),
                 //stringTransacaoTipo12.GetTransacao(stringTransacaoTipo12),
                 //stringTransacaoTipo2.GetTransacao(stringTransacaoTipo2),
                 //stringTransacaoTipo6.GetTransacao(stringTransacaoTipo6),

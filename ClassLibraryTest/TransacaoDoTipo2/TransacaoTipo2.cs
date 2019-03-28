@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibraryTest.Utils;
+using System;
 using System.Globalization;
 using System.Text;
 
@@ -50,12 +51,12 @@ namespace ClassLibraryTest
             set { dataLimiteDesconto2 = value; }
         }
 
-        private string valorDesconto2;
+        private decimal valorDesconto2;
 
-        public string ValorDesconto2
+        public decimal ValorDesconto2
         {
             get { return valorDesconto2; }
-            set { valorDesconto2 = Util.FormataCampoComZerosEsquerda(value, 13); }
+            set { valorDesconto2 = value; }
         }
 
         private DateTime dataLimiteDesconto3;
@@ -68,63 +69,17 @@ namespace ClassLibraryTest
             set { dataLimiteDesconto3 = value; }
         }
 
-        private string valorDesconto3;
+        private decimal valorDesconto3;
 
-        public string ValorDesconto3
+        public decimal ValorDesconto3
         {
             get { return valorDesconto3; }
-            set { valorDesconto3 = Util.FormataCampoComZerosEsquerda(value, 13); }
+            set { valorDesconto3 = value; }
         }
 
-        private string reserva;
-        /// <summary>
-        /// Filler
-        /// </summary>
-        public string Reserva
-        {
-            get { return reserva; }
-            set { reserva = Util.FormataCampoComEspacosDireita(value, 7); }
-        }
+        private string reserva = "       ";
 
-        private string carteira;
-        /// <summary>
-        /// Nº da Carteira
-        /// </summary>
-        public string Carteira
-        {
-            get { return carteira; }
-            set { carteira = Util.FormataCampoComEspacosDireita(value, 3); }
-        }
-
-        private string agencia;
-        /// <summary>
-        /// Código da Agência Beneficiário
-        /// </summary>
-        public string Agencia
-        {
-            get { return agencia; }
-            set { agencia = Util.FormataCampoComEspacosDireita(value, 5); }
-        }
-
-        private string contaCorrente;
-        /// <summary>
-        /// Nº da Conta Corrente
-        /// </summary>
-        public string ContaCorrente
-        {
-            get { return contaCorrente; }
-            set { contaCorrente = Util.FormataCampoComEspacosDireita(value, 7); }
-        }
-
-        private string digitoCC;
-        /// <summary>
-        /// DAC C/C
-        /// </summary>
-        public string DigitoCC
-        {
-            get { return digitoCC; }
-            set { digitoCC = Util.FormataCampoComEspacosDireita(value, 1); }
-        }
+        public EmpresaBeneficiariaBanco BeneficiariaBanco { get; set; }
 
         private string nossoNumero;
         /// <summary>
@@ -133,15 +88,19 @@ namespace ClassLibraryTest
         public string NossoNumero
         {
             get { return nossoNumero; }
-            set { nossoNumero = Util.FormataCampoComEspacosDireita(value, 11); }
+            set
+            {
+                if (value.Length != 11)
+                {
+                    throw new Exception("Nosso número deve conter 11 dígitos");
+                }
+                nossoNumero = Util.FormataCampoComEspacosDireita(value, 11);
+            }
         }
 
-        private string dacNossoNumero;
-
-        public string DacNossoNumero
+        public TransacaoTipo2()
         {
-            get { return dacNossoNumero; }
-            set { dacNossoNumero = Util.FormataCampoComEspacosDireita(value, 1); }
+            BeneficiariaBanco = new EmpresaBeneficiariaBanco();
         }
 
         public StringBuilder GetTransacao(TransacaoTipo2 stringTransacao)
@@ -154,14 +113,11 @@ namespace ClassLibraryTest
             transacao.Insert(161, stringTransacao.mensagem3);
             transacao.Insert(241, stringTransacao.mensagem4);
             transacao.Insert(321, Util.FormataCampoComZerosEsquerda(stringTransacao.dataLimiteDesconto2.ToString("ddMMyy"), 6));
-            transacao.Insert(327, stringTransacao.valorDesconto2);
+            transacao.Insert(327, Util.FormataCampoComZerosEsquerda(stringTransacao.valorDesconto2.ToString().Replace(",", ""), 13));
             transacao.Insert(340, Util.FormataCampoComZerosEsquerda(stringTransacao.dataLimiteDesconto3.ToString("ddMMyy"), 6));
-            transacao.Insert(346, stringTransacao.valorDesconto3);
+            transacao.Insert(346, Util.FormataCampoComZerosEsquerda(stringTransacao.valorDesconto3.ToString().Replace(",", ""), 13));
             transacao.Insert(359, stringTransacao.reserva);
-            transacao.Insert(366, stringTransacao.carteira);
-            transacao.Insert(369, stringTransacao.agencia);
-            transacao.Insert(374, stringTransacao.contaCorrente);
-            transacao.Insert(381, stringTransacao.digitoCC);
+            transacao.Insert(366, BeneficiariaBanco.ToStringTransacaoTipo2());
             transacao.Insert(382, stringTransacao.nossoNumero);
             NossoNumero NN = new NossoNumero
             {

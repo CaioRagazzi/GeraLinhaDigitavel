@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using ClassLibraryTest.TransacaoDoTipo3;
+using ClassLibraryTest.Utils;
+using System;
+using System.Text;
 
 namespace ClassLibraryTest
 {
@@ -6,74 +9,32 @@ namespace ClassLibraryTest
     {
         private const string tipoRegistro = "3";
 
-        private string identificacaoEmpresaBanco;
-        /// <summary>
-        /// Deverá ser preenchido (esquerda para direita), conforme a seguir:
-        ///02 a 04 - Código da carteira.
-        ///05 a 09 - Código da Agência Beneficiário, sem o dígito.
-        ///10 a 16 - Conta Corrente.
-        ///17 a 17 - Dígito da Conta Corrente.
-        /// </summary>
-        public string IdentificacaoEmpresaBanco
-        {
-            get { return identificacaoEmpresaBanco; }
-            set { identificacaoEmpresaBanco = Util.FormataCampoComEspacosDireita(value, 16); }
-        }
+        private EmpresaBeneficiariaBanco identificacaoEmpresaBanco;
 
         private string identificacaoTituloBanco;
         /// <summary>
-        /// Esse campo deverá ser informado com Zeros, quando a emissão do Boleto de Cobrança for pelo Banco; quando for pela Empresa, esse campo deverá ser preenchido conforme os critérios apresentados nas páginas 18 a 20.
+        /// Nosso Numero, esse campo deverá ser informado com Zeros, quando a emissão do Boleto de Cobrança for pelo Banco; quando for pela Empresa, esse campo deverá ser preenchido conforme os critérios apresentados nas páginas 18 a 20.
         /// </summary>
         public string IdentificacaoTituloBanco
         {
             get { return identificacaoTituloBanco; }
-            set { identificacaoTituloBanco = Util.FormataCampoComEspacosDireita(value, 12); }
+            set
+            {
+                if (value.Length != 12)
+                {
+                    throw new Exception("Nosso número deve conter 12 dígitos");
+                }
+                identificacaoTituloBanco = Util.FormataCampoComEspacosDireita(value, 12);
+            }
         }
 
-        private string codigoCalculoRateio;
-        /// <summary>
-        /// 1- Valor cobrado
-        ///2- Valor do registro
-        ///3- Rateio pelo menor valor(registrado ou pago)
-        /// </summary>
-        public string CodigoCalculoRateio
-        {
-            get { return codigoCalculoRateio; }
-            set { codigoCalculoRateio = Util.FormataCampoComEspacosDireita(value, 1); }
-        }
+        public CodigosCalculoRateio codigoCalculoRateio;
 
-        private string tipoValorInformado;
-        /// <summary>
-        /// 1- Percentual
-        ///2- Valor
-        ///Para um mesmo Título, o Beneficiário deverá optar pelo valor ou percentual, nunca os dois tipos.
-        ///Importante: A Empresa que optar rateio pelo valor cobrado, deverá obrigatoriamente, informar o rateio em percentual.
-        /// </summary>
-        public string TipoValorInformado
-        {
-            get { return tipoValorInformado; }
-            set { tipoValorInformado = Util.FormataCampoComEspacosDireita(value, 1); }
-        }
+        public TiposDeValorInformado tipoValorInformado;
 
-        private string filler;
-        /// <summary>
-        /// Brancos
-        /// </summary>
-        public string Filler
-        {
-            get { return filler; }
-            set { filler = Util.FormataCampoComEspacosDireita(value, 12); }
-        }
+        private string filler = "            ";
 
-        private string codigoBancoCreditoPrimeiroBeneficiario;
-        /// <summary>
-        /// Fixo “237”
-        /// </summary>
-        public string CodigoBancoCreditoPrimeiroBeneficiario
-        {
-            get { return codigoBancoCreditoPrimeiroBeneficiario; }
-            set { codigoBancoCreditoPrimeiroBeneficiario = Util.FormataCampoComEspacosDireita(value, 3); }
-        }
+        private string codigoBancoCreditoPrimeiroBeneficiario = "237";
 
         private string codigoAgenciaCreditoPrimeiroBeneficiario;
         /// <summary>
@@ -366,6 +327,8 @@ namespace ClassLibraryTest
         }
 
         private string floatingTerceiroBeneficiario;
+
+
         /// <summary>
         /// Quantidade de Dias para Crédito do Beneficiário
         /// </summary>
@@ -375,15 +338,19 @@ namespace ClassLibraryTest
             set { floatingTerceiroBeneficiario = Util.FormataCampoComEspacosDireita(value, 3); }
         }
 
+        public TransacaoTipo3()
+        {
+        }
+
         public StringBuilder GetTransacao(TransacaoTipo3 stringTransacao)
         {
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
-            transacao.Insert(1, stringTransacao.identificacaoEmpresaBanco);
+            transacao.Insert(1, identificacaoEmpresaBanco.ToString().Substring(1, 16));
             transacao.Insert(17, stringTransacao.identificacaoTituloBanco);
-            transacao.Insert(29, stringTransacao.codigoCalculoRateio);
-            transacao.Insert(30, stringTransacao.tipoValorInformado);
+            transacao.Insert(29, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.codigoCalculoRateio), 2));
+            transacao.Insert(30, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.tipoValorInformado), 2));
             transacao.Insert(31, stringTransacao.filler);
             transacao.Insert(43, stringTransacao.codigoBancoCreditoPrimeiroBeneficiario);
             transacao.Insert(46, stringTransacao.codigoAgenciaCreditoPrimeiroBeneficiario);
