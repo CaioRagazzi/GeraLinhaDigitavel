@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using ClassLibraryTest;
 using Xunit;
+using System.Numerics;
 
 namespace XUnitTestProject1
 {
@@ -76,26 +77,33 @@ namespace XUnitTestProject1
         }
 
         [Fact]
-        public void TestaSubtracao()
+        public void TestaFatorVencimento()
         {
-            //DateTime data1 = new DateTime(2025, 02, 23);
-            //DateTime data2 = new DateTime(1997, 10, 07);
-            ////DateTime data3;
+            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "90740000039", "0000340", "0");
+            CodigoDeBarras cd = new CodigoDeBarras("237", "9", new DateTime(2019, 03, 23), "0000009000", campoLivre) ;
 
-            //var data3 = data1.Subtract(data2).TotalDays.ToString();
+            var teste = cd.GetFatorVencimento(new DateTime(2019, 03, 23));
+        }
 
-            //if (data3.Length > 4)
-            //{
-            //    data2 = new DateTime(2022, 05, 29);
-            //    return data3 = data1.Subtract(data2).TotalDays.ToString().Substring(0, 4);
-            //}
-            //else
-            //{
-            //    return data3.Substring(0, 4);
-            //}
+        [Fact]
+        public void TestaConverterGuid()
+        {
+            var guidConvert = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+            var guidBack = new Guid(Convert.FromBase64String(guidConvert));
+        }
 
-            //string teste = data3.ToString().Substring(0, 4);
+        [Fact]
+        public void TestaData()
+        {
+            var data1 = new DateTime();
+            var datastring = data1.ToString("ddMMyyyy");
+        }
 
+        [Fact]
+        public void TestaMoney()
+        {
+            decimal money = 20.50m;
+            var moneystring = Util.FormataCampoComZerosEsquerda(money.ToString().Replace(",",""), 10);
         }
     }
 }

@@ -4,13 +4,7 @@ namespace ClassLibraryTest
 {
     class Trailler
     {
-        private string identificacaoRegistro;
-
-        public string IdentificacaoRegistro
-        {
-            get { return identificacaoRegistro; }
-            set { identificacaoRegistro = Util.FormataCampoComEspacosDireita(value, 1); }
-        }
+        private const string tipoRegistro = "9";
 
         private string branco;
 
@@ -24,7 +18,7 @@ namespace ClassLibraryTest
         {
             StringBuilder trailler = new StringBuilder(400);
 
-            trailler.Insert(0, stringTrailler.identificacaoRegistro);
+            trailler.Insert(0, tipoRegistro);
             trailler.Insert(1, stringTrailler.branco);
             trailler.Insert(394, numSequencial);
 

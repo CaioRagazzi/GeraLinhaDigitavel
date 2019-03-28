@@ -1,6 +1,7 @@
 ﻿using ClassLibraryTest;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ConsoleAppTest
 {
@@ -12,9 +13,5 @@ namespace ConsoleAppTest
 
             Console.ReadKey();
         }
-    }
-
-    class Teste
-    {
     }
 }

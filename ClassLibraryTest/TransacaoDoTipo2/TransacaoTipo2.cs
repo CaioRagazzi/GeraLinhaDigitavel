@@ -1,16 +1,12 @@
-﻿using System.Text;
+﻿using System;
+using System.Globalization;
+using System.Text;
 
 namespace ClassLibraryTest
 {
     class TransacaoTipo2
     {
-        private string tipoRegistro;
-
-        public string TipoRegistro
-        {
-            get { return tipoRegistro; }
-            set { tipoRegistro = Util.FormataCampoComEspacosDireita(value, 1); }
-        }
+        private const string tipoRegistro = "2";
 
         private string mensagem1;
 
@@ -44,14 +40,14 @@ namespace ClassLibraryTest
             set { mensagem4 = Util.FormataCampoComEspacosDireita(value, 80); }
         }
 
-        private string dataLimiteDesconto2;
+        private DateTime dataLimiteDesconto2;
         /// <summary>
         /// DDMMAA
         /// </summary>
-        public string DataLimiteDesconto2
+        public DateTime DataLimiteDesconto2
         {
             get { return dataLimiteDesconto2; }
-            set { dataLimiteDesconto2 = Util.FormataCampoComZerosEsquerda(value, 6); }
+            set { dataLimiteDesconto2 = value; }
         }
 
         private string valorDesconto2;
@@ -62,14 +58,14 @@ namespace ClassLibraryTest
             set { valorDesconto2 = Util.FormataCampoComZerosEsquerda(value, 13); }
         }
 
-        private string dataLimiteDesconto3;
+        private DateTime dataLimiteDesconto3;
         /// <summary>
         /// DDMMAA
         /// </summary>
-        public string DataLimiteDesconto3
+        public DateTime DataLimiteDesconto3
         {
             get { return dataLimiteDesconto3; }
-            set { dataLimiteDesconto3 = Util.FormataCampoComEspacosDireita(value, 6); }
+            set { dataLimiteDesconto3 = value; }
         }
 
         private string valorDesconto3;
@@ -152,14 +148,14 @@ namespace ClassLibraryTest
         {
             StringBuilder transacao = new StringBuilder(400);
 
-            transacao.Insert(0, stringTransacao.tipoRegistro);
+            transacao.Insert(0, tipoRegistro);
             transacao.Insert(1, stringTransacao.mensagem1);
             transacao.Insert(81, stringTransacao.mensagem2);
             transacao.Insert(161, stringTransacao.mensagem3);
             transacao.Insert(241, stringTransacao.mensagem4);
-            transacao.Insert(321, stringTransacao.dataLimiteDesconto2);
+            transacao.Insert(321, Util.FormataCampoComZerosEsquerda(stringTransacao.dataLimiteDesconto2.ToString("ddMMyy"), 6));
             transacao.Insert(327, stringTransacao.valorDesconto2);
-            transacao.Insert(340, stringTransacao.dataLimiteDesconto3);
+            transacao.Insert(340, Util.FormataCampoComZerosEsquerda(stringTransacao.dataLimiteDesconto3.ToString("ddMMyy"), 6));
             transacao.Insert(346, stringTransacao.valorDesconto3);
             transacao.Insert(359, stringTransacao.reserva);
             transacao.Insert(366, stringTransacao.carteira);

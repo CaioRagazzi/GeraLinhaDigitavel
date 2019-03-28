@@ -12,6 +12,8 @@ namespace ClassLibraryTest
 
         public static string FormataCampoComZerosEsquerda(string campo, int tamanho) => campo.PadLeft(tamanho, '0').Substring(0, tamanho);
 
+        public static string FormataCampoComZerosEsquerda(int campo, int tamanho) => campo.ToString().PadLeft(tamanho, '0').Substring(0, tamanho);
+
         public static string FormataCampoCaracteresEspeciais(string campo)
         {
             StringBuilder sbReturn = new StringBuilder();
@@ -23,5 +25,6 @@ namespace ClassLibraryTest
             }
             return sbReturn.ToString();
         }
+
     }
 }

@@ -1,58 +1,19 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace ClassLibraryTest
 {
     class Header
     {
-        private string identificacaoRegistro;
-        /// <summary>
-        /// Identificação do registro
-        /// </summary>
-        public string IdentificacaoRegistro
-        {
-            get { return identificacaoRegistro; }
-            set { identificacaoRegistro = Util.FormataCampoComEspacosDireita(value, 1); }
-        }
+        private const string tipoRegistro = "0";
 
-        private string identificacaoArquivoRemessa;
-        /// <summary>
-        /// Identificação do arquivo remessa
-        /// </summary>
-        public string IdentificacaoArquivoRemessa
-        {
-            get { return identificacaoArquivoRemessa; }
-            set { identificacaoArquivoRemessa = Util.FormataCampoComEspacosDireita(value, 1); }
-        }
+        private const string identificacaoArquivoRemessa = "1";
 
-        private string literalRemessa;
-        /// <summary>
-        /// Literal remessa
-        /// </summary>
-        public string LiteralRemessa
-        {
-            get { return literalRemessa; }
-            set { literalRemessa = Util.FormataCampoComEspacosDireita(value, 7); }
-        }
+        private const string literalRemessa = "REMESSA";
 
-        private string codigoServico;
-        /// <summary>
-        /// Código serviço
-        /// </summary>
-        public string CodigoServico
-        {
-            get { return codigoServico; }
-            set { codigoServico = Util.FormataCampoComEspacosDireita(value, 2); }
-        }
+        private const string codigoServico = "01";
 
-        private string literalServico;
-        /// <summary>
-        /// Literal serviço
-        /// </summary>
-        public string LiteralServico
-        {
-            get { return literalServico; }
-            set { literalServico = Util.FormataCampoComEspacosDireita(value, 15); }
-        }
+        private const string literalServico = "COBRANCA       ";
 
         private string codEmpresa;
         /// <summary>
@@ -95,14 +56,14 @@ namespace ClassLibraryTest
             set { nomeBanco = Util.FormataCampoComEspacosDireita(value, 15); }
         }
 
-        private string dataGravacaoArquivo;
+        private DateTime dataGravacaoArquivo;
         /// <summary>
         /// Data da Gravação do Arquivo. Para a retransmissão de um Arquivo Remessa rejeitado, será necessário alterar a data constante desse campo, bem como atualizar o número de remessa na posição 111 a 117 (número sequencial de remessa).
         /// </summary>
-        public string DataGravacaoArquivo
+        public DateTime DataGravacaoArquivo
         {
             get { return dataGravacaoArquivo; }
-            set { dataGravacaoArquivo = Util.FormataCampoComEspacosDireita(value, 6); }
+            set { dataGravacaoArquivo = value; }
         }
 
         private string branco;
@@ -153,16 +114,16 @@ namespace ClassLibraryTest
 
             StringBuilder header = new StringBuilder(400);
 
-            header.Insert(0, stringHeader.identificacaoRegistro);
-            header.Insert(1, stringHeader.identificacaoArquivoRemessa);
-            header.Insert(2, stringHeader.literalRemessa);
-            header.Insert(9, stringHeader.codigoServico);
-            header.Insert(11, stringHeader.literalServico);
+            header.Insert(0, tipoRegistro);
+            header.Insert(1, identificacaoArquivoRemessa);
+            header.Insert(2, literalRemessa);
+            header.Insert(9, codigoServico);
+            header.Insert(11, literalServico);
             header.Insert(26, stringHeader.codEmpresa);
             header.Insert(46, stringHeader.nomeEmpresa);
             header.Insert(76, stringHeader.numeroBradesco);
             header.Insert(79, stringHeader.nomeBanco);
-            header.Insert(94, stringHeader.dataGravacaoArquivo);
+            header.Insert(94, Util.FormataCampoComZerosEsquerda(stringHeader.dataGravacaoArquivo.ToString("ddMMyy"), 6));
             header.Insert(100, stringHeader.branco);
             header.Insert(108, stringHeader.identSistema);
             header.Insert(110, numSeqRemessa);

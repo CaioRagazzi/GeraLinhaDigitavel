@@ -4,15 +4,7 @@ namespace ClassLibraryTest
 {
     class TransacaoTipo3
     {
-        private string identificacaoRegistro;
-        /// <summary>
-        /// Fixo “3”
-        /// </summary>
-        public string IdentificacaoRegistro
-        {
-            get { return identificacaoRegistro; }
-            set { identificacaoRegistro = Util.FormataCampoComEspacosDireita(value, 1); }
-        }
+        private const string tipoRegistro = "3";
 
         private string identificacaoEmpresaBanco;
         /// <summary>
@@ -387,7 +379,7 @@ namespace ClassLibraryTest
         {
             StringBuilder transacao = new StringBuilder(400);
 
-            transacao.Insert(0, stringTransacao.identificacaoRegistro);
+            transacao.Insert(0, tipoRegistro);
             transacao.Insert(1, stringTransacao.identificacaoEmpresaBanco);
             transacao.Insert(17, stringTransacao.identificacaoTituloBanco);
             transacao.Insert(29, stringTransacao.codigoCalculoRateio);

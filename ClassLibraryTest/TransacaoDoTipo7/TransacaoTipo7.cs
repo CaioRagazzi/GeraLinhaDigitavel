@@ -4,15 +4,7 @@ namespace ClassLibraryTest
 {
     class TransacaoTipo7
     {
-        private string tipoRegistro;
-        /// <summary>
-        /// Fixo 7
-        /// </summary>
-        public string TipoRegistro
-        {
-            get { return tipoRegistro; }
-            set { tipoRegistro = Util.FormataCampoComEspacosDireita(value, 1); }
-        }
+        private const string tipoRegistro = "7";
 
         private string enderecoSacadorAvalista;
         /// <summary>
@@ -135,7 +127,7 @@ namespace ClassLibraryTest
         {
             StringBuilder transacao = new StringBuilder(400);
 
-            transacao.Insert(0, stringTransacao.tipoRegistro);
+            transacao.Insert(0, tipoRegistro);
             transacao.Insert(1, stringTransacao.enderecoSacadorAvalista);
             transacao.Insert(46, stringTransacao.cep);
             transacao.Insert(51, stringTransacao.sufixoCep);

@@ -37,7 +37,7 @@ namespace ClassLibraryTest
             return stringDadosCodigoDeBarras;
         }
 
-        private string GetFatorVencimento(DateTime dataDeVencimento)
+        public string GetFatorVencimento(DateTime dataDeVencimento)
         {
             DateTime data2 = new DateTime(1997, 10, 07);
 
