@@ -6,13 +6,7 @@ namespace ClassLibraryTest
     {
         private const string tipoRegistro = "9";
 
-        private string branco;
-
-        public string Branco
-        {
-            get { return branco; }
-            set { branco = Util.FormataCampoComEspacosDireita(value, 393); }
-        }
+        private string branco = new string(' ', 393);
 
         public StringBuilder GetTrailler(Trailler stringTrailler, string numSequencial)
         {

@@ -50,7 +50,6 @@ namespace ClassLibraryTest.TransacaoDoTipo1
             set { percentualMulta = value; }
         }
 
-        //TODO: efetuar o calculo do digito
         private string identificacaoTituloBanco;
         /// <summary>
         /// Número Bancário para Cobrança Com e Sem Registro. 

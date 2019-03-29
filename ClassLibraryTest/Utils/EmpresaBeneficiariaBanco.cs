@@ -50,5 +50,15 @@ namespace ClassLibraryTest.Utils
         {
             return CodigoAgenciaBeneficiario.PadLeft(5, '0') + DigitoAgencia + ContaCorrente.PadLeft(12, '0') + DigitoContaCorrente;
         }
+
+        public string ToStringTransacaoTipo6()
+        {
+            return CodigoCarteira + CodigoAgenciaBeneficiario + ContaCorrente;
+        }
+
+        public string ToStringTransacaoTipo7()
+        {
+            return CodigoCarteira + CodigoAgenciaBeneficiario + ContaCorrente + DigitoContaCorrente;
+        }
     }
 }

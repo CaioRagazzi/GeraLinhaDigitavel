@@ -66,15 +66,7 @@ namespace ClassLibraryTest
             set { dataGravacaoArquivo = value; }
         }
 
-        private string branco;
-        /// <summary>
-        /// Branco
-        /// </summary>
-        public string Branco
-        {
-            get { return branco; }
-            set { branco = Util.FormataCampoComEspacosDireita(value, 8); }
-        }
+        private string branco = new string(' ', 8);
 
         private string identSistema;
 
@@ -95,13 +87,7 @@ namespace ClassLibraryTest
             set { numSeqRemessa = value; }
         }
 
-        private string branco2;
-
-        public string Branco2
-        {
-            get { return branco2; }
-            set { branco2 = Util.FormataCampoComEspacosDireita(value, 277); }
-        }
+        private string branco2 = new string(' ', 277);
 
         /// <summary>
         /// Método responsável por montar a linha do Header do arquivo de remessa.

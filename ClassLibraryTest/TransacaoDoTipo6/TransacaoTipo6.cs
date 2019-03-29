@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using ClassLibraryTest.Utils;
+using System;
+using System.Text;
 
 namespace ClassLibraryTest
 {
@@ -6,35 +8,7 @@ namespace ClassLibraryTest
     {
         private const string tipoRegistro = "6";
 
-        private string carteira;
-        /// <summary>
-        /// Nº da Carteira
-        /// </summary>
-        public string Carteira
-        {
-            get { return carteira; }
-            set { carteira = Util.FormataCampoComEspacosDireita(value, 3); }
-        }
-
-        private string agencia;
-        /// <summary>
-        /// Código da Agencia do Beneficiário
-        /// </summary>
-        public string Agencia
-        {
-            get { return agencia; }
-            set { agencia = Util.FormataCampoComEspacosDireita(value, 5); }
-        }
-
-        private string contaCorrente;
-        /// <summary>
-        /// Numero da Conta Corrente
-        /// </summary>
-        public string ContaCorrente
-        {
-            get { return contaCorrente; }
-            set { contaCorrente = Util.FormataCampoComEspacosDireita(value, 7); }
-        }
+        public EmpresaBeneficiariaBanco empresaBeneficiariaBanco { get; set; }
 
         private string nossoNumero;
         /// <summary>
@@ -43,27 +17,21 @@ namespace ClassLibraryTest
         public string NossoNumero
         {
             get { return nossoNumero; }
-            set { nossoNumero = Util.FormataCampoComEspacosDireita(value, 11); }
+            set
+            {
+                if (value.Length != 11)
+                {
+                    throw new Exception("Nosso número deve conter 11 dígitos");
+                }
+                nossoNumero = Util.FormataCampoComZerosEsquerda(value, 11);
+            }
         }
 
-        private string digitoNossoNumero;
-        /// <summary>
-        /// Dígito do Nosso Número 
-        /// </summary>
-        public string DigitoNossoNumero
-        {
-            get { return digitoNossoNumero; }
-            set { digitoNossoNumero = Util.FormataCampoComEspacosDireita(value, 1); }
-        }
+        private string brancos = new string(' ', 365);
 
-        private string brancos;
-        /// <summary>
-        /// Brancos
-        /// </summary>
-        public string Brancos
+        public TransacaoTipo6()
         {
-            get { return brancos; }
-            set { brancos = Util.FormataCampoComEspacosDireita(value, 366); }
+            empresaBeneficiariaBanco = new EmpresaBeneficiariaBanco();
         }
 
         public StringBuilder GetTransacao(TransacaoTipo6 stringTransacao)
@@ -71,11 +39,14 @@ namespace ClassLibraryTest
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
-            transacao.Insert(1, stringTransacao.carteira);
-            transacao.Insert(4, stringTransacao.agencia);
-            transacao.Insert(9, stringTransacao.contaCorrente);
+            transacao.Insert(1, empresaBeneficiariaBanco.ToStringTransacaoTipo6());
             transacao.Insert(16, stringTransacao.nossoNumero);
-            transacao.Insert(27, stringTransacao.digitoNossoNumero);
+            NossoNumero NN = new NossoNumero
+            {
+                Carteira = empresaBeneficiariaBanco.CodigoCarteira.Substring(1, 2),
+                NossoNumeroSemDigito = stringTransacao.nossoNumero
+            };
+            transacao.Insert(27, NN.GetDigitoNossoNumero());
             transacao.Insert(28, stringTransacao.brancos);
 
             return transacao;

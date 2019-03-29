@@ -28,7 +28,6 @@ namespace ClassLibraryTest
 
         public void WriteFile(bool test)
         {
-            //TODO: Ver codigo remessa
             Header stringHeader = new Header
             {
                 CodEmpresa = "5118770",
@@ -36,10 +35,8 @@ namespace ClassLibraryTest
                 NumeroBradesco = "237",
                 NomeBanco = "BRADESCO",
                 DataGravacaoArquivo = DateTime.Now,
-                Branco = "",
                 IdentSistema = "MX",
-                NumSeqRemessa = "0000000",
-                Branco2 = ""
+                NumSeqRemessa = "0000000"
             };
 
             TransacaoTipo1 stringTransacaoTipo1 = new TransacaoTipo1
@@ -50,203 +47,41 @@ namespace ClassLibraryTest
                 PercentualMulta = 0.00m,
                 IdentificacaoTituloBanco = "00000000000",
                 DescontoBonificacaoDia = 0.00m,
-                condicaoEmissaoBoletoCobranca = EmissaoBoletoCobranca.ClienteEmiteBoleto,
+                condicaoEmissaoBoletoCobranca = EmissaoBoletoCobranca.BancoEmiteBoleto,
                 CondicaoRegistroDebitoAutomatico = "N",
                 IndicadorRateioCredito = "",
                 EnderecamentoAvisoDebitoAutomatico = "2",
                 PagamentoParcial = "",
                 identificacaoOcorrencia = IdentificacoesOcorrencia.Remessa,
                 NumeroDocumento = "0000000001",
-                DataVencimentoTitulo = DateTime.Now.AddDays(5),
-                ValorTitulo = 69.23m,
+                DataVencimentoTitulo = DateTime.Now.AddDays(30),
+                ValorTitulo = 33.33m,
                 BancoEncarregadoCobranca = "000",
                 AgenciaDepositaria = "00000",
                 especieTitulo = EspecieTitulo.DuplicataDeServ,
                 DataEmissaoTitulo = DateTime.Now,
                 primeiraInstrucao = Protestos.SemInteresse,
                 SegundaInstrucao = "00",
-                ValorCobrarDiaAtraso = 75.43m,
+                ValorCobrarDiaAtraso = 00.00m,
                 DataLimiteConcessaoDesconto = new DateTime(),
                 ValorDesconto = 0.00m,
                 ValorIOF = 0.00m,
                 ValorAbatimento = 0.00m,
                 identificacaoTipoInscricao = IdentificacaoTipoInscricaoPagador.CPF,
-                NumeroInscricaoPagador = "33531106821",
-                NomePagador = "Fabio Gonçálvés",
-                EnderecoCompleto = "Rua Ney Mascarenhas, 130",
-                PrimeiraMensagem = "Gerando arquivo remessa",
-                Cep = "08542",
-                SufixoCep = "120",
-                SegundaMensagem = "Remessa gerada no dia 27/03 as 16:00"
-            };
-
-            TransacaoTipo1 stringTransacaoTipo12 = new TransacaoTipo1
-            {
-                //IdentificacaoEmpresaBeneficiaria = "00090339200003409",
-                NumeroControleParticipante = Convert.ToBase64String(Guid.NewGuid().ToByteArray()),
-                CodigoBancoDebito = "000",
-                multa = Multa.SemMulta,
-                PercentualMulta = 20.00m,
-                IdentificacaoTituloBanco = "00000000000",
-                DigitoAutoConferencia = "0",
-                DescontoBonificacaoDia = 0.00m,
-                condicaoEmissaoBoletoCobranca = EmissaoBoletoCobranca.ClienteEmiteBoleto,
-                CondicaoRegistroDebitoAutomatico = "N",
-                IndicadorRateioCredito = "",
-                EnderecamentoAvisoDebitoAutomatico = "2",
-                PagamentoParcial = "",
-                identificacaoOcorrencia = IdentificacoesOcorrencia.Remessa,
-                NumeroDocumento = "0000000002",
-                DataVencimentoTitulo = DateTime.Now.AddDays(10),
-                ValorTitulo = 6.32m,
-                BancoEncarregadoCobranca = "000",
-                AgenciaDepositaria = "00000",
-                especieTitulo = EspecieTitulo.DuplicataDeServ,
-                DataEmissaoTitulo = DateTime.Now,
-                primeiraInstrucao = Protestos.SemInteresse,
-                SegundaInstrucao = "00",
-                ValorCobrarDiaAtraso = 16.33m,
-                DataLimiteConcessaoDesconto = new DateTime(),
-                ValorDesconto = 3.26m,
-                ValorIOF = 0.00m,
-                ValorAbatimento = 0.00m,
-                identificacaoTipoInscricao = IdentificacaoTipoInscricaoPagador.CPF,
                 NumeroInscricaoPagador = "36190841813",
-                NomePagador = "Caio Ragazzi",
-                EnderecoCompleto = "Rua Monlevade, 128",
+                NomePagador = "Caio Eduardo Ragazzi Gemignani",
+                EnderecoCompleto = "Rua monlevade, 128",
                 PrimeiraMensagem = "Gerando arquivo remessa",
                 Cep = "04679",
                 SufixoCep = "345",
-                SegundaMensagem = "Remessa gerada no dia 27/03 16:08"
+                SegundaMensagem = "Remessa gerada no dia 29/03 as 11:00"
             };
 
-            TransacaoTipo1 stringTransacaoTipo13 = new TransacaoTipo1
-            {
-                NumeroControleParticipante = Convert.ToBase64String(Guid.NewGuid().ToByteArray()),
-                CodigoBancoDebito = "000",
-                multa = Multa.SemMulta,
-                PercentualMulta = 40.00m,
-                IdentificacaoTituloBanco = "00000000000",
-                DigitoAutoConferencia = "0",
-                DescontoBonificacaoDia = 0.00m,
-                condicaoEmissaoBoletoCobranca = EmissaoBoletoCobranca.ClienteEmiteBoleto,
-                CondicaoRegistroDebitoAutomatico = "N",
-                IndicadorRateioCredito = "",
-                EnderecamentoAvisoDebitoAutomatico = "2",
-                PagamentoParcial = "",
-                identificacaoOcorrencia = IdentificacoesOcorrencia.Remessa,
-                NumeroDocumento = "5555555555",
-                DataVencimentoTitulo = DateTime.Now.AddDays(20),
-                ValorTitulo = 7.63m,
-                BancoEncarregadoCobranca = "237",
-                AgenciaDepositaria = "00000",
-                especieTitulo = EspecieTitulo.DuplicataDeServ,
-                DataEmissaoTitulo = DateTime.Now,
-                primeiraInstrucao = Protestos.SemInteresse,
-                SegundaInstrucao = "00",
-                ValorCobrarDiaAtraso = 54.23m,
-                DataLimiteConcessaoDesconto = new DateTime(),
-                ValorDesconto = 6.56m,
-                ValorIOF = 0.00m,
-                ValorAbatimento = 0.00m,
-                identificacaoTipoInscricao = IdentificacaoTipoInscricaoPagador.CPF,
-                NumeroInscricaoPagador = "23322675000152",
-                NomePagador = "Intermeio",
-                EnderecoCompleto = "Avenida Jabaquara, 2819",
-                PrimeiraMensagem = "Teste primeira mensagem Boleto Intermeio",
-                Cep = "04045",
-                SufixoCep = "004",
-                SegundaMensagem = "Teste segunda mensagem Boleto Intermeio"
-            };
-
-            TransacaoTipo2 stringTransacaoTipo2 = new TransacaoTipo2
-            {
-                Mensagem1 = "teste mensagem 1",
-                Mensagem2 = "teste mensagem 2",
-                Mensagem3 = "teste mensagem 3",
-                Mensagem4 = "teste mensagem 4",
-                DataLimiteDesconto2 = DateTime.Now,
-                ValorDesconto2 = 0.00m,
-                DataLimiteDesconto3 = DateTime.Now,
-                ValorDesconto3 = 0.00m,
-                NossoNumero = "00000000000",
-            };
-
-            TransacaoTipo3 stringTransacaoTipo3 = new TransacaoTipo3
-            {
-                IdentificacaoTituloBanco = "",
-                codigoCalculoRateio = CodigosCalculoRateio.ValorCobrado,
-                tipoValorInformado = TiposDeValorInformado.Valor,
-                CodigoAgenciaCreditoPrimeiroBeneficiario = "12345",
-                CodigoAgenciaCreditoSegundoBeneficiario = "",
-                CodigoAgenciaCreditoTerceiroBeneficiario = "",
-                CodigoBancoCreditoSegundoBeneficiario = "",
-                CodigoBancoCreditoTerceiroBeneficiario = "",
-                DigitoAgenciaCreditoPrimeiroBeneficiario = "",
-                DigitoAgenciaCreditoSegundoBeneficiario = "",
-                DigitoAgenciaCreditoTerceiroBeneficiario = "",
-                DigitoContaCorrenteCreditoPrimeiroBeneficiario = "",
-                DigitoContaCorrenteCreditoSegundoBeneficiario = "",
-                DigitoContaCorrenteCreditoTerceiroBeneficiario = "",
-                Filler2 = "",
-                Filler3 = "",
-                Filler4 = "",
-                FloatingPrimeiroBeneficiario = "",
-                FloatingSegundoBeneficiario = "",
-                FloatingTerceiroBeneficiario = "",
-                NomePrimeiroBeneficiario = "",
-                NomeSegundoBeneficiario = "",
-                NomeTerceiroBeneficiario = "",
-                NumeroContaCorrenteCreditoPrimeiroBeneficiario = "",
-                NumeroContaCorrenteCreditoSegundoBeneficiario = "",
-                NumeroContaCorrenteCreditoTerceiroBeneficiario = "",
-                Parcela = "",
-                Parcela2 = "",
-                Parcela3 = "",
-                ValorOuParcelamentoRateio = "",
-                ValorOuParcelamentoRateio2 = "",
-                ValorOuParcelamentoRateio3 = ""
-            };
-
-            TransacaoTipo6 stringTransacaoTipo6 = new TransacaoTipo6()
-            {
-                Agencia = "",
-                Brancos = "",
-                Carteira = "",
-                ContaCorrente = "",
-                DigitoNossoNumero = "",
-                NossoNumero = ""
-            };
-
-            TransacaoTipo7 stringTransacaoTipo7 = new TransacaoTipo7
-            {
-                NossoNumero = "12345678912",
-                ContaCorrente = "1234567",
-                Carteira = "123",
-                Agencia = "12345",
-                Cep = "04679",
-                Cidade = "SÃO PAULO",
-                DacNossoNumero = "",
-                DigitoCC = "",
-                EnderecoSacadorAvalista = "",
-                Reserva = "",
-                SufixoCep = "345",
-                Uf = ""
-            };
-
-            Trailler stringTrailler = new Trailler
-            {
-                Branco = "",
-            };
+            Trailler stringTrailler = new Trailler();
 
             List<StringBuilder> listaTransacoes = new List<StringBuilder>
             {
-                stringTransacaoTipo1.GetTransacao(stringTransacaoTipo1),
-                stringTransacaoTipo2.GetTransacao(stringTransacaoTipo2),
-                //stringTransacaoTipo12.GetTransacao(stringTransacaoTipo12),
-                //stringTransacaoTipo2.GetTransacao(stringTransacaoTipo2),
-                //stringTransacaoTipo6.GetTransacao(stringTransacaoTipo6),
-                //stringTransacaoTipo7.GetTransacao(stringTransacaoTipo7)
+                stringTransacaoTipo1.GetTransacao(stringTransacaoTipo1)
             };
 
             using (StreamWriter sw = new StreamWriter("C:\\TesteGravacao\\" + GetFileName(false)))
