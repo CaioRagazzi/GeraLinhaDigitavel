@@ -1,9 +1,9 @@
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\bin\Debug\netcoreapp2.2\Boleto.deps.json
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\bin\Debug\netcoreapp2.2\Boleto.dll
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\bin\Debug\netcoreapp2.2\Boleto.pdb
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\Boleto.csprojAssemblyReference.cache
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\Boleto.csproj.CoreCompileInputs.cache
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\Boleto.AssemblyInfoInputs.cache
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\Boleto.AssemblyInfo.cs
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\Boleto.dll
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\Boleto.pdb
-C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\Boleto.csprojAssemblyReference.cache

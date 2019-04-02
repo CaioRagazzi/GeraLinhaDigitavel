@@ -1,10 +1,9 @@
-﻿using ClassLibraryTest.Utils;
-using System;
+﻿using System;
 using System.Text;
 
-namespace ClassLibraryTest
+namespace ArquivoRemessa
 {
-    class TransacaoTipo7
+    public class TransacaoTipo7
     {
         private const string tipoRegistro = "7";
 

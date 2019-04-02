@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ClassLibraryTest.TransacaoDoTipo3
+namespace ArquivoRemessa
 {
-    enum CodigosCalculoRateio
+    public enum CodigosCalculoRateio
     {
         ValorCobrado = 1,
         ValorRegistro = 2,

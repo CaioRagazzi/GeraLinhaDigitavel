@@ -10,5 +10,5 @@ C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2.2\ConsoleAppTest.csproj.CopyComplete
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2.2\ConsoleAppTest.dll
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2.2\ConsoleAppTest.pdb
-C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\Boleto.dll
-C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\Boleto.pdb
+C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\ArquivoRemessa.dll
+C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\ArquivoRemessa.pdb

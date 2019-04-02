@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v2.2": {
       "XUnitTestProject1/1.0.0": {
         "dependencies": {
-          "BoletoRemessa": "1.0.3",
+          "ArquivoRemessa": "1.0.2",
           "Microsoft.NET.Test.Sdk": "15.9.0",
           "xunit": "2.4.0",
           "xunit.runner.visualstudio": "2.4.0"
@@ -1054,9 +1054,9 @@
           "Microsoft.NET.Test.Sdk": "15.9.0"
         }
       },
-      "BoletoRemessa/1.0.3": {
+      "ArquivoRemessa/1.0.2": {
         "runtime": {
-          "Boleto.dll": {}
+          "ArquivoRemessa.dll": {}
         }
       }
     }
@@ -1599,7 +1599,7 @@
       "path": "xunit.runner.visualstudio/2.4.0",
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
     },
-    "BoletoRemessa/1.0.3": {
+    "ArquivoRemessa/1.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

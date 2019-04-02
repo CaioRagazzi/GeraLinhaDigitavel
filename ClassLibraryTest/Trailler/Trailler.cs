@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace ClassLibraryTest
+namespace ArquivoRemessa
 {
     public class Trailler
     {

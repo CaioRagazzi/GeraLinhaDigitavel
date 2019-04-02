@@ -8,15 +8,15 @@
     ".NETCoreApp,Version=v2.2": {
       "ConsoleAppTest/1.0.0": {
         "dependencies": {
-          "BoletoRemessa": "1.0.3"
+          "ArquivoRemessa": "1.0.2"
         },
         "runtime": {
           "ConsoleAppTest.dll": {}
         }
       },
-      "BoletoRemessa/1.0.3": {
+      "ArquivoRemessa/1.0.2": {
         "runtime": {
-          "Boleto.dll": {}
+          "ArquivoRemessa.dll": {}
         }
       }
     }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "BoletoRemessa/1.0.3": {
+    "ArquivoRemessa/1.0.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

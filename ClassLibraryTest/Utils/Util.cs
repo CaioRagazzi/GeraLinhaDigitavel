@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace ClassLibraryTest
+namespace ArquivoRemessa
 {
     public static class Util
     {

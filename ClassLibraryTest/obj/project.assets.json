@@ -690,11 +690,11 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.3",
+    "version": "1.0.2",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\Boleto.csproj",
-      "projectName": "BoletoRemessa",
-      "projectPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\Boleto.csproj",
+      "projectUniqueName": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\ArquivoRemessa.csproj",
+      "projectName": "ArquivoRemessa",
+      "projectPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\ArquivoRemessa.csproj",
       "packagesPath": "C:\\Users\\Int6\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,9 +1,9 @@
-﻿using ClassLibraryTest.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TransacaoDoTipo1;
 
-namespace ClassLibraryTest.TransacaoDoTipo1
+namespace ArquivoRemessa
 {
     public class TransacaoTipo1
     {
@@ -361,66 +361,66 @@ namespace ClassLibraryTest.TransacaoDoTipo1
             BeneficiariaBanco = new EmpresaBeneficiariaBanco();
         }
 
-        public StringBuilder GetTransacao(TransacaoTipo1 stringTransacao)
+        public StringBuilder GetTransacao()
         {
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
-            transacao.Insert(1, stringTransacao.DebitoAutomatico.Agencia);
-            transacao.Insert(6, stringTransacao.DebitoAutomatico.DigitoAgencia);
-            transacao.Insert(7, stringTransacao.DebitoAutomatico.RazaoConta);
-            transacao.Insert(12, stringTransacao.DebitoAutomatico.ContaCorrente);
-            transacao.Insert(19, stringTransacao.DebitoAutomatico.DigitoContaCorrente);
-            transacao.Insert(20, stringTransacao.BeneficiariaBanco.ToStringTransacaoTipo1());
-            transacao.Insert(37, stringTransacao.numeroControleParticipante);
-            transacao.Insert(62, stringTransacao.codigoBancoDebito);
-            transacao.Insert(65, (int)stringTransacao.multa);
-            transacao.Insert(66, Util.FormataCampoComZerosEsquerda(stringTransacao.percentualMulta.ToString().Replace(",", ""), 4));
-            transacao.Insert(70, stringTransacao.identificacaoTituloBanco);
+            transacao.Insert(1, this.DebitoAutomatico.Agencia);
+            transacao.Insert(6, this.DebitoAutomatico.DigitoAgencia);
+            transacao.Insert(7, this.DebitoAutomatico.RazaoConta);
+            transacao.Insert(12, this.DebitoAutomatico.ContaCorrente);
+            transacao.Insert(19, this.DebitoAutomatico.DigitoContaCorrente);
+            transacao.Insert(20, this.BeneficiariaBanco.ToStringTransacaoTipo1());
+            transacao.Insert(37, this.numeroControleParticipante);
+            transacao.Insert(62, this.codigoBancoDebito);
+            transacao.Insert(65, (int)this.multa);
+            transacao.Insert(66, Util.FormataCampoComZerosEsquerda(this.percentualMulta.ToString().Replace(",", ""), 4));
+            transacao.Insert(70, this.identificacaoTituloBanco);
             NossoNumero NN = new NossoNumero
             {
                 Carteira = BeneficiariaBanco.CodigoCarteira.Substring(1, 2),
-                NossoNumeroSemDigito = stringTransacao.IdentificacaoTituloBanco
+                NossoNumeroSemDigito = this.IdentificacaoTituloBanco
             };
             transacao.Insert(81, NN.GetDigitoNossoNumero());
-            transacao.Insert(82, Util.FormataCampoComZerosEsquerda(stringTransacao.descontoBonificacaoDia.ToString().Replace(",", ""), 10));
-            transacao.Insert(92, (int)stringTransacao.condicaoEmissaoBoletoCobranca);
-            transacao.Insert(93, stringTransacao.condicaoRegistroDebitoAutomatico);
-            transacao.Insert(94, stringTransacao.identificacaoOperacaoBanco);
-            transacao.Insert(104, stringTransacao.indicadorRateioCredito);
-            transacao.Insert(105, stringTransacao.enderecamentoAvisoDebitoAutomatico);
-            transacao.Insert(106, stringTransacao.pagamentoParcial);
-            transacao.Insert(108, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.identificacaoOcorrencia), 2));
-            transacao.Insert(110, stringTransacao.numeroDocumento);
-            transacao.Insert(120, Util.FormataCampoComZerosEsquerda(stringTransacao.dataVencimentoTitulo.ToString("ddMMyy"), 6));
-            transacao.Insert(126, Util.FormataCampoComZerosEsquerda(stringTransacao.valorTitulo.ToString().Replace(",", ""), 13));
-            transacao.Insert(139, stringTransacao.bancoEncarregadoCobranca);
-            transacao.Insert(142, stringTransacao.agenciaDepositaria);
-            transacao.Insert(147, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.especieTitulo), 2));
+            transacao.Insert(82, Util.FormataCampoComZerosEsquerda(this.descontoBonificacaoDia.ToString().Replace(",", ""), 10));
+            transacao.Insert(92, (int)this.condicaoEmissaoBoletoCobranca);
+            transacao.Insert(93, this.condicaoRegistroDebitoAutomatico);
+            transacao.Insert(94, this.identificacaoOperacaoBanco);
+            transacao.Insert(104, this.indicadorRateioCredito);
+            transacao.Insert(105, this.enderecamentoAvisoDebitoAutomatico);
+            transacao.Insert(106, this.pagamentoParcial);
+            transacao.Insert(108, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.identificacaoOcorrencia), 2));
+            transacao.Insert(110, this.numeroDocumento);
+            transacao.Insert(120, Util.FormataCampoComZerosEsquerda(this.dataVencimentoTitulo.ToString("ddMMyy"), 6));
+            transacao.Insert(126, Util.FormataCampoComZerosEsquerda(this.valorTitulo.ToString().Replace(",", ""), 13));
+            transacao.Insert(139, this.bancoEncarregadoCobranca);
+            transacao.Insert(142, this.agenciaDepositaria);
+            transacao.Insert(147, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.especieTitulo), 2));
             transacao.Insert(149, identificacao);
-            transacao.Insert(150, Util.FormataCampoComZerosEsquerda(stringTransacao.dataEmissaoTitulo.ToString("ddMMyy"), 6));
-            transacao.Insert(156, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.primeiraInstrucao), 2));
-            transacao.Insert(158, stringTransacao.segundaInstrucao);
-            transacao.Insert(160, Util.FormataCampoComZerosEsquerda(stringTransacao.valorCobrarDiaAtraso.ToString().Replace(",", ""), 13));
+            transacao.Insert(150, Util.FormataCampoComZerosEsquerda(this.dataEmissaoTitulo.ToString("ddMMyy"), 6));
+            transacao.Insert(156, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.primeiraInstrucao), 2));
+            transacao.Insert(158, this.segundaInstrucao);
+            transacao.Insert(160, Util.FormataCampoComZerosEsquerda(this.valorCobrarDiaAtraso.ToString().Replace(",", ""), 13));
             if (dataLimiteConcessaoDesconto == new DateTime(0001,01,01))
             {
                 transacao.Insert(173, "000000");
             }
             else
             {
-                transacao.Insert(173, Util.FormataCampoComZerosEsquerda(stringTransacao.dataLimiteConcessaoDesconto.ToString("ddMMyy"), 6));
+                transacao.Insert(173, Util.FormataCampoComZerosEsquerda(this.dataLimiteConcessaoDesconto.ToString("ddMMyy"), 6));
             }
-            transacao.Insert(179, Util.FormataCampoComZerosEsquerda(stringTransacao.valorDesconto.ToString().Replace(",", ""), 13));
-            transacao.Insert(192, Util.FormataCampoComZerosEsquerda(stringTransacao.valorIOF.ToString().Replace(",", ""), 13));
-            transacao.Insert(205, Util.FormataCampoComZerosEsquerda(stringTransacao.valorAbatimento.ToString().Replace(",", ""), 13));
-            transacao.Insert(218, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.identificacaoTipoInscricao), 2));
-            transacao.Insert(220, stringTransacao.numeroInscricaoPagador);
-            transacao.Insert(234, stringTransacao.nomePagador);
-            transacao.Insert(274, stringTransacao.enderecoCompleto);
-            transacao.Insert(314, stringTransacao.primeiraMensagem);
-            transacao.Insert(326, stringTransacao.cep);
-            transacao.Insert(331, stringTransacao.sufixoCep);
-            transacao.Insert(334, stringTransacao.segundaMensagem);
+            transacao.Insert(179, Util.FormataCampoComZerosEsquerda(this.valorDesconto.ToString().Replace(",", ""), 13));
+            transacao.Insert(192, Util.FormataCampoComZerosEsquerda(this.valorIOF.ToString().Replace(",", ""), 13));
+            transacao.Insert(205, Util.FormataCampoComZerosEsquerda(this.valorAbatimento.ToString().Replace(",", ""), 13));
+            transacao.Insert(218, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.identificacaoTipoInscricao), 2));
+            transacao.Insert(220, this.numeroInscricaoPagador);
+            transacao.Insert(234, this.nomePagador);
+            transacao.Insert(274, this.enderecoCompleto);
+            transacao.Insert(314, this.primeiraMensagem);
+            transacao.Insert(326, this.cep);
+            transacao.Insert(331, this.sufixoCep);
+            transacao.Insert(334, this.segundaMensagem);
 
             return transacao;
         }

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using ClassLibraryTest.TransacaoDoTipo1;
-using ClassLibraryTest.Utils;
+using TransacaoDoTipo1;
 
-namespace ClassLibraryTest
+namespace ArquivoRemessa
 {
     public class Class1
     {
@@ -81,7 +80,8 @@ namespace ClassLibraryTest
 
             List<StringBuilder> listaTransacoes = new List<StringBuilder>
             {
-                stringTransacaoTipo1.GetTransacao(stringTransacaoTipo1)
+                stringTransacaoTipo1.GetTransacao(),
+
             };
 
             using (StreamWriter sw = new StreamWriter("C:\\TesteGravacao\\" + GetFileName(false)))

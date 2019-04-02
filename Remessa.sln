@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boleto", "ClassLibraryTest\Boleto.csproj", "{766B87BA-3E4F-4BFE-A107-B6476AE594B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArquivoRemessa", "ClassLibraryTest\ArquivoRemessa.csproj", "{766B87BA-3E4F-4BFE-A107-B6476AE594B2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppTest", "ConsoleAppTest\ConsoleAppTest.csproj", "{13B899E0-387D-46C6-A5A1-F1324BDC41FC}"
 EndProject

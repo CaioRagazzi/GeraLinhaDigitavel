@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace ClassLibraryTest
+namespace ArquivoRemessa
 {
     public class Header
     {
