@@ -6,4 +6,3 @@ C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreap
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\ClassLibraryTest.AssemblyInfo.cs
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\ClassLibraryTest.dll
 C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\ClassLibraryTest.pdb
-C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\ClassLibraryTest.csprojAssemblyReference.cache

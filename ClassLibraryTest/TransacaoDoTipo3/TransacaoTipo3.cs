@@ -9,7 +9,9 @@ namespace ClassLibraryTest
     {
         private const string tipoRegistro = "3";
 
-        private EmpresaBeneficiariaBanco identificacaoEmpresaBanco;
+        
+
+        private EmpresaBeneficiariaBanco IdentificacaoEmpresaBanco { get; set; }
 
         private string identificacaoTituloBanco;
         /// <summary>
@@ -340,6 +342,7 @@ namespace ClassLibraryTest
 
         public TransacaoTipo3()
         {
+            IdentificacaoEmpresaBanco = new EmpresaBeneficiariaBanco();
         }
 
         public StringBuilder GetTransacao(TransacaoTipo3 stringTransacao)
@@ -347,7 +350,7 @@ namespace ClassLibraryTest
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
-            transacao.Insert(1, identificacaoEmpresaBanco.ToString().Substring(1, 16));
+            transacao.Insert(1, IdentificacaoEmpresaBanco.ToString().Substring(1, 16));
             transacao.Insert(17, stringTransacao.identificacaoTituloBanco);
             transacao.Insert(29, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.codigoCalculoRateio), 2));
             transacao.Insert(30, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.tipoValorInformado), 2));

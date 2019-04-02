@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using ClassLibraryTest.TransacaoDoTipo1;
-using ClassLibraryTest.TransacaoDoTipo3;
+using ClassLibraryTest.Utils;
 
 namespace ClassLibraryTest
 {
@@ -45,7 +45,7 @@ namespace ClassLibraryTest
                 CodigoBancoDebito = "000",
                 multa = Multa.SemMulta,
                 PercentualMulta = 0.00m,
-                IdentificacaoTituloBanco = "00000000000",
+                IdentificacaoTituloBanco = "90890000023",
                 DescontoBonificacaoDia = 0.00m,
                 condicaoEmissaoBoletoCobranca = EmissaoBoletoCobranca.BancoEmiteBoleto,
                 CondicaoRegistroDebitoAutomatico = "N",
