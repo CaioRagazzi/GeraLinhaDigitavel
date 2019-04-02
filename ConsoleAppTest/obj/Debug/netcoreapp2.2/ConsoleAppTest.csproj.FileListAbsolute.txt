@@ -3,8 +3,6 @@ C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\ConsoleAppTest.runtimeconfig.dev.json
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\ConsoleAppTest.dll
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\ConsoleAppTest.pdb
-C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\ClassLibraryTest.dll
-C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\ClassLibraryTest.pdb
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2.2\ConsoleAppTest.csprojAssemblyReference.cache
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2.2\ConsoleAppTest.csproj.CoreCompileInputs.cache
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2.2\ConsoleAppTest.AssemblyInfoInputs.cache
@@ -12,3 +10,5 @@ C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2.2\ConsoleAppTest.csproj.CopyComplete
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2.2\ConsoleAppTest.dll
 C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\obj\Debug\netcoreapp2.2\ConsoleAppTest.pdb
+C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\Boleto.dll
+C:\Users\Int6\source\repos\ClassLibraryTest\ConsoleAppTest\bin\Debug\netcoreapp2.2\Boleto.pdb

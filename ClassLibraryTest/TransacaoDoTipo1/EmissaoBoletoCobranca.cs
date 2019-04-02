@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibraryTest.TransacaoDoTipo1
 {
-    enum EmissaoBoletoCobranca
+    public enum EmissaoBoletoCobranca
     {
         BancoEmiteBoleto = 1,
         ClienteEmiteBoleto = 2

@@ -3,7 +3,7 @@ using System.Text;
 
 namespace ClassLibraryTest
 {
-    class Header
+    public class Header
     {
         private const string tipoRegistro = "0";
 

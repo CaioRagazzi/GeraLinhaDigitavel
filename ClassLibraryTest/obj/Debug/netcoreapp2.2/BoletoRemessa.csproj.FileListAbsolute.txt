@@ -1,0 +1,9 @@
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\bin\Debug\netcoreapp2.2\BoletoRemessa.deps.json
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\bin\Debug\netcoreapp2.2\BoletoRemessa.dll
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\bin\Debug\netcoreapp2.2\BoletoRemessa.pdb
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\BoletoRemessa.csprojAssemblyReference.cache
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\BoletoRemessa.csproj.CoreCompileInputs.cache
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\BoletoRemessa.AssemblyInfoInputs.cache
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\BoletoRemessa.AssemblyInfo.cs
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\BoletoRemessa.dll
+C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\obj\Debug\netcoreapp2.2\BoletoRemessa.pdb

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryTest\ClassLibraryTest.csproj" />
+    <ProjectReference Include="..\ClassLibraryTest\Boleto.csproj" />
   </ItemGroup>
 
 </Project>

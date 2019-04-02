@@ -2,7 +2,7 @@
 
 namespace ClassLibraryTest
 {
-    class Trailler
+    public class Trailler
     {
         private const string tipoRegistro = "9";
 

@@ -1674,14 +1674,14 @@
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "ClassLibraryTest/1.0.0": {
+      "BoletoRemessa/1.0.3": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
-          "bin/placeholder/ClassLibraryTest.dll": {}
+          "bin/placeholder/BoletoRemessa.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ClassLibraryTest.dll": {}
+          "bin/placeholder/BoletoRemessa.dll": {}
         }
       }
     }
@@ -5854,15 +5854,15 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "ClassLibraryTest/1.0.0": {
+    "BoletoRemessa/1.0.3": {
       "type": "project",
-      "path": "../ClassLibraryTest/ClassLibraryTest.csproj",
-      "msbuildProject": "../ClassLibraryTest/ClassLibraryTest.csproj"
+      "path": "../ClassLibraryTest/Boleto.csproj",
+      "msbuildProject": "../ClassLibraryTest/Boleto.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "ClassLibraryTest >= 1.0.0",
+      "BoletoRemessa >= 1.0.3",
       "Microsoft.NET.Test.Sdk >= 15.9.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "xunit >= 2.4.0",
@@ -5899,8 +5899,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\ClassLibraryTest.csproj": {
-              "projectPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\ClassLibraryTest.csproj"
+            "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\Boleto.csproj": {
+              "projectPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\Boleto.csproj"
             }
           }
         }

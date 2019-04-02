@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClassLibraryTest.TransacaoDoTipo1
 {
-    class TransacaoTipo1
+    public class TransacaoTipo1
     {
         private const string tipoRegistro = "1";
 

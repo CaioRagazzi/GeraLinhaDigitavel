@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibraryTest.TransacaoDoTipo1
 {
-    enum EspecieTitulo
+    public enum EspecieTitulo
     {
         Duplicata = 1,
         NotaPromissoria = 2,

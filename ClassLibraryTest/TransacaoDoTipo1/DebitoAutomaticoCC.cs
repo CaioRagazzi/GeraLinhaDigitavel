@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibraryTest.TransacaoDoTipo1
 {
-    class DebitoAutomaticoCC
+    public class DebitoAutomaticoCC
     {
         public string Agencia { get; } = "00000";
         public string DigitoAgencia { get; } = "0";

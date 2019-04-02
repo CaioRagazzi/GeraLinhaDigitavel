@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibraryTest.TransacaoDoTipo1
 {
-    enum Protestos
+    public enum Protestos
     {
         SemInteresse = 0,
         Protestar = 6,

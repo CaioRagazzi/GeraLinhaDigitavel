@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibraryTest.TransacaoDoTipo1
 {
-    enum IdentificacaoTipoInscricaoPagador
+    public enum IdentificacaoTipoInscricaoPagador
     {
         CPF = 1,
         CNPJ = 2

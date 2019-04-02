@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ClassLibraryTest.Utils
 {
-    class EmpresaBeneficiariaBanco
+    public class EmpresaBeneficiariaBanco
     {
 
         public string Zero { get; } = "0";
