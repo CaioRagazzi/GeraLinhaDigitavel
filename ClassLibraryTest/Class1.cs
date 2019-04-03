@@ -54,7 +54,7 @@ namespace ArquivoRemessa
                 identificacaoOcorrencia = IdentificacoesOcorrencia.Remessa,
                 NumeroDocumento = "0000000001",
                 DataVencimentoTitulo = DateTime.Now.AddDays(30),
-                ValorTitulo = 33.33m,
+                ValorTitulo = "3333",
                 BancoEncarregadoCobranca = "000",
                 AgenciaDepositaria = "00000",
                 especieTitulo = EspecieTitulo.DuplicataDeServ,

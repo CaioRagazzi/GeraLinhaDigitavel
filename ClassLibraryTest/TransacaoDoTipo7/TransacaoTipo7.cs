@@ -64,7 +64,7 @@ namespace ArquivoRemessa
             {
                 if (value.Length != 11)
                 {
-                    throw new Exception("Nosso número deve conter 11 dígitos");
+                    throw new Exception($"Nosso número deve conter 11 dígitos, possui {value.Length}");
                 }
                 nossoNumero = Util.FormataCampoComZerosEsquerda(value, 11);
             }

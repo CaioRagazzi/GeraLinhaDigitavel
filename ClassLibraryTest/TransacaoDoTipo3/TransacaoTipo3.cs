@@ -7,8 +7,6 @@ namespace ArquivoRemessa
     {
         private const string tipoRegistro = "3";
 
-        
-
         private EmpresaBeneficiariaBanco IdentificacaoEmpresaBanco { get; set; }
 
         private string identificacaoTituloBanco;
