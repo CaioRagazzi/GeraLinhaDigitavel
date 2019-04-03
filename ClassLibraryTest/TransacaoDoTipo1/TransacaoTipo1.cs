@@ -20,7 +20,7 @@ namespace ArquivoRemessa
         public string NumeroControleParticipante
         {
             get { return numeroControleParticipante; }
-            set { numeroControleParticipante =Util.FormataCampoComZerosEsquerda(value, 25); }
+            set { numeroControleParticipante = Util.FormataCampoComZerosEsquerda(value, 25); }
         }
 
         private string codigoBancoDebito;
@@ -402,7 +402,7 @@ namespace ArquivoRemessa
             transacao.Insert(156, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.primeiraInstrucao), 2));
             transacao.Insert(158, this.segundaInstrucao);
             transacao.Insert(160, Util.FormataCampoComZerosEsquerda(this.valorCobrarDiaAtraso.ToString().Replace(",", ""), 13));
-            if (dataLimiteConcessaoDesconto == new DateTime(0001,01,01))
+            if (dataLimiteConcessaoDesconto == new DateTime(0001, 01, 01))
             {
                 transacao.Insert(173, "000000");
             }

@@ -5,8 +5,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>ArquivoRemessa</PackageId>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.7</Version>
-    <PackageReleaseNotes>Retirado o campo sufixo cedo e atribuido o cep completo no campo cep da classe transacaotipo1</PackageReleaseNotes>
+    <Version>1.0.8</Version>
+    <PackageReleaseNotes></PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

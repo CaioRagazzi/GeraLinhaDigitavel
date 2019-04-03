@@ -8,11 +8,23 @@ namespace ArquivoRemessa
 {
     public static class Util
     {
-        public static string FormataCampoComEspacosDireita(string campo, int tamanho) => campo.PadRight(tamanho, ' ').Substring(0, tamanho);
+        public static string FormataCampoComEspacosDireita(string campo, int tamanho)
+        {
+            if (string.IsNullOrWhiteSpace(campo)) campo = "";
+            return campo.PadRight(tamanho, ' ').Substring(0, tamanho);
+        }
 
-        public static string FormataCampoComZerosEsquerda(string campo, int tamanho) => campo.PadLeft(tamanho, '0').Substring(0, tamanho);
+        public static string FormataCampoComZerosEsquerda(string campo, int tamanho)
+        {
+            if (string.IsNullOrWhiteSpace(campo)) campo = "";
+            return campo.PadLeft(tamanho, '0').Substring(0, tamanho);
+        }
 
-        public static string FormataCampoComZerosEsquerda(int campo, int tamanho) => campo.ToString().PadLeft(tamanho, '0').Substring(0, tamanho);
+        //public static string FormataCampoComZerosEsquerda(int campo, int tamanho)
+        //{
+        //    if (string.IsNullOrWhiteSpace(campo)) campo = "";
+        //    return campo.ToString().PadLeft(tamanho, '0').Substring(0, tamanho);
+        //}
 
         public static string FormataCampoCaracteresEspeciais(string campo)
         {

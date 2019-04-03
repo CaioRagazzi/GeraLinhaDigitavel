@@ -8,13 +8,13 @@
     ".NETCoreApp,Version=v2.2": {
       "ConsoleAppTest/1.0.0": {
         "dependencies": {
-          "ArquivoRemessa": "1.0.7"
+          "ArquivoRemessa": "1.0.8"
         },
         "runtime": {
           "ConsoleAppTest.dll": {}
         }
       },
-      "ArquivoRemessa/1.0.7": {
+      "ArquivoRemessa/1.0.8": {
         "runtime": {
           "ArquivoRemessa.dll": {}
         }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ArquivoRemessa/1.0.7": {
+    "ArquivoRemessa/1.0.8": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
