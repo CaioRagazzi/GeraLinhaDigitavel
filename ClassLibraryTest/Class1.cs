@@ -71,8 +71,8 @@ namespace ArquivoRemessa
                 NomePagador = "Caio Eduardo Ragazzi Gemignani",
                 EnderecoCompleto = "Rua monlevade, 128",
                 PrimeiraMensagem = "Gerando arquivo remessa",
-                Cep = "04679",
-                SufixoCep = "345",
+                Cep = "04679345",
+                //SufixoCep = "345",
                 SegundaMensagem = "Remessa gerada no dia 29/03 as 11:00"
             };
 

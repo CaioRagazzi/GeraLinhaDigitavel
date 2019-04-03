@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ArquivoRemessa</id>
+    <version>1.0.7</version>
+    <authors>ArquivoRemessa</authors>
+    <owners>ArquivoRemessa</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <releaseNotes>Retirado o campo sufixo cedo e atribuido o cep completo no campo cep da classe transacaotipo1</releaseNotes>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.2" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Int6\source\repos\ClassLibraryTest\ClassLibraryTest\bin\Debug\netcoreapp2.2\ArquivoRemessa.dll" target="lib\netcoreapp2.2\ArquivoRemessa.dll" />
+  </files>
+</package>

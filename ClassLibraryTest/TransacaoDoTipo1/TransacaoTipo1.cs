@@ -329,18 +329,18 @@ namespace ArquivoRemessa
         public string Cep
         {
             get { return cep; }
-            set { cep = Util.FormataCampoComEspacosDireita(value, 5); }
+            set { cep = Util.FormataCampoComEspacosDireita(value, 8); }
         }
 
-        private string sufixoCep;
-        /// <summary>
-        /// Sufixo CEP
-        /// </summary>
-        public string SufixoCep
-        {
-            get { return sufixoCep; }
-            set { sufixoCep = Util.FormataCampoComEspacosDireita(value, 3); }
-        }
+        //private string sufixoCep;
+        ///// <summary>
+        ///// Sufixo CEP
+        ///// </summary>
+        //public string SufixoCep
+        //{
+        //    get { return sufixoCep; }
+        //    set { sufixoCep = Util.FormataCampoComEspacosDireita(value, 3); }
+        //}
 
         private string segundaMensagem;
         /// <summary>
@@ -419,7 +419,7 @@ namespace ArquivoRemessa
             transacao.Insert(274, this.enderecoCompleto);
             transacao.Insert(314, this.primeiraMensagem);
             transacao.Insert(326, this.cep);
-            transacao.Insert(331, this.sufixoCep);
+            //transacao.Insert(331, this.sufixoCep);
             transacao.Insert(334, this.segundaMensagem);
 
             return transacao;
