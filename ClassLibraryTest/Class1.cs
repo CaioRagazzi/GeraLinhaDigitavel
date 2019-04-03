@@ -86,14 +86,14 @@ namespace ArquivoRemessa
 
             using (StreamWriter sw = new StreamWriter("C:\\TesteGravacao\\" + GetFileName(false)))
             {
-                sw.WriteLine(stringHeader.GetHeader(stringHeader, GetNumSequencial()));
+                sw.WriteLine(stringHeader.GetHeader(GetNumSequencial()));
 
                 foreach (var item in listaTransacoes)
                 {
                     item.Insert(394, GetNumSequencial());
                     sw.WriteLine(item);
                 }
-                sw.WriteLine(stringTrailler.GetTrailler(stringTrailler, GetNumSequencial()));
+                sw.WriteLine(stringTrailler.GetTrailler(GetNumSequencial()));
             }
         }
 

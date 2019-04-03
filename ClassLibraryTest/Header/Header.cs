@@ -95,7 +95,7 @@ namespace ArquivoRemessa
         /// <param name="stringHeader">Objeto do tipo Header</param>
         /// <param name="numSequencial">Numero sequencial para colocar na linha do boleto.</param>
         /// <returns>Retorna um StringBuilder com a linha do Header completa.</returns>
-        public StringBuilder GetHeader(Header stringHeader, string numSequencial)
+        public StringBuilder GetHeader(string numSequencial)
         {
 
             StringBuilder header = new StringBuilder(400);
@@ -105,15 +105,15 @@ namespace ArquivoRemessa
             header.Insert(2, literalRemessa);
             header.Insert(9, codigoServico);
             header.Insert(11, literalServico);
-            header.Insert(26, stringHeader.codEmpresa);
-            header.Insert(46, stringHeader.nomeEmpresa);
-            header.Insert(76, stringHeader.numeroBradesco);
-            header.Insert(79, stringHeader.nomeBanco);
-            header.Insert(94, Util.FormataCampoComZerosEsquerda(stringHeader.dataGravacaoArquivo.ToString("ddMMyy"), 6));
-            header.Insert(100, stringHeader.branco);
-            header.Insert(108, stringHeader.identSistema);
+            header.Insert(26, this.codEmpresa);
+            header.Insert(46, this.nomeEmpresa);
+            header.Insert(76, this.numeroBradesco);
+            header.Insert(79, this.nomeBanco);
+            header.Insert(94, Util.FormataCampoComZerosEsquerda(this.dataGravacaoArquivo.ToString("ddMMyy"), 6));
+            header.Insert(100, this.branco);
+            header.Insert(108, this.identSistema);
             header.Insert(110, numSeqRemessa);
-            header.Insert(117, stringHeader.branco2);
+            header.Insert(117, this.branco2);
             header.Insert(394, numSequencial);
 
             return header;

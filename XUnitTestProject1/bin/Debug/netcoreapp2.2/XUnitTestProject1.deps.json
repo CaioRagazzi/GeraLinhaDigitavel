@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v2.2": {
       "XUnitTestProject1/1.0.0": {
         "dependencies": {
-          "ArquivoRemessa": "1.0.2",
+          "ArquivoRemessa": "1.0.4",
           "Microsoft.NET.Test.Sdk": "15.9.0",
           "xunit": "2.4.0",
           "xunit.runner.visualstudio": "2.4.0"
@@ -1054,7 +1054,7 @@
           "Microsoft.NET.Test.Sdk": "15.9.0"
         }
       },
-      "ArquivoRemessa/1.0.2": {
+      "ArquivoRemessa/1.0.4": {
         "runtime": {
           "ArquivoRemessa.dll": {}
         }
@@ -1599,7 +1599,7 @@
       "path": "xunit.runner.visualstudio/2.4.0",
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
     },
-    "ArquivoRemessa/1.0.2": {
+    "ArquivoRemessa/1.0.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

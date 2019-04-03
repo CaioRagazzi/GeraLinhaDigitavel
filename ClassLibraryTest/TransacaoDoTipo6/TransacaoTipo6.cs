@@ -33,20 +33,20 @@ namespace ArquivoRemessa
             empresaBeneficiariaBanco = new EmpresaBeneficiariaBanco();
         }
 
-        public StringBuilder GetTransacao(TransacaoTipo6 stringTransacao)
+        public StringBuilder GetTransacao()
         {
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
             transacao.Insert(1, empresaBeneficiariaBanco.ToStringTransacaoTipo6());
-            transacao.Insert(16, stringTransacao.nossoNumero);
+            transacao.Insert(16, this.nossoNumero);
             NossoNumero NN = new NossoNumero
             {
                 Carteira = empresaBeneficiariaBanco.CodigoCarteira.Substring(1, 2),
-                NossoNumeroSemDigito = stringTransacao.nossoNumero
+                NossoNumeroSemDigito = this.nossoNumero
             };
             transacao.Insert(27, NN.GetDigitoNossoNumero());
-            transacao.Insert(28, stringTransacao.brancos);
+            transacao.Insert(28, this.brancos);
 
             return transacao;
         }

@@ -343,46 +343,46 @@ namespace ArquivoRemessa
             IdentificacaoEmpresaBanco = new EmpresaBeneficiariaBanco();
         }
 
-        public StringBuilder GetTransacao(TransacaoTipo3 stringTransacao)
+        public StringBuilder GetTransacao()
         {
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
             transacao.Insert(1, IdentificacaoEmpresaBanco.ToString().Substring(1, 16));
-            transacao.Insert(17, stringTransacao.identificacaoTituloBanco);
-            transacao.Insert(29, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.codigoCalculoRateio), 2));
-            transacao.Insert(30, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)stringTransacao.tipoValorInformado), 2));
-            transacao.Insert(31, stringTransacao.filler);
-            transacao.Insert(43, stringTransacao.codigoBancoCreditoPrimeiroBeneficiario);
-            transacao.Insert(46, stringTransacao.codigoAgenciaCreditoPrimeiroBeneficiario);
-            transacao.Insert(51, stringTransacao.digitoAgenciaCreditoPrimeiroBeneficiario);
-            transacao.Insert(52, stringTransacao.numeroContaCorrenteCreditoPrimeiroBeneficiario);
-            transacao.Insert(64, stringTransacao.digitoContaCorrenteCreditoPrimeiroBeneficiario);
-            transacao.Insert(65, stringTransacao.valorOuParcelamentoRateio);
-            transacao.Insert(80, stringTransacao.nomePrimeiroBeneficiario);
-            transacao.Insert(120, stringTransacao.filler2);
-            transacao.Insert(120, stringTransacao.parcela);
-            transacao.Insert(157, stringTransacao.floatingPrimeiroBeneficiario);
-            transacao.Insert(160, stringTransacao.codigoBancoCreditoSegundoBeneficiario);
-            transacao.Insert(163, stringTransacao.codigoAgenciaCreditoSegundoBeneficiario);
-            transacao.Insert(167, stringTransacao.digitoAgenciaCreditoSegundoBeneficiario);
-            transacao.Insert(169, stringTransacao.numeroContaCorrenteCreditoSegundoBeneficiario);
-            transacao.Insert(181, stringTransacao.digitoContaCorrenteCreditoSegundoBeneficiario);
-            transacao.Insert(182, stringTransacao.valorOuParcelamentoRateio2);
-            transacao.Insert(197, stringTransacao.nomeSegundoBeneficiario);
-            transacao.Insert(237, stringTransacao.filler3);
-            transacao.Insert(268, stringTransacao.parcela2);
-            transacao.Insert(274, stringTransacao.floatingSegundoBeneficiario);
-            transacao.Insert(277, stringTransacao.codigoBancoCreditoTerceiroBeneficiario);
-            transacao.Insert(280, stringTransacao.codigoAgenciaCreditoTerceiroBeneficiario);
-            transacao.Insert(285, stringTransacao.DigitoAgenciaCreditoTerceiroBeneficiario);
-            transacao.Insert(286, stringTransacao.numeroContaCorrenteCreditoTerceiroBeneficiario);
-            transacao.Insert(298, stringTransacao.digitoContaCorrenteCreditoTerceiroBeneficiario);
-            transacao.Insert(299, stringTransacao.valorOuParcelamentoRateio3);
-            transacao.Insert(314, stringTransacao.nomeTerceiroBeneficiario);
-            transacao.Insert(354, stringTransacao.filler4);
-            transacao.Insert(385, stringTransacao.parcela3);
-            transacao.Insert(391, stringTransacao.floatingTerceiroBeneficiario);
+            transacao.Insert(17, this.identificacaoTituloBanco);
+            transacao.Insert(29, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.codigoCalculoRateio), 2));
+            transacao.Insert(30, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.tipoValorInformado), 2));
+            transacao.Insert(31, this.filler);
+            transacao.Insert(43, this.codigoBancoCreditoPrimeiroBeneficiario);
+            transacao.Insert(46, this.codigoAgenciaCreditoPrimeiroBeneficiario);
+            transacao.Insert(51, this.digitoAgenciaCreditoPrimeiroBeneficiario);
+            transacao.Insert(52, this.numeroContaCorrenteCreditoPrimeiroBeneficiario);
+            transacao.Insert(64, this.digitoContaCorrenteCreditoPrimeiroBeneficiario);
+            transacao.Insert(65, this.valorOuParcelamentoRateio);
+            transacao.Insert(80, this.nomePrimeiroBeneficiario);
+            transacao.Insert(120, this.filler2);
+            transacao.Insert(120, this.parcela);
+            transacao.Insert(157, this.floatingPrimeiroBeneficiario);
+            transacao.Insert(160, this.codigoBancoCreditoSegundoBeneficiario);
+            transacao.Insert(163, this.codigoAgenciaCreditoSegundoBeneficiario);
+            transacao.Insert(167, this.digitoAgenciaCreditoSegundoBeneficiario);
+            transacao.Insert(169, this.numeroContaCorrenteCreditoSegundoBeneficiario);
+            transacao.Insert(181, this.digitoContaCorrenteCreditoSegundoBeneficiario);
+            transacao.Insert(182, this.valorOuParcelamentoRateio2);
+            transacao.Insert(197, this.nomeSegundoBeneficiario);
+            transacao.Insert(237, this.filler3);
+            transacao.Insert(268, this.parcela2);
+            transacao.Insert(274, this.floatingSegundoBeneficiario);
+            transacao.Insert(277, this.codigoBancoCreditoTerceiroBeneficiario);
+            transacao.Insert(280, this.codigoAgenciaCreditoTerceiroBeneficiario);
+            transacao.Insert(285, this.DigitoAgenciaCreditoTerceiroBeneficiario);
+            transacao.Insert(286, this.numeroContaCorrenteCreditoTerceiroBeneficiario);
+            transacao.Insert(298, this.digitoContaCorrenteCreditoTerceiroBeneficiario);
+            transacao.Insert(299, this.valorOuParcelamentoRateio3);
+            transacao.Insert(314, this.nomeTerceiroBeneficiario);
+            transacao.Insert(354, this.filler4);
+            transacao.Insert(385, this.parcela3);
+            transacao.Insert(391, this.floatingTerceiroBeneficiario);
 
             return transacao;
         }

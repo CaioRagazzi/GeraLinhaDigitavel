@@ -92,23 +92,23 @@ namespace ArquivoRemessa
         /// </summary>
         /// <param name="stringTransacao">Recebe um objeto do tipo TransacaoTipo7</param>
         /// <returns>Retorna um StringBuilder com a linha completa da transação do tipo 7.</returns>
-        public StringBuilder GetTransacao(TransacaoTipo7 stringTransacao)
+        public StringBuilder GetTransacao()
         {
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
-            transacao.Insert(1, stringTransacao.enderecoSacadorAvalista);
-            transacao.Insert(46, stringTransacao.cep);
-            transacao.Insert(51, stringTransacao.sufixoCep);
-            transacao.Insert(54, stringTransacao.cidade);
-            transacao.Insert(74, stringTransacao.uf);
-            transacao.Insert(76, stringTransacao.reserva);
+            transacao.Insert(1, this.enderecoSacadorAvalista);
+            transacao.Insert(46, this.cep);
+            transacao.Insert(51, this.sufixoCep);
+            transacao.Insert(54, this.cidade);
+            transacao.Insert(74, this.uf);
+            transacao.Insert(76, this.reserva);
             transacao.Insert(366, empresaBeneficiariaBanco.ToStringTransacaoTipo7());
-            transacao.Insert(382, stringTransacao.nossoNumero);
+            transacao.Insert(382, this.nossoNumero);
             NossoNumero NN = new NossoNumero
             {
                 Carteira = empresaBeneficiariaBanco.CodigoCarteira.Substring(1, 2),
-                NossoNumeroSemDigito = stringTransacao.nossoNumero
+                NossoNumeroSemDigito = this.nossoNumero
             };
             transacao.Insert(393, NN.GetDigitoNossoNumero());
 

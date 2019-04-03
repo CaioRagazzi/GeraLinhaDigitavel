@@ -102,26 +102,26 @@ namespace ArquivoRemessa
             BeneficiariaBanco = new EmpresaBeneficiariaBanco();
         }
 
-        public StringBuilder GetTransacao(TransacaoTipo2 stringTransacao)
+        public StringBuilder GetTransacao()
         {
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
-            transacao.Insert(1, stringTransacao.mensagem1);
-            transacao.Insert(81, stringTransacao.mensagem2);
-            transacao.Insert(161, stringTransacao.mensagem3);
-            transacao.Insert(241, stringTransacao.mensagem4);
-            transacao.Insert(321, Util.FormataCampoComZerosEsquerda(stringTransacao.dataLimiteDesconto2.ToString("ddMMyy"), 6));
-            transacao.Insert(327, Util.FormataCampoComZerosEsquerda(stringTransacao.valorDesconto2.ToString().Replace(",", ""), 13));
-            transacao.Insert(340, Util.FormataCampoComZerosEsquerda(stringTransacao.dataLimiteDesconto3.ToString("ddMMyy"), 6));
-            transacao.Insert(346, Util.FormataCampoComZerosEsquerda(stringTransacao.valorDesconto3.ToString().Replace(",", ""), 13));
-            transacao.Insert(359, stringTransacao.reserva);
+            transacao.Insert(1, this.mensagem1);
+            transacao.Insert(81, this.mensagem2);
+            transacao.Insert(161, this.mensagem3);
+            transacao.Insert(241, this.mensagem4);
+            transacao.Insert(321, Util.FormataCampoComZerosEsquerda(this.dataLimiteDesconto2.ToString("ddMMyy"), 6));
+            transacao.Insert(327, Util.FormataCampoComZerosEsquerda(this.valorDesconto2.ToString().Replace(",", ""), 13));
+            transacao.Insert(340, Util.FormataCampoComZerosEsquerda(this.dataLimiteDesconto3.ToString("ddMMyy"), 6));
+            transacao.Insert(346, Util.FormataCampoComZerosEsquerda(this.valorDesconto3.ToString().Replace(",", ""), 13));
+            transacao.Insert(359, this.reserva);
             transacao.Insert(366, BeneficiariaBanco.ToStringTransacaoTipo2());
-            transacao.Insert(382, stringTransacao.nossoNumero);
+            transacao.Insert(382, this.nossoNumero);
             NossoNumero NN = new NossoNumero
             {
                 Carteira = "09",
-                NossoNumeroSemDigito = stringTransacao.nossoNumero
+                NossoNumeroSemDigito = this.nossoNumero
             };
             transacao.Insert(393, NN.GetDigitoNossoNumero());
 
