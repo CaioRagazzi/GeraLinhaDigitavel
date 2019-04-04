@@ -112,6 +112,11 @@ namespace ArquivoRemessa
             };
             transacao.Insert(393, NN.GetDigitoNossoNumero());
 
+            var transacaoSemCaractereEspecial = Util.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+
+            transacao.Clear();
+            transacao.Insert(0, transacaoSemCaractereEspecial);
+
             return transacao;
         }
     }

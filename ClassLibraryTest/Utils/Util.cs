@@ -38,5 +38,30 @@ namespace ArquivoRemessa
             return sbReturn.ToString();
         }
 
+        public static string SubstituiCaracteresEspeciais(string text)
+        {
+            if (!string.IsNullOrEmpty(text))
+            {
+                var sb = new StringBuilder();
+                var arrayChar = text.Normalize(NormalizationForm.FormD).ToCharArray();
+
+                foreach (char c in arrayChar)
+                {
+                    if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
+                        sb.Append(c);
+                }
+                return Regex.Replace(sb.ToString(), @"[^0-9a-zA-Z°ºª&¹²³.,\\@\- ]+", x => new string(' ', x.Length))
+                    .Replace("ª", "a")
+                    .Replace("º", "o")
+                    .Replace("°", "o")
+                    .Replace("&", "e")
+                    .Replace("¹", "1")
+                    .Replace("²", "2")
+                    .Replace("³", "3")
+                    .Replace("@", "a");
+            }
+            return string.Empty;
+        }
+
     }
 }

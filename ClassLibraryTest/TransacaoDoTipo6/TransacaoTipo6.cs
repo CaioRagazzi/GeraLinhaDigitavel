@@ -48,6 +48,11 @@ namespace ArquivoRemessa
             transacao.Insert(27, NN.GetDigitoNossoNumero());
             transacao.Insert(28, this.brancos);
 
+            var transacaoSemCaractereEspecial = Util.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+
+            transacao.Clear();
+            transacao.Insert(0, transacaoSemCaractereEspecial);
+
             return transacao;
         }
     }

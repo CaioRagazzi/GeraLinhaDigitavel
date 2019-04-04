@@ -208,7 +208,7 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "ArquivoRemessa/1.0.8": {
+      "ArquivoRemessa/1.0.9": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
@@ -689,7 +689,7 @@
         "netstandard.library.nuspec"
       ]
     },
-    "ArquivoRemessa/1.0.8": {
+    "ArquivoRemessa/1.0.9": {
       "type": "project",
       "path": "../ClassLibraryTest/ArquivoRemessa.csproj",
       "msbuildProject": "../ClassLibraryTest/ArquivoRemessa.csproj"
@@ -697,7 +697,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "ArquivoRemessa >= 1.0.8",
+      "ArquivoRemessa >= 1.0.9",
       "Microsoft.NETCore.App >= 2.2.0"
     ]
   },

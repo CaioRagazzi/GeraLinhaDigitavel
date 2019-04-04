@@ -382,6 +382,11 @@ namespace ArquivoRemessa
             transacao.Insert(385, this.parcela3);
             transacao.Insert(391, this.floatingTerceiroBeneficiario);
 
+            var transacaoSemCaractereEspecial = Util.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+
+            transacao.Clear();
+            transacao.Insert(0, transacaoSemCaractereEspecial);
+
             return transacao;
         }
     }

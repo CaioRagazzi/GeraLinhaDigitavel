@@ -68,9 +68,9 @@ namespace ArquivoRemessa
                 ValorAbatimento = 0.00m,
                 identificacaoTipoInscricao = IdentificacaoTipoInscricaoPagador.CPF,
                 NumeroInscricaoPagador = "36190841813",
-                NomePagador = "Caio Eduardo Ragazzi Gemignani",
-                EnderecoCompleto = "Rua monlevade, 128",
-                PrimeiraMensagem = "Gerando arquivo remessa",
+                NomePagador = "Cáio Edu@rdo Ragazzi! Gemign@ni",
+                EnderecoCompleto = "Ru@ monleváde, 128",
+                PrimeiraMensagem = "Gerãndo arquivo reméss@",
                 Cep = "04679345",
                 //SufixoCep = "345",
                 SegundaMensagem = "Remessa gerada no dia 29/03 as 11:00"

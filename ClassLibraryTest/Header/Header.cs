@@ -116,6 +116,11 @@ namespace ArquivoRemessa
             header.Insert(117, this.branco2);
             header.Insert(394, numSequencial);
 
+            var transacaoSemCaractereEspecial = Util.FormataCampoCaracteresEspeciais(Convert.ToString(header));
+
+            header.Clear();
+            header.Insert(0, transacaoSemCaractereEspecial);
+
             return header;
         }
     }

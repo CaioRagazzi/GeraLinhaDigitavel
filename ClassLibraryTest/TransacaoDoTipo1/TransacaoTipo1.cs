@@ -294,12 +294,7 @@ namespace ArquivoRemessa
         public string NomePagador
         {
             get { return nomePagador; }
-            set
-            {
-                var stringTratada = Util.FormataCampoCaracteresEspeciais(value);
-                stringTratada = Util.FormataCampoComEspacosDireita(stringTratada, 40);
-                nomePagador = stringTratada;
-            }
+            set { nomePagador = Util.FormataCampoComEspacosDireita(value, 40); }
         }
 
         private string enderecoCompleto;
@@ -421,6 +416,11 @@ namespace ArquivoRemessa
             transacao.Insert(326, this.cep);
             //transacao.Insert(331, this.sufixoCep);
             transacao.Insert(334, this.segundaMensagem);
+
+            var transacaoSemCaractereEspecial = Util.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+
+            transacao.Clear();
+            transacao.Insert(0, transacaoSemCaractereEspecial);
 
             return transacao;
         }

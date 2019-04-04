@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace ArquivoRemessa
 {
@@ -15,6 +16,11 @@ namespace ArquivoRemessa
             trailler.Insert(0, tipoRegistro);
             trailler.Insert(1, this.branco);
             trailler.Insert(394, numSequencial);
+
+            var transacaoSemCaractereEspecial = Util.FormataCampoCaracteresEspeciais(Convert.ToString(trailler));
+
+            trailler.Clear();
+            trailler.Insert(0, transacaoSemCaractereEspecial);
 
             return trailler;
         }
