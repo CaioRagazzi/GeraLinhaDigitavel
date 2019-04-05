@@ -97,7 +97,6 @@ namespace ArquivoRemessa
         /// <returns>Retorna um StringBuilder com a linha do Header completa.</returns>
         public StringBuilder GetHeader()
         {
-
             StringBuilder header = new StringBuilder(400);
 
             header.Insert(0, tipoRegistro);

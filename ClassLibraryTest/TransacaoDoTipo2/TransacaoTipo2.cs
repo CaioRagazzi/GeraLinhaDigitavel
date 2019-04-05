@@ -112,9 +112,23 @@ namespace ArquivoRemessa
             transacao.Insert(161, this.mensagem3);
             transacao.Insert(241, this.mensagem4);
             transacao.Insert(321, Util.FormataCampoComZerosEsquerda(this.dataLimiteDesconto2.ToString("ddMMyy"), 6));
-            transacao.Insert(327, Util.FormataCampoComZerosEsquerda(this.valorDesconto2.ToString().Replace(",", ""), 13));
+            if (this.valorDesconto2 == 0m)
+            {
+                transacao.Insert(327, Util.FormataCampoComEspacosDireita(this.valorDesconto2.ToString().Replace(",", ""), 13));
+            }
+            else if (this.valorDesconto2 != 0m)
+            {
+                transacao.Insert(327, Util.FormataCampoComZerosEsquerda(this.valorDesconto2.ToString().Replace(",", ""), 13));
+            }
             transacao.Insert(340, Util.FormataCampoComZerosEsquerda(this.dataLimiteDesconto3.ToString("ddMMyy"), 6));
-            transacao.Insert(346, Util.FormataCampoComZerosEsquerda(this.valorDesconto3.ToString().Replace(",", ""), 13));
+            if (this.valorDesconto3 == 0m)
+            {
+                transacao.Insert(346, Util.FormataCampoComEspacosDireita(this.valorDesconto3.ToString().Replace(",", ""), 13));
+            }
+            else if (this.valorDesconto3 != 0m)
+            {
+                transacao.Insert(346, Util.FormataCampoComZerosEsquerda(this.valorDesconto3.ToString().Replace(",", ""), 13));
+            }
             transacao.Insert(359, this.reserva);
             transacao.Insert(366, BeneficiariaBanco.ToStringTransacaoTipo2());
             transacao.Insert(382, this.nossoNumero);

@@ -78,19 +78,13 @@ namespace ArquivoRemessa
 
             List<StringBuilder> listaTransacoes = new List<StringBuilder>
             {
-                stringTransacaoTipo1.GetTransacao(),
-
-            };
-
-            List<StringBuilder> listaTransacoes2 = new List<StringBuilder>
-            {
                 stringHeader.GetHeader(),
                 stringTransacaoTipo1.GetTransacao(),
                 stringTrailler.GetTrailler()
 
             };
 
-            Util.GravaArquivo(listaTransacoes2, "C:\\TesteGravacao2\\" + GetFileName(false));
+            Util.GravaArquivo(listaTransacoes, "C:\\TesteGravacao2\\" + GetFileName(false));
         }
     }
 }

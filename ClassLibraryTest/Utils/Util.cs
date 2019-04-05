@@ -22,12 +22,6 @@ namespace ArquivoRemessa
             return campo.PadLeft(tamanho, '0').Substring(0, tamanho);
         }
 
-        //public static string FormataCampoComZerosEsquerda(int campo, int tamanho)
-        //{
-        //    if (string.IsNullOrWhiteSpace(campo)) campo = "";
-        //    return campo.ToString().PadLeft(tamanho, '0').Substring(0, tamanho);
-        //}
-
         public static string FormataCampoCaracteresEspeciais(string campo)
         {
             StringBuilder sbReturn = new StringBuilder();
@@ -117,7 +111,6 @@ namespace ArquivoRemessa
             {
                 throw new Exception("Lista de transações não contém Header e/ou Trailler");
             }
-
 
             if (listaTransacoesTipo1.Count == 0 && listaTransacoesTipo2.Count == 0 && listaTransacoesTipo3.Count == 0 && listaTransacoesTipo6.Count == 0 && listaTransacoesTipo7.Count == 0)
             {
