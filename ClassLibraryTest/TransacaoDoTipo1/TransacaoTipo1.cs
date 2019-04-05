@@ -156,12 +156,12 @@ namespace ArquivoRemessa
             set { dataVencimentoTitulo = value; }
         }
 
-        private string valorTitulo;
+        private decimal valorTitulo;
         /// <summary>
         /// Valor do Título (preencher sem ponto e sem vírgula) 
         /// Exemplos de multas: [[90% = 90.00m], [37,5% = 37.50m], [15,96% = 15.96m]]
         /// </summary>
-        public string ValorTitulo
+        public decimal ValorTitulo
         {
             get { return valorTitulo; }
             set { valorTitulo = value; }
@@ -388,7 +388,7 @@ namespace ArquivoRemessa
             transacao.Insert(108, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.identificacaoOcorrencia), 2));
             transacao.Insert(110, this.numeroDocumento);
             transacao.Insert(120, Util.FormataCampoComZerosEsquerda(this.dataVencimentoTitulo.ToString("ddMMyy"), 6));
-            transacao.Insert(126, Util.FormataCampoComZerosEsquerda(this.valorTitulo, 13));
+            transacao.Insert(126, Util.FormataCampoComZerosEsquerda(this.valorTitulo.ToString().Replace(",", ""), 13));
             transacao.Insert(139, this.bancoEncarregadoCobranca);
             transacao.Insert(142, this.agenciaDepositaria);
             transacao.Insert(147, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.especieTitulo), 2));

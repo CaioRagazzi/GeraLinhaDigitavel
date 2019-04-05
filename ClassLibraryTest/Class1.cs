@@ -8,8 +8,6 @@ namespace ArquivoRemessa
 {
     public class Class1
     {
-        int numeroSequencial = 1;
-
         private string GetFileName(bool test)
         {
             string fileName = "COBN" + System.DateTime.Now.ToString("dd") + System.DateTime.Now.ToString("MM") + System.DateTime.Now.ToString("ss");
@@ -54,7 +52,7 @@ namespace ArquivoRemessa
                 identificacaoOcorrencia = IdentificacoesOcorrencia.Remessa,
                 NumeroDocumento = "0000000001",
                 DataVencimentoTitulo = DateTime.Now.AddDays(30),
-                ValorTitulo = "3333",
+                ValorTitulo = 33.33m,
                 BancoEncarregadoCobranca = "000",
                 AgenciaDepositaria = "00000",
                 especieTitulo = EspecieTitulo.DuplicataDeServ,
@@ -84,25 +82,15 @@ namespace ArquivoRemessa
 
             };
 
-            using (StreamWriter sw = new StreamWriter("C:\\TesteGravacao\\" + GetFileName(false)))
+            List<StringBuilder> listaTransacoes2 = new List<StringBuilder>
             {
-                sw.WriteLine(stringHeader.GetHeader(GetNumSequencial()));
+                stringHeader.GetHeader(),
+                stringTransacaoTipo1.GetTransacao(),
+                stringTrailler.GetTrailler()
 
-                foreach (var item in listaTransacoes)
-                {
-                    item.Insert(394, GetNumSequencial());
-                    sw.WriteLine(item);
-                }
-                sw.WriteLine(stringTrailler.GetTrailler(GetNumSequencial()));
-            }
+            };
+
+            Util.GravaArquivo(listaTransacoes2, "C:\\TesteGravacao2\\" + GetFileName(false));
         }
-
-        public string GetNumSequencial()
-        {
-            var numeroSequencialString = numeroSequencial.ToString().PadLeft(6, '0');
-            numeroSequencial++;
-            return numeroSequencialString;
-        }
-
     }
 }

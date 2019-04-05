@@ -95,7 +95,7 @@ namespace ArquivoRemessa
         /// <param name="stringHeader">Objeto do tipo Header</param>
         /// <param name="numSequencial">Numero sequencial para colocar na linha do boleto.</param>
         /// <returns>Retorna um StringBuilder com a linha do Header completa.</returns>
-        public StringBuilder GetHeader(string numSequencial)
+        public StringBuilder GetHeader()
         {
 
             StringBuilder header = new StringBuilder(400);
@@ -114,7 +114,6 @@ namespace ArquivoRemessa
             header.Insert(108, this.identSistema);
             header.Insert(110, numSeqRemessa);
             header.Insert(117, this.branco2);
-            header.Insert(394, numSequencial);
 
             var transacaoSemCaractereEspecial = Util.FormataCampoCaracteresEspeciais(Convert.ToString(header));
 

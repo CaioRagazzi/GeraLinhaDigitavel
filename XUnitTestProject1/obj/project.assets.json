@@ -1674,7 +1674,7 @@
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "ArquivoRemessa/1.0.9": {
+      "ArquivoRemessa/1.0.13": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
@@ -5854,7 +5854,7 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "ArquivoRemessa/1.0.9": {
+    "ArquivoRemessa/1.0.13": {
       "type": "project",
       "path": "../ClassLibraryTest/ArquivoRemessa.csproj",
       "msbuildProject": "../ClassLibraryTest/ArquivoRemessa.csproj"
@@ -5862,7 +5862,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "ArquivoRemessa >= 1.0.9",
+      "ArquivoRemessa >= 1.0.13",
       "Microsoft.NET.Test.Sdk >= 15.9.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "xunit >= 2.4.0",

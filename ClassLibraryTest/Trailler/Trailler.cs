@@ -9,13 +9,12 @@ namespace ArquivoRemessa
 
         private string branco = new string(' ', 393);
 
-        public StringBuilder GetTrailler(string numSequencial)
+        public StringBuilder GetTrailler()
         {
             StringBuilder trailler = new StringBuilder(400);
 
             trailler.Insert(0, tipoRegistro);
             trailler.Insert(1, this.branco);
-            trailler.Insert(394, numSequencial);
 
             var transacaoSemCaractereEspecial = Util.FormataCampoCaracteresEspeciais(Convert.ToString(trailler));
 
