@@ -81,7 +81,6 @@ namespace ArquivoRemessa
                 stringHeader.GetHeader(),
                 stringTransacaoTipo1.GetTransacao(),
                 stringTrailler.GetTrailler()
-
             };
 
             Util.FormataArquivo.GravaArquivo(listaTransacoes, "C:\\TesteGravacao2\\" + GetFileName(false));
