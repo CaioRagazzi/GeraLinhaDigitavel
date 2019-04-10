@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Text;
+using Util;
 
 namespace ArquivoRemessa
 {
@@ -13,7 +14,7 @@ namespace ArquivoRemessa
         public string Mensagem1
         {
             get { return mensagem1; }
-            set { mensagem1 = Util.FormataCampoComEspacosDireita(value, 80); }
+            set { mensagem1 = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 80); }
         }
 
         private string mensagem2;
@@ -21,7 +22,7 @@ namespace ArquivoRemessa
         public string Mensagem2
         {
             get { return mensagem2; }
-            set { mensagem2 = Util.FormataCampoComEspacosDireita(value, 80); }
+            set { mensagem2 = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 80); }
         }
 
         private string mensagem3;
@@ -29,7 +30,7 @@ namespace ArquivoRemessa
         public string Mensagem3
         {
             get { return mensagem3; }
-            set { mensagem3 = Util.FormataCampoComEspacosDireita(value, 80); }
+            set { mensagem3 = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 80); }
         }
 
         private string mensagem4;
@@ -37,7 +38,7 @@ namespace ArquivoRemessa
         public string Mensagem4
         {
             get { return mensagem4; }
-            set { mensagem4 = Util.FormataCampoComEspacosDireita(value, 80); }
+            set { mensagem4 = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 80); }
         }
 
         private DateTime dataLimiteDesconto2;
@@ -93,7 +94,7 @@ namespace ArquivoRemessa
                 {
                     throw new Exception($"Nosso número deve conter 11 dígitos, possui {value.Length}");
                 }
-                nossoNumero = Util.FormataCampoComEspacosDireita(value, 11);
+                nossoNumero = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 11);
             }
         }
 
@@ -111,23 +112,23 @@ namespace ArquivoRemessa
             transacao.Insert(81, this.mensagem2);
             transacao.Insert(161, this.mensagem3);
             transacao.Insert(241, this.mensagem4);
-            transacao.Insert(321, Util.FormataCampoComZerosEsquerda(this.dataLimiteDesconto2.ToString("ddMMyy"), 6));
+            transacao.Insert(321, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.dataLimiteDesconto2.ToString("ddMMyy"), 6));
             if (this.valorDesconto2 == 0m)
             {
-                transacao.Insert(327, Util.FormataCampoComEspacosDireita(this.valorDesconto2.ToString().Replace(",", ""), 13));
+                transacao.Insert(327, Util.FormataArquivo.FormataCampoComEspacosDireita(this.valorDesconto2.ToString().Replace(",", ""), 13));
             }
             else if (this.valorDesconto2 != 0m)
             {
-                transacao.Insert(327, Util.FormataCampoComZerosEsquerda(this.valorDesconto2.ToString().Replace(",", ""), 13));
+                transacao.Insert(327, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.valorDesconto2.ToString().Replace(",", ""), 13));
             }
-            transacao.Insert(340, Util.FormataCampoComZerosEsquerda(this.dataLimiteDesconto3.ToString("ddMMyy"), 6));
+            transacao.Insert(340, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.dataLimiteDesconto3.ToString("ddMMyy"), 6));
             if (this.valorDesconto3 == 0m)
             {
-                transacao.Insert(346, Util.FormataCampoComEspacosDireita(this.valorDesconto3.ToString().Replace(",", ""), 13));
+                transacao.Insert(346, Util.FormataArquivo.FormataCampoComEspacosDireita(this.valorDesconto3.ToString().Replace(",", ""), 13));
             }
             else if (this.valorDesconto3 != 0m)
             {
-                transacao.Insert(346, Util.FormataCampoComZerosEsquerda(this.valorDesconto3.ToString().Replace(",", ""), 13));
+                transacao.Insert(346, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.valorDesconto3.ToString().Replace(",", ""), 13));
             }
             transacao.Insert(359, this.reserva);
             transacao.Insert(366, BeneficiariaBanco.ToStringTransacaoTipo2());
@@ -139,7 +140,7 @@ namespace ArquivoRemessa
             };
             transacao.Insert(393, NN.GetDigitoNossoNumero());
 
-            var transacaoSemCaractereEspecial = Util.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+            var transacaoSemCaractereEspecial = Util.FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
 
             transacao.Clear();
             transacao.Insert(0, transacaoSemCaractereEspecial);

@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using TransacaoDoTipo1;
+using Util;
 
 namespace ArquivoRemessa
 {
     public class TransacaoTipo1
     {
+        #region propriedades
+
         private const string tipoRegistro = "1";
 
         public DebitoAutomaticoCC DebitoAutomatico { get; set; }
@@ -20,7 +23,7 @@ namespace ArquivoRemessa
         public string NumeroControleParticipante
         {
             get { return numeroControleParticipante; }
-            set { numeroControleParticipante = Util.FormataCampoComZerosEsquerda(value, 25); }
+            set { numeroControleParticipante = Util.FormataArquivo.FormataCampoComZerosEsquerda(value, 25); }
         }
 
         private string codigoBancoDebito;
@@ -34,7 +37,7 @@ namespace ArquivoRemessa
         public string CodigoBancoDebito
         {
             get { return codigoBancoDebito; }
-            set { codigoBancoDebito = Util.FormataCampoComEspacosDireita(value, 3); }
+            set { codigoBancoDebito = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         }
 
         public Multa multa { get; set; }
@@ -64,7 +67,7 @@ namespace ArquivoRemessa
                 {
                     throw new Exception($"Nosso número deve conter 11 dígitos, possui {value.Length}");
                 }
-                identificacaoTituloBanco = Util.FormataCampoComZerosEsquerda(value, 11);
+                identificacaoTituloBanco = Util.FormataArquivo.FormataCampoComZerosEsquerda(value, 11);
             }
         }
 
@@ -73,7 +76,7 @@ namespace ArquivoRemessa
         public string DigitoAutoConferencia
         {
             get { return digitoAutoConferencia; }
-            set { digitoAutoConferencia = Util.FormataCampoComEspacosDireita(value, 1); }
+            set { digitoAutoConferencia = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         private decimal descontoBonificacaoDia;
@@ -97,7 +100,7 @@ namespace ArquivoRemessa
         public string CondicaoRegistroDebitoAutomatico
         {
             get { return condicaoRegistroDebitoAutomatico; }
-            set { condicaoRegistroDebitoAutomatico = Util.FormataCampoComEspacosDireita(value, 1); }
+            set { condicaoRegistroDebitoAutomatico = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         private string identificacaoOperacaoBanco = "          ";
@@ -109,7 +112,7 @@ namespace ArquivoRemessa
         public string IndicadorRateioCredito
         {
             get { return indicadorRateioCredito; }
-            set { indicadorRateioCredito = Util.FormataCampoComEspacosDireita(value, 1); }
+            set { indicadorRateioCredito = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         private string enderecamentoAvisoDebitoAutomatico;
@@ -121,7 +124,7 @@ namespace ArquivoRemessa
         public string EnderecamentoAvisoDebitoAutomatico
         {
             get { return enderecamentoAvisoDebitoAutomatico; }
-            set { enderecamentoAvisoDebitoAutomatico = Util.FormataCampoComEspacosDireita(value, 1); }
+            set { enderecamentoAvisoDebitoAutomatico = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         private string pagamentoParcial;
@@ -131,7 +134,7 @@ namespace ArquivoRemessa
         public string PagamentoParcial
         {
             get { return pagamentoParcial; }
-            set { pagamentoParcial = Util.FormataCampoComEspacosDireita(value, 2); }
+            set { pagamentoParcial = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 2); }
         }
 
         public IdentificacoesOcorrencia identificacaoOcorrencia;
@@ -143,7 +146,7 @@ namespace ArquivoRemessa
         public string NumeroDocumento
         {
             get { return numeroDocumento; }
-            set { numeroDocumento = Util.FormataCampoComEspacosDireita(value, 10); }
+            set { numeroDocumento = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 10); }
         }
 
         private DateTime dataVencimentoTitulo;
@@ -174,7 +177,7 @@ namespace ArquivoRemessa
         public string BancoEncarregadoCobranca
         {
             get { return bancoEncarregadoCobranca; }
-            set { bancoEncarregadoCobranca = Util.FormataCampoComEspacosDireita(value, 3); }
+            set { bancoEncarregadoCobranca = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         }
 
         private string agenciaDepositaria;
@@ -184,7 +187,7 @@ namespace ArquivoRemessa
         public string AgenciaDepositaria
         {
             get { return agenciaDepositaria; }
-            set { agenciaDepositaria = Util.FormataCampoComEspacosDireita(value, 5); }
+            set { agenciaDepositaria = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 5); }
         }
 
         public EspecieTitulo especieTitulo;
@@ -211,7 +214,7 @@ namespace ArquivoRemessa
         public string SegundaInstrucao
         {
             get { return segundaInstrucao; }
-            set { segundaInstrucao = Util.FormataCampoComEspacosDireita(value, 2); }
+            set { segundaInstrucao = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 2); }
         }
 
         private decimal valorCobrarDiaAtraso;
@@ -283,7 +286,7 @@ namespace ArquivoRemessa
         public string NumeroInscricaoPagador
         {
             get { return numeroInscricaoPagador; }
-            set { numeroInscricaoPagador = Util.FormataCampoComZerosEsquerda(value, 14); }
+            set { numeroInscricaoPagador = Util.FormataArquivo.FormataCampoComZerosEsquerda(value, 14); }
         }
 
         private string nomePagador;
@@ -294,7 +297,7 @@ namespace ArquivoRemessa
         public string NomePagador
         {
             get { return nomePagador; }
-            set { nomePagador = Util.FormataCampoComEspacosDireita(value, 40); }
+            set { nomePagador = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 40); }
         }
 
         private string enderecoCompleto;
@@ -304,7 +307,7 @@ namespace ArquivoRemessa
         public string EnderecoCompleto
         {
             get { return enderecoCompleto; }
-            set { enderecoCompleto = Util.FormataCampoComEspacosDireita(value, 40); }
+            set { enderecoCompleto = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 40); }
         }
 
         private string primeiraMensagem;
@@ -314,7 +317,7 @@ namespace ArquivoRemessa
         public string PrimeiraMensagem
         {
             get { return primeiraMensagem; }
-            set { primeiraMensagem = Util.FormataCampoComEspacosDireita(value, 12); }
+            set { primeiraMensagem = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 12); }
         }
 
         private string cep;
@@ -324,7 +327,7 @@ namespace ArquivoRemessa
         public string Cep
         {
             get { return cep; }
-            set { cep = Util.FormataCampoComEspacosDireita(value, 8); }
+            set { cep = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 8); }
         }
 
         //private string sufixoCep;
@@ -334,7 +337,7 @@ namespace ArquivoRemessa
         //public string SufixoCep
         //{
         //    get { return sufixoCep; }
-        //    set { sufixoCep = Util.FormataCampoComEspacosDireita(value, 3); }
+        //    set { sufixoCep = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         //}
 
         private string segundaMensagem;
@@ -347,8 +350,9 @@ namespace ArquivoRemessa
         public string SegundaMensagem
         {
             get { return segundaMensagem; }
-            set { segundaMensagem = Util.FormataCampoComEspacosDireita(value, 60); }
+            set { segundaMensagem = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 60); }
         }
+        #endregion propriedades
 
         public TransacaoTipo1()
         {
@@ -370,7 +374,7 @@ namespace ArquivoRemessa
             transacao.Insert(37, this.numeroControleParticipante);
             transacao.Insert(62, this.codigoBancoDebito);
             transacao.Insert(65, (int)this.multa);
-            transacao.Insert(66, Util.FormataCampoComZerosEsquerda(this.percentualMulta.ToString().Replace(",", ""), 4));
+            transacao.Insert(66, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.percentualMulta.ToString().Replace(",", ""), 4));
             transacao.Insert(70, this.identificacaoTituloBanco);
             NossoNumero NN = new NossoNumero
             {
@@ -378,37 +382,37 @@ namespace ArquivoRemessa
                 NossoNumeroSemDigito = this.IdentificacaoTituloBanco
             };
             transacao.Insert(81, NN.GetDigitoNossoNumero());
-            transacao.Insert(82, Util.FormataCampoComZerosEsquerda(this.descontoBonificacaoDia.ToString().Replace(",", ""), 10));
+            transacao.Insert(82, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.descontoBonificacaoDia.ToString().Replace(",", ""), 10));
             transacao.Insert(92, (int)this.condicaoEmissaoBoletoCobranca);
             transacao.Insert(93, this.condicaoRegistroDebitoAutomatico);
             transacao.Insert(94, this.identificacaoOperacaoBanco);
             transacao.Insert(104, this.indicadorRateioCredito);
             transacao.Insert(105, this.enderecamentoAvisoDebitoAutomatico);
             transacao.Insert(106, this.pagamentoParcial);
-            transacao.Insert(108, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.identificacaoOcorrencia), 2));
+            transacao.Insert(108, Util.FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.identificacaoOcorrencia), 2));
             transacao.Insert(110, this.numeroDocumento);
-            transacao.Insert(120, Util.FormataCampoComZerosEsquerda(this.dataVencimentoTitulo.ToString("ddMMyy"), 6));
-            transacao.Insert(126, Util.FormataCampoComZerosEsquerda(this.valorTitulo.ToString().Replace(",", ""), 13));
+            transacao.Insert(120, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.dataVencimentoTitulo.ToString("ddMMyy"), 6));
+            transacao.Insert(126, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.valorTitulo.ToString().Replace(",", ""), 13));
             transacao.Insert(139, this.bancoEncarregadoCobranca);
             transacao.Insert(142, this.agenciaDepositaria);
-            transacao.Insert(147, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.especieTitulo), 2));
+            transacao.Insert(147, Util.FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.especieTitulo), 2));
             transacao.Insert(149, identificacao);
-            transacao.Insert(150, Util.FormataCampoComZerosEsquerda(this.dataEmissaoTitulo.ToString("ddMMyy"), 6));
-            transacao.Insert(156, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.primeiraInstrucao), 2));
+            transacao.Insert(150, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.dataEmissaoTitulo.ToString("ddMMyy"), 6));
+            transacao.Insert(156, Util.FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.primeiraInstrucao), 2));
             transacao.Insert(158, this.segundaInstrucao);
-            transacao.Insert(160, Util.FormataCampoComZerosEsquerda(this.valorCobrarDiaAtraso.ToString().Replace(",", ""), 13));
+            transacao.Insert(160, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.valorCobrarDiaAtraso.ToString().Replace(",", ""), 13));
             if (dataLimiteConcessaoDesconto == new DateTime(0001, 01, 01))
             {
                 transacao.Insert(173, "000000");
             }
             else
             {
-                transacao.Insert(173, Util.FormataCampoComZerosEsquerda(this.dataLimiteConcessaoDesconto.ToString("ddMMyy"), 6));
+                transacao.Insert(173, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.dataLimiteConcessaoDesconto.ToString("ddMMyy"), 6));
             }
-            transacao.Insert(179, Util.FormataCampoComZerosEsquerda(this.valorDesconto.ToString().Replace(",", ""), 13));
-            transacao.Insert(192, Util.FormataCampoComZerosEsquerda(this.valorIOF.ToString().Replace(",", ""), 13));
-            transacao.Insert(205, Util.FormataCampoComZerosEsquerda(this.valorAbatimento.ToString().Replace(",", ""), 13));
-            transacao.Insert(218, Util.FormataCampoComZerosEsquerda(Convert.ToString((int)this.identificacaoTipoInscricao), 2));
+            transacao.Insert(179, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.valorDesconto.ToString().Replace(",", ""), 13));
+            transacao.Insert(192, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.valorIOF.ToString().Replace(",", ""), 13));
+            transacao.Insert(205, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.valorAbatimento.ToString().Replace(",", ""), 13));
+            transacao.Insert(218, Util.FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.identificacaoTipoInscricao), 2));
             transacao.Insert(220, this.numeroInscricaoPagador);
             transacao.Insert(234, this.nomePagador);
             transacao.Insert(274, this.enderecoCompleto);
@@ -417,7 +421,7 @@ namespace ArquivoRemessa
             //transacao.Insert(331, this.sufixoCep);
             transacao.Insert(334, this.segundaMensagem);
 
-            var transacaoSemCaractereEspecial = Util.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+            var transacaoSemCaractereEspecial = Util.FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
 
             transacao.Clear();
             transacao.Insert(0, transacaoSemCaractereEspecial);

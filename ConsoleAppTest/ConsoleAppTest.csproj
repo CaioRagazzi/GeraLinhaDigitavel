@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ArquivoRetorno\ArquivoRetorno.csproj" />
     <ProjectReference Include="..\ClassLibraryTest\ArquivoRemessa.csproj" />
+    <ProjectReference Include="..\Util\Util.csproj" />
   </ItemGroup>
 
 </Project>

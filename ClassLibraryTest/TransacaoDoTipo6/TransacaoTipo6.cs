@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Util;
 
 namespace ArquivoRemessa
 {
@@ -22,7 +23,7 @@ namespace ArquivoRemessa
                 {
                     throw new Exception($"Nosso número deve conter 11 dígitos, possui {value.Length}");
                 }
-                nossoNumero = Util.FormataCampoComZerosEsquerda(value, 11);
+                nossoNumero = Util.FormataArquivo.FormataCampoComZerosEsquerda(value, 11);
             }
         }
 
@@ -48,7 +49,7 @@ namespace ArquivoRemessa
             transacao.Insert(27, NN.GetDigitoNossoNumero());
             transacao.Insert(28, this.brancos);
 
-            var transacaoSemCaractereEspecial = Util.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+            var transacaoSemCaractereEspecial = Util.FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
 
             transacao.Clear();
             transacao.Insert(0, transacaoSemCaractereEspecial);

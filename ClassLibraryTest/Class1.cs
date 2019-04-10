@@ -33,15 +33,15 @@ namespace ArquivoRemessa
                 NomeBanco = "BRADESCO",
                 DataGravacaoArquivo = DateTime.Now,
                 IdentSistema = "MX",
-                NumSeqRemessa = "0000000"
+                NumSeqRemessa = "48"
             };
 
             TransacaoTipo1 stringTransacaoTipo1 = new TransacaoTipo1
             {
                 NumeroControleParticipante = Convert.ToBase64String(Guid.NewGuid().ToByteArray()),
                 CodigoBancoDebito = "000",
-                multa = Multa.SemMulta,
-                PercentualMulta = 0.00m,
+                multa = Multa.ComMulta,
+                PercentualMulta = 10.00m,
                 IdentificacaoTituloBanco = "90890000023",
                 DescontoBonificacaoDia = 0.00m,
                 condicaoEmissaoBoletoCobranca = EmissaoBoletoCobranca.BancoEmiteBoleto,
@@ -84,7 +84,7 @@ namespace ArquivoRemessa
 
             };
 
-            Util.GravaArquivo(listaTransacoes, "C:\\TesteGravacao2\\" + GetFileName(false));
+            Util.FormataArquivo.GravaArquivo(listaTransacoes, "C:\\TesteGravacao2\\" + GetFileName(false));
         }
     }
 }

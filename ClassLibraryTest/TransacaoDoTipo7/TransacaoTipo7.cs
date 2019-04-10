@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using Util;
 
 namespace ArquivoRemessa
 {
@@ -14,7 +15,7 @@ namespace ArquivoRemessa
         public string EnderecoSacadorAvalista
         {
             get { return enderecoSacadorAvalista; }
-            set { enderecoSacadorAvalista = Util.FormataCampoComEspacosDireita(value, 45); }
+            set { enderecoSacadorAvalista = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 45); }
         }
 
         private string cep;
@@ -22,7 +23,7 @@ namespace ArquivoRemessa
         public string Cep
         {
             get { return cep; }
-            set { cep = Util.FormataCampoComEspacosDireita(value, 5); }
+            set { cep = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 5); }
         }
 
         private string sufixoCep;
@@ -30,7 +31,7 @@ namespace ArquivoRemessa
         public string SufixoCep
         {
             get { return sufixoCep; }
-            set { sufixoCep = Util.FormataCampoComEspacosDireita(value, 3); }
+            set { sufixoCep = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         }
 
         private string cidade;
@@ -38,7 +39,7 @@ namespace ArquivoRemessa
         public string Cidade
         {
             get { return cidade; }
-            set { cidade = Util.FormataCampoComEspacosDireita(value, 20); }
+            set { cidade = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 20); }
         }
 
         private string uf;
@@ -46,7 +47,7 @@ namespace ArquivoRemessa
         public string Uf
         {
             get { return uf; }
-            set { uf = Util.FormataCampoComEspacosDireita(value, 2); }
+            set { uf = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 2); }
         }
 
         private string reserva = new string(' ', 290);
@@ -66,7 +67,7 @@ namespace ArquivoRemessa
                 {
                     throw new Exception($"Nosso número deve conter 11 dígitos, possui {value.Length}");
                 }
-                nossoNumero = Util.FormataCampoComZerosEsquerda(value, 11);
+                nossoNumero = Util.FormataArquivo.FormataCampoComZerosEsquerda(value, 11);
             }
         }
 
@@ -79,7 +80,7 @@ namespace ArquivoRemessa
         public string DacNossoNumero
         {
             get { return dacNossoNumero; }
-            set { dacNossoNumero = Util.FormataCampoComEspacosDireita(value, 1); }
+            set { dacNossoNumero = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         public TransacaoTipo7()
@@ -112,7 +113,7 @@ namespace ArquivoRemessa
             };
             transacao.Insert(393, NN.GetDigitoNossoNumero());
 
-            var transacaoSemCaractereEspecial = Util.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+            var transacaoSemCaractereEspecial = Util.FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
 
             transacao.Clear();
             transacao.Insert(0, transacaoSemCaractereEspecial);
