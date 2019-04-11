@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppTest", "ConsoleAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{4F714168-4E6B-4EB3-B8F1-611A511662B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArquivoRetorno", "ArquivoRetorno\ArquivoRetorno.csproj", "{2671A5FC-4613-49A6-89BB-FA0E47B38B80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArquivoRetorno", "ArquivoRetorno\ArquivoRetorno.csproj", "{2671A5FC-4613-49A6-89BB-FA0E47B38B80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "Util\Util.csproj", "{41AA5C94-188D-4E3B-8196-4A17D31F680F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilRemessa", "Util\UtilRemessa.csproj", "{41AA5C94-188D-4E3B-8196-4A17D31F680F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

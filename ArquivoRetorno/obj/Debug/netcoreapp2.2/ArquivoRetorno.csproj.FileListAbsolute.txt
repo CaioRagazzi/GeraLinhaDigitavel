@@ -1,8 +1,6 @@
 C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\bin\Debug\netcoreapp2.2\ArquivoRetorno.deps.json
 C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\bin\Debug\netcoreapp2.2\ArquivoRetorno.dll
 C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\bin\Debug\netcoreapp2.2\ArquivoRetorno.pdb
-C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\bin\Debug\netcoreapp2.2\Util.dll
-C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\bin\Debug\netcoreapp2.2\Util.pdb
 C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\obj\Debug\netcoreapp2.2\ArquivoRetorno.csprojAssemblyReference.cache
 C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\obj\Debug\netcoreapp2.2\ArquivoRetorno.csproj.CoreCompileInputs.cache
 C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\obj\Debug\netcoreapp2.2\ArquivoRetorno.AssemblyInfoInputs.cache
@@ -10,3 +8,5 @@ C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\obj\Debug\netcoreapp2
 C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\obj\Debug\netcoreapp2.2\ArquivoRetorno.csproj.CopyComplete
 C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\obj\Debug\netcoreapp2.2\ArquivoRetorno.dll
 C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\obj\Debug\netcoreapp2.2\ArquivoRetorno.pdb
+C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\bin\Debug\netcoreapp2.2\UtilRemessa.dll
+C:\Users\Int6\source\repos\ClassLibraryTest\ArquivoRetorno\bin\Debug\netcoreapp2.2\UtilRemessa.pdb

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using Util;
+using UtilRemessa;
 
 namespace ArquivoRetorno
 {
@@ -28,7 +28,7 @@ namespace ArquivoRetorno
 
         public Header GeraHeader(string path)
         {
-            List<String> lista = Util.FormataArquivo.LeArquivoRetorno(path);
+            List<String> lista = UtilRemessa.FormataArquivo.LeArquivoRetorno(path);
             String linhaHeader = lista[0];
 
             Header header =  new Header

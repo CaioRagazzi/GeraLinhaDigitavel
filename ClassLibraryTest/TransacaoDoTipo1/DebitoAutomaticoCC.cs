@@ -20,11 +20,11 @@ namespace TransacaoDoTipo1
 
         public DebitoAutomaticoCC(string agencia, string digitoAgencia, string razaoConta, string contaCorrente, string DigitoContaCorrente)
         {
-            this.Agencia = Util.FormataArquivo.FormataCampoComZerosEsquerda(agencia, 5);
-            this.DigitoAgencia = Util.FormataArquivo.FormataCampoComZerosEsquerda(digitoAgencia, 1);
-            this.RazaoConta = Util.FormataArquivo.FormataCampoComZerosEsquerda(razaoConta, 5);
-            this.ContaCorrente = Util.FormataArquivo.FormataCampoComZerosEsquerda(contaCorrente,7);
-            this.DigitoContaCorrente = Util.FormataArquivo.FormataCampoComZerosEsquerda(DigitoContaCorrente,1);
+            this.Agencia = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(agencia, 5);
+            this.DigitoAgencia = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(digitoAgencia, 1);
+            this.RazaoConta = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(razaoConta, 5);
+            this.ContaCorrente = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(contaCorrente,7);
+            this.DigitoContaCorrente = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(DigitoContaCorrente,1);
         }
 
     }

@@ -52,7 +52,7 @@ namespace ArquivoRetorno
 
         public List<TransacaoTipo1> GeraTransacaoTipo1(string path)
         {
-            List<String> lista = Util.FormataArquivo.LeArquivoRetorno(path);
+            List<String> lista = UtilRemessa.FormataArquivo.LeArquivoRetorno(path);
             List<TransacaoTipo1> transacoesTipo1 = new List<TransacaoTipo1>();
 
             foreach (var item in lista)

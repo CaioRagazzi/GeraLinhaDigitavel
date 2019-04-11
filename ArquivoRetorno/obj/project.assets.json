@@ -208,14 +208,14 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Util/1.0.0": {
+      "UtilRemessa/1.0.5": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
-          "bin/placeholder/Util.dll": {}
+          "bin/placeholder/UtilRemessa.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Util.dll": {}
+          "bin/placeholder/UtilRemessa.dll": {}
         }
       }
     }
@@ -689,16 +689,16 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Util/1.0.0": {
+    "UtilRemessa/1.0.5": {
       "type": "project",
-      "path": "../Util/Util.csproj",
-      "msbuildProject": "../Util/Util.csproj"
+      "path": "../Util/UtilRemessa.csproj",
+      "msbuildProject": "../Util/UtilRemessa.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.NETCore.App >= 2.2.0",
-      "Util >= 1.0.0"
+      "UtilRemessa >= 1.0.5"
     ]
   },
   "packageFolders": {
@@ -731,8 +731,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\Util\\Util.csproj": {
-              "projectPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\Util\\Util.csproj"
+            "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\Util\\UtilRemessa.csproj": {
+              "projectPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\Util\\UtilRemessa.csproj"
             }
           }
         }

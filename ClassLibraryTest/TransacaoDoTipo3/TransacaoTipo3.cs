@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using Util;
+using UtilRemessa;
 
 namespace ArquivoRemessa
 {
@@ -23,7 +23,7 @@ namespace ArquivoRemessa
                 {
                     throw new Exception("Nosso número deve conter 12 dígitos");
                 }
-                identificacaoTituloBanco =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 12);
+                identificacaoTituloBanco =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 12);
             }
         }
 
@@ -42,7 +42,7 @@ namespace ArquivoRemessa
         public string CodigoAgenciaCreditoPrimeiroBeneficiario
         {
             get { return codigoAgenciaCreditoPrimeiroBeneficiario; }
-            set { codigoAgenciaCreditoPrimeiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 5); }
+            set { codigoAgenciaCreditoPrimeiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 5); }
         }
 
         private string digitoAgenciaCreditoPrimeiroBeneficiario;
@@ -52,7 +52,7 @@ namespace ArquivoRemessa
         public string DigitoAgenciaCreditoPrimeiroBeneficiario
         {
             get { return digitoAgenciaCreditoPrimeiroBeneficiario; }
-            set { digitoAgenciaCreditoPrimeiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
+            set { digitoAgenciaCreditoPrimeiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         private string numeroContaCorrenteCreditoPrimeiroBeneficiario;
@@ -62,7 +62,7 @@ namespace ArquivoRemessa
         public string NumeroContaCorrenteCreditoPrimeiroBeneficiario
         {
             get { return numeroContaCorrenteCreditoPrimeiroBeneficiario; }
-            set { numeroContaCorrenteCreditoPrimeiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 12); }
+            set { numeroContaCorrenteCreditoPrimeiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 12); }
         }
 
         private string digitoContaCorrenteCreditoPrimeiroBeneficiario;
@@ -72,7 +72,7 @@ namespace ArquivoRemessa
         public string DigitoContaCorrenteCreditoPrimeiroBeneficiario
         {
             get { return digitoContaCorrenteCreditoPrimeiroBeneficiario; }
-            set { digitoContaCorrenteCreditoPrimeiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
+            set { digitoContaCorrenteCreditoPrimeiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         private string valorOuParcelamentoRateio;
@@ -85,7 +85,7 @@ namespace ArquivoRemessa
         public string ValorOuParcelamentoRateio
         {
             get { return valorOuParcelamentoRateio; }
-            set { valorOuParcelamentoRateio =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 15); }
+            set { valorOuParcelamentoRateio =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 15); }
         }
 
         private string nomePrimeiroBeneficiario;
@@ -95,7 +95,7 @@ namespace ArquivoRemessa
         public string NomePrimeiroBeneficiario
         {
             get { return nomePrimeiroBeneficiario; }
-            set { nomePrimeiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 40); }
+            set { nomePrimeiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 40); }
         }
 
         private string filler2;
@@ -105,7 +105,7 @@ namespace ArquivoRemessa
         public string Filler2
         {
             get { return filler2; }
-            set { filler2 =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 31); }
+            set { filler2 =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 31); }
         }
 
         private string parcela;
@@ -116,7 +116,7 @@ namespace ArquivoRemessa
         public string Parcela
         {
             get { return parcela; }
-            set { parcela =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 6); }
+            set { parcela =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 6); }
         }
 
         private string floatingPrimeiroBeneficiario;
@@ -126,7 +126,7 @@ namespace ArquivoRemessa
         public string FloatingPrimeiroBeneficiario
         {
             get { return floatingPrimeiroBeneficiario; }
-            set { floatingPrimeiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
+            set { floatingPrimeiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         }
 
         private string codigoBancoCreditoSegundoBeneficiario;
@@ -136,7 +136,7 @@ namespace ArquivoRemessa
         public string CodigoBancoCreditoSegundoBeneficiario
         {
             get { return codigoBancoCreditoSegundoBeneficiario; }
-            set { codigoBancoCreditoSegundoBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
+            set { codigoBancoCreditoSegundoBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         }
 
         private string codigoAgenciaCreditoSegundoBeneficiario;
@@ -146,7 +146,7 @@ namespace ArquivoRemessa
         public string CodigoAgenciaCreditoSegundoBeneficiario
         {
             get { return codigoAgenciaCreditoSegundoBeneficiario; }
-            set { codigoAgenciaCreditoSegundoBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 5); }
+            set { codigoAgenciaCreditoSegundoBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 5); }
         }
 
         private string digitoAgenciaCreditoSegundoBeneficiario;
@@ -156,7 +156,7 @@ namespace ArquivoRemessa
         public string DigitoAgenciaCreditoSegundoBeneficiario
         {
             get { return digitoAgenciaCreditoSegundoBeneficiario; }
-            set { digitoAgenciaCreditoSegundoBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
+            set { digitoAgenciaCreditoSegundoBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         private string numeroContaCorrenteCreditoSegundoBeneficiario;
@@ -166,7 +166,7 @@ namespace ArquivoRemessa
         public string NumeroContaCorrenteCreditoSegundoBeneficiario
         {
             get { return numeroContaCorrenteCreditoSegundoBeneficiario; }
-            set { numeroContaCorrenteCreditoSegundoBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 12); }
+            set { numeroContaCorrenteCreditoSegundoBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 12); }
         }
 
         private string digitoContaCorrenteCreditoSegundoBeneficiario;
@@ -176,7 +176,7 @@ namespace ArquivoRemessa
         public string DigitoContaCorrenteCreditoSegundoBeneficiario
         {
             get { return digitoContaCorrenteCreditoSegundoBeneficiario; }
-            set { digitoContaCorrenteCreditoSegundoBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
+            set { digitoContaCorrenteCreditoSegundoBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         private string valorOuParcelamentoRateio2;
@@ -189,7 +189,7 @@ namespace ArquivoRemessa
         public string ValorOuParcelamentoRateio2
         {
             get { return valorOuParcelamentoRateio2; }
-            set { valorOuParcelamentoRateio2 =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 15); }
+            set { valorOuParcelamentoRateio2 =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 15); }
         }
 
         private string nomeSegundoBeneficiario;
@@ -199,7 +199,7 @@ namespace ArquivoRemessa
         public string NomeSegundoBeneficiario
         {
             get { return nomeSegundoBeneficiario; }
-            set { nomeSegundoBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 40); }
+            set { nomeSegundoBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 40); }
         }
 
         private string filler3;
@@ -209,7 +209,7 @@ namespace ArquivoRemessa
         public string Filler3
         {
             get { return filler3; }
-            set { filler3 =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 31); }
+            set { filler3 =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 31); }
         }
 
         private string parcela2;
@@ -219,7 +219,7 @@ namespace ArquivoRemessa
         public string Parcela2
         {
             get { return parcela2; }
-            set { parcela2 =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 6); }
+            set { parcela2 =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 6); }
         }
 
         private string floatingSegundoBeneficiario;
@@ -229,7 +229,7 @@ namespace ArquivoRemessa
         public string FloatingSegundoBeneficiario
         {
             get { return floatingSegundoBeneficiario; }
-            set { floatingSegundoBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
+            set { floatingSegundoBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         }
 
         private string codigoBancoCreditoTerceiroBeneficiario;
@@ -239,7 +239,7 @@ namespace ArquivoRemessa
         public string CodigoBancoCreditoTerceiroBeneficiario
         {
             get { return codigoBancoCreditoTerceiroBeneficiario; }
-            set { codigoBancoCreditoTerceiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
+            set { codigoBancoCreditoTerceiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         }
 
         private string codigoAgenciaCreditoTerceiroBeneficiario;
@@ -249,7 +249,7 @@ namespace ArquivoRemessa
         public string CodigoAgenciaCreditoTerceiroBeneficiario
         {
             get { return codigoAgenciaCreditoTerceiroBeneficiario; }
-            set { codigoAgenciaCreditoTerceiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 5); }
+            set { codigoAgenciaCreditoTerceiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 5); }
         }
 
         private string digitoAgenciaCreditoTerceiroBeneficiario;
@@ -259,7 +259,7 @@ namespace ArquivoRemessa
         public string DigitoAgenciaCreditoTerceiroBeneficiario
         {
             get { return digitoAgenciaCreditoTerceiroBeneficiario; }
-            set { digitoAgenciaCreditoTerceiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
+            set { digitoAgenciaCreditoTerceiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         private string numeroContaCorrenteCreditoTerceiroBeneficiario;
@@ -269,7 +269,7 @@ namespace ArquivoRemessa
         public string NumeroContaCorrenteCreditoTerceiroBeneficiario
         {
             get { return numeroContaCorrenteCreditoTerceiroBeneficiario; }
-            set { numeroContaCorrenteCreditoTerceiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 12); }
+            set { numeroContaCorrenteCreditoTerceiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 12); }
         }
 
         private string digitoContaCorrenteCreditoTerceiroBeneficiario;
@@ -279,7 +279,7 @@ namespace ArquivoRemessa
         public string DigitoContaCorrenteCreditoTerceiroBeneficiario
         {
             get { return digitoContaCorrenteCreditoTerceiroBeneficiario; }
-            set { digitoContaCorrenteCreditoTerceiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
+            set { digitoContaCorrenteCreditoTerceiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
 
         private string valorOuParcelamentoRateio3;
@@ -292,7 +292,7 @@ namespace ArquivoRemessa
         public string ValorOuParcelamentoRateio3
         {
             get { return valorOuParcelamentoRateio3; }
-            set { valorOuParcelamentoRateio3 =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 15); }
+            set { valorOuParcelamentoRateio3 =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 15); }
         }
 
         private string nomeTerceiroBeneficiario;
@@ -302,7 +302,7 @@ namespace ArquivoRemessa
         public string NomeTerceiroBeneficiario
         {
             get { return nomeTerceiroBeneficiario; }
-            set { nomeTerceiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 40); }
+            set { nomeTerceiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 40); }
         }
 
         private string filler4;
@@ -312,7 +312,7 @@ namespace ArquivoRemessa
         public string Filler4
         {
             get { return filler4; }
-            set { filler4 =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 31); }
+            set { filler4 =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 31); }
         }
 
         private string parcela3;
@@ -322,7 +322,7 @@ namespace ArquivoRemessa
         public string Parcela3
         {
             get { return parcela3; }
-            set { parcela3 =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 6); }
+            set { parcela3 =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 6); }
         }
 
         private string floatingTerceiroBeneficiario;
@@ -334,7 +334,7 @@ namespace ArquivoRemessa
         public string FloatingTerceiroBeneficiario
         {
             get { return floatingTerceiroBeneficiario; }
-            set { floatingTerceiroBeneficiario =Util.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
+            set { floatingTerceiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         }
 
         public TransacaoTipo3()
@@ -349,8 +349,8 @@ namespace ArquivoRemessa
             transacao.Insert(0, tipoRegistro);
             transacao.Insert(1, IdentificacaoEmpresaBanco.ToString().Substring(1, 16));
             transacao.Insert(17, this.identificacaoTituloBanco);
-            transacao.Insert(29,Util.FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.codigoCalculoRateio), 2));
-            transacao.Insert(30,Util.FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.tipoValorInformado), 2));
+            transacao.Insert(29,UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.codigoCalculoRateio), 2));
+            transacao.Insert(30,UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.tipoValorInformado), 2));
             transacao.Insert(31, this.filler);
             transacao.Insert(43, this.codigoBancoCreditoPrimeiroBeneficiario);
             transacao.Insert(46, this.codigoAgenciaCreditoPrimeiroBeneficiario);
@@ -383,7 +383,7 @@ namespace ArquivoRemessa
             transacao.Insert(385, this.parcela3);
             transacao.Insert(391, this.floatingTerceiroBeneficiario);
 
-            var transacaoSemCaractereEspecial =Util.FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+            var transacaoSemCaractereEspecial =UtilRemessa.FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
 
             transacao.Clear();
             transacao.Insert(0, transacaoSemCaractereEspecial);

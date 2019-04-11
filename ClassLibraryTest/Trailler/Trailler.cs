@@ -16,7 +16,7 @@ namespace ArquivoRemessa
             trailler.Insert(0, tipoRegistro);
             trailler.Insert(1, this.branco);
 
-            var transacaoSemCaractereEspecial = Util.FormataArquivo.FormataCampoCaracteresEspeciais(Convert.ToString(trailler));
+            var transacaoSemCaractereEspecial = UtilRemessa.FormataArquivo.FormataCampoCaracteresEspeciais(Convert.ToString(trailler));
 
             trailler.Clear();
             trailler.Insert(0, transacaoSemCaractereEspecial);

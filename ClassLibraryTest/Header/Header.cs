@@ -22,7 +22,7 @@ namespace ArquivoRemessa
         public string CodEmpresa
         {
             get { return codEmpresa; }
-            set { codEmpresa = Util.FormataArquivo.FormataCampoComZerosEsquerda(value, 20); }
+            set { codEmpresa = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(value, 20); }
         }
 
         private string nomeEmpresa;
@@ -33,7 +33,7 @@ namespace ArquivoRemessa
         {
             
             get { return nomeEmpresa; }
-            set { nomeEmpresa = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 30); }
+            set { nomeEmpresa = UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 30); }
         }
 
         private string numeroBradesco;
@@ -43,7 +43,7 @@ namespace ArquivoRemessa
         public string NumeroBradesco
         {
             get { return numeroBradesco; }
-            set { numeroBradesco = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
+            set { numeroBradesco = UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         }
 
         private string nomeBanco;
@@ -53,7 +53,7 @@ namespace ArquivoRemessa
         public string NomeBanco
         {
             get { return nomeBanco; }
-            set { nomeBanco = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 15); }
+            set { nomeBanco = UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 15); }
         }
 
         private DateTime dataGravacaoArquivo;
@@ -73,7 +73,7 @@ namespace ArquivoRemessa
         public string IdentSistema
         {
             get { return identSistema; }
-            set { identSistema = Util.FormataArquivo.FormataCampoComEspacosDireita(value, 2); }
+            set { identSistema = UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 2); }
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace ArquivoRemessa
         public string NumSeqRemessa
         {
             get { return numSeqRemessa; }
-            set { numSeqRemessa = Util.FormataArquivo.FormataCampoComZerosEsquerda(value, 7); }
+            set { numSeqRemessa = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(value, 7); }
         }
 
         private string branco2 = new string(' ', 277);
@@ -108,13 +108,13 @@ namespace ArquivoRemessa
             header.Insert(46, this.nomeEmpresa);
             header.Insert(76, this.numeroBradesco);
             header.Insert(79, this.nomeBanco);
-            header.Insert(94, Util.FormataArquivo.FormataCampoComZerosEsquerda(this.dataGravacaoArquivo.ToString("ddMMyy"), 6));
+            header.Insert(94, UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(this.dataGravacaoArquivo.ToString("ddMMyy"), 6));
             header.Insert(100, this.branco);
             header.Insert(108, this.identSistema);
             header.Insert(110, numSeqRemessa);
             header.Insert(117, this.branco2);
 
-            var transacaoSemCaractereEspecial = Util.FormataArquivo.FormataCampoCaracteresEspeciais(Convert.ToString(header));
+            var transacaoSemCaractereEspecial = UtilRemessa.FormataArquivo.FormataCampoCaracteresEspeciais(Convert.ToString(header));
 
             header.Clear();
             header.Insert(0, transacaoSemCaractereEspecial);

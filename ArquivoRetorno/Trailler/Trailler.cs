@@ -38,7 +38,7 @@ namespace ArquivoRetorno
 
         public Trailler GetTrailler(string path)
         {
-            List<String> lista = Util.FormataArquivo.LeArquivoRetorno(path);
+            List<String> lista = UtilRemessa.FormataArquivo.LeArquivoRetorno(path);
             String linhaTrailler = lista[lista.Count -1];
 
             Trailler trailler = new Trailler

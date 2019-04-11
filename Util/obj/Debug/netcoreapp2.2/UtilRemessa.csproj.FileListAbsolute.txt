@@ -1,0 +1,9 @@
+C:\Users\Int6\source\repos\ClassLibraryTest\Util\bin\Debug\netcoreapp2.2\UtilRemessa.deps.json
+C:\Users\Int6\source\repos\ClassLibraryTest\Util\bin\Debug\netcoreapp2.2\UtilRemessa.dll
+C:\Users\Int6\source\repos\ClassLibraryTest\Util\bin\Debug\netcoreapp2.2\UtilRemessa.pdb
+C:\Users\Int6\source\repos\ClassLibraryTest\Util\obj\Debug\netcoreapp2.2\UtilRemessa.csproj.CoreCompileInputs.cache
+C:\Users\Int6\source\repos\ClassLibraryTest\Util\obj\Debug\netcoreapp2.2\UtilRemessa.AssemblyInfoInputs.cache
+C:\Users\Int6\source\repos\ClassLibraryTest\Util\obj\Debug\netcoreapp2.2\UtilRemessa.AssemblyInfo.cs
+C:\Users\Int6\source\repos\ClassLibraryTest\Util\obj\Debug\netcoreapp2.2\UtilRemessa.dll
+C:\Users\Int6\source\repos\ClassLibraryTest\Util\obj\Debug\netcoreapp2.2\UtilRemessa.pdb
+C:\Users\Int6\source\repos\ClassLibraryTest\Util\obj\Debug\netcoreapp2.2\UtilRemessa.csprojAssemblyReference.cache

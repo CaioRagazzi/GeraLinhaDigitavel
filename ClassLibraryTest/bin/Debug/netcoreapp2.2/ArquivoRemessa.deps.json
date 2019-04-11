@@ -6,28 +6,28 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "ArquivoRemessa/1.0.17": {
+      "ArquivoRemessa/1.0.24": {
         "dependencies": {
-          "Util": "1.0.0"
+          "UtilRemessa": "1.0.5"
         },
         "runtime": {
           "ArquivoRemessa.dll": {}
         }
       },
-      "Util/1.0.0": {
+      "UtilRemessa/1.0.5": {
         "runtime": {
-          "Util.dll": {}
+          "UtilRemessa.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "ArquivoRemessa/1.0.17": {
+    "ArquivoRemessa/1.0.24": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Util/1.0.0": {
+    "UtilRemessa/1.0.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

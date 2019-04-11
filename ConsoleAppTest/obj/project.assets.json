@@ -208,11 +208,11 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "ArquivoRemessa/1.0.17": {
+      "ArquivoRemessa/1.0.24": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "Util": "1.0.0"
+          "UtilRemessa": "1.0.5"
         },
         "compile": {
           "bin/placeholder/ArquivoRemessa.dll": {}
@@ -225,7 +225,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "Util": "1.0.0"
+          "UtilRemessa": "1.0.5"
         },
         "compile": {
           "bin/placeholder/ArquivoRetorno.dll": {}
@@ -234,14 +234,14 @@
           "bin/placeholder/ArquivoRetorno.dll": {}
         }
       },
-      "Util/1.0.0": {
+      "UtilRemessa/1.0.5": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
-          "bin/placeholder/Util.dll": {}
+          "bin/placeholder/UtilRemessa.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Util.dll": {}
+          "bin/placeholder/UtilRemessa.dll": {}
         }
       }
     }
@@ -715,7 +715,7 @@
         "netstandard.library.nuspec"
       ]
     },
-    "ArquivoRemessa/1.0.17": {
+    "ArquivoRemessa/1.0.24": {
       "type": "project",
       "path": "../ClassLibraryTest/ArquivoRemessa.csproj",
       "msbuildProject": "../ClassLibraryTest/ArquivoRemessa.csproj"
@@ -725,18 +725,18 @@
       "path": "../ArquivoRetorno/ArquivoRetorno.csproj",
       "msbuildProject": "../ArquivoRetorno/ArquivoRetorno.csproj"
     },
-    "Util/1.0.0": {
+    "UtilRemessa/1.0.5": {
       "type": "project",
-      "path": "../Util/Util.csproj",
-      "msbuildProject": "../Util/Util.csproj"
+      "path": "../Util/UtilRemessa.csproj",
+      "msbuildProject": "../Util/UtilRemessa.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "ArquivoRemessa >= 1.0.17",
+      "ArquivoRemessa >= 1.0.24",
       "ArquivoRetorno >= 1.0.0",
       "Microsoft.NETCore.App >= 2.2.0",
-      "Util >= 1.0.0"
+      "UtilRemessa >= 1.0.5"
     ]
   },
   "packageFolders": {
@@ -775,8 +775,8 @@
             "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\ArquivoRemessa.csproj": {
               "projectPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\ArquivoRemessa.csproj"
             },
-            "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\Util\\Util.csproj": {
-              "projectPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\Util\\Util.csproj"
+            "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\Util\\UtilRemessa.csproj": {
+              "projectPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\Util\\UtilRemessa.csproj"
             }
           }
         }

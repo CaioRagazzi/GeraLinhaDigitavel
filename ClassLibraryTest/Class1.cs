@@ -36,7 +36,19 @@ namespace ArquivoRemessa
                 NumSeqRemessa = "48"
             };
 
-            TransacaoTipo1 stringTransacaoTipo1 = new TransacaoTipo1
+            Trailler stringTrailler = new Trailler();
+
+            List<StringBuilder> listaTransacoes = new List<StringBuilder>
+            {
+                stringHeader.GetHeader(),
+                //stringTransacaoTipo1.GetTransacao(),
+                //stringTrailler.GetTrailler()
+            };
+
+            for (int i = 0; i < 1000000; i++)
+            {
+                //string nomeVariavel = "stringTransacaoTipo" + Convert.ToString(num);
+                TransacaoTipo1 tr1 = new TransacaoTipo1
             {
                 NumeroControleParticipante = Convert.ToBase64String(Guid.NewGuid().ToByteArray()),
                 CodigoBancoDebito = "000",
@@ -73,17 +85,13 @@ namespace ArquivoRemessa
                 //SufixoCep = "345",
                 SegundaMensagem = "Remessa gerada no dia 29/03 as 11:00"
             };
+                listaTransacoes.Add(tr1.GetTransacao());
+            }
 
-            Trailler stringTrailler = new Trailler();
+            listaTransacoes.Add(stringTrailler.GetTrailler());
 
-            List<StringBuilder> listaTransacoes = new List<StringBuilder>
-            {
-                stringHeader.GetHeader(),
-                stringTransacaoTipo1.GetTransacao(),
-                stringTrailler.GetTrailler()
-            };
+            UtilRemessa.FormataArquivo.GravaArquivo(listaTransacoes, "C:\\TesteGravacao2\\" + GetFileName(false));
 
-            Util.FormataArquivo.GravaArquivo(listaTransacoes, "C:\\TesteGravacao2\\" + GetFileName(false));
         }
     }
 }
