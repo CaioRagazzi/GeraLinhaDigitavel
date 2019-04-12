@@ -6,35 +6,35 @@ namespace ArquivoRetorno
 {
     public class Trailler
     {
-        private string identificacaoRegistro;
-        private string identificacaoDoRetorno;
-        private string identificacaoTipoRegistro;
-        private string codigoBanco;
-        private string brancos;
-        private string quantidadeTitulosCobranca;
-        private string valorTotalCobranca;
-        private string numAvisoBancario;
-        private string brancos2;
-        private string quantidadeRegistrosOcorrencia2ConfirmacaoEntradas;
-        private string valorRegistrosOcorrencia2ConfirmacaoEntradas;
-        private string valorRegistrosOcorrencia6Liquidacao;
-        private string quantidadeRegistrosOcorrencia6Liquidacao;
-        private string valorRegistrosOcorrencia6;
-        private string quantidadeRegistrosOcorrencia9E10TitulosBaixados;
-        private string valorDosRegistrosOcorrencia9E10TitulosBaixados;
-        private string quantidadeRegistrosOcorrencia13AbatimentoCancelado;
-        private string valorRegistrosOcorrencia13AbatimentoCancelado;
-        private string quantidadeRegistrosOcorrencia14VencimentoAlterado;
-        private string valorRegistrosOcorrencia14VencimentoAlterado;
-        private string quantidadeRegistrosOcorrencia12AbatimentoConcedido;
-        private string valorRegistrosOcorrencia12AbatimentoConcedido;
-        private string quantidadeRegistrosOcorrencia19ConfirmacaoInstrucaoProtesto;
-        private string valorRegistrosOcorrencia19ConfirmacaoInstrucaoProtesto;
-        private string brancos3;
-        private string valorTotalRateiosEfetuados;
-        private string quantidadeTotalRateiosEfetuados;
-        private string brancos4;
-        private string numSequencialRegistro;
+        private string IdentificacaoRegistro { get; set; }
+        private string IdentificacaoDoRetorno { get; set; }
+        private string IdentificacaoTipoRegistro { get; set; }
+        private string CodigoBanco { get; set; }
+        private string Brancos { get; set; }
+        private string QuantidadeTitulosCobranca { get; set; }
+        private string ValorTotalCobranca { get; set; }
+        private string NumAvisoBancario { get; set; }
+        private string Brancos2 { get; set; }
+        private string QuantidadeRegistrosOcorrencia2ConfirmacaoEntradas { get; set; }
+        private string ValorRegistrosOcorrencia2ConfirmacaoEntradas { get; set; }
+        private string ValorRegistrosOcorrencia6Liquidacao { get; set; }
+        private string QuantidadeRegistrosOcorrencia6Liquidacao { get; set; }
+        private string ValorRegistrosOcorrencia6 { get; set; }
+        private string QuantidadeRegistrosOcorrencia9E10TitulosBaixados { get; set; }
+        private string ValorDosRegistrosOcorrencia9E10TitulosBaixados { get; set; }
+        private string QuantidadeRegistrosOcorrencia13AbatimentoCancelado { get; set; }
+        private string ValorRegistrosOcorrencia13AbatimentoCancelado { get; set; }
+        private string QuantidadeRegistrosOcorrencia14VencimentoAlterado { get; set; }
+        private string ValorRegistrosOcorrencia14VencimentoAlterado { get; set; }
+        private string QuantidadeRegistrosOcorrencia12AbatimentoConcedido { get; set; }
+        private string ValorRegistrosOcorrencia12AbatimentoConcedido { get; set; }
+        private string QuantidadeRegistrosOcorrencia19ConfirmacaoInstrucaoProtesto { get; set; }
+        private string ValorRegistrosOcorrencia19ConfirmacaoInstrucaoProtesto { get; set; }
+        private string Brancos3 { get; set; }
+        private string ValorTotalRateiosEfetuados { get; set; }
+        private string QuantidadeTotalRateiosEfetuados { get; set; }
+        private string Brancos4 { get; set; }
+        private string NumSequencialRegistro { get; set; }
 
         public Trailler GetTrailler(string path)
         {
@@ -43,35 +43,35 @@ namespace ArquivoRetorno
 
             Trailler trailler = new Trailler
             {
-                identificacaoRegistro = linhaTrailler.Substring(0, 1),
-                identificacaoDoRetorno = linhaTrailler.Substring(1, 1),
-                identificacaoTipoRegistro = linhaTrailler.Substring(2, 2),
-                codigoBanco = linhaTrailler.Substring(4, 3),
-                brancos = linhaTrailler.Substring(7, 10),
-                quantidadeTitulosCobranca = linhaTrailler.Substring(17, 8),
-                valorTotalCobranca = linhaTrailler.Substring(25, 14),
-                numAvisoBancario = linhaTrailler.Substring(39, 8),
-                brancos2 = linhaTrailler.Substring(47, 10),
-                quantidadeRegistrosOcorrencia2ConfirmacaoEntradas = linhaTrailler.Substring(57, 5),
-                valorRegistrosOcorrencia2ConfirmacaoEntradas = linhaTrailler.Substring(62, 12),
-                valorRegistrosOcorrencia6Liquidacao = linhaTrailler.Substring(74, 12),
-                quantidadeRegistrosOcorrencia6Liquidacao = linhaTrailler.Substring(86, 5),
-                valorRegistrosOcorrencia6 = linhaTrailler.Substring(91, 12),
-                quantidadeRegistrosOcorrencia9E10TitulosBaixados = linhaTrailler.Substring(103, 5),
-                valorDosRegistrosOcorrencia9E10TitulosBaixados = linhaTrailler.Substring(108, 12),
-                quantidadeRegistrosOcorrencia13AbatimentoCancelado = linhaTrailler.Substring(120, 5),
-                valorRegistrosOcorrencia13AbatimentoCancelado = linhaTrailler.Substring(125, 12),
-                quantidadeRegistrosOcorrencia14VencimentoAlterado = linhaTrailler.Substring(137, 5),
-                valorRegistrosOcorrencia14VencimentoAlterado = linhaTrailler.Substring(142, 12),
-                quantidadeRegistrosOcorrencia12AbatimentoConcedido = linhaTrailler.Substring(154, 5),
-                valorRegistrosOcorrencia12AbatimentoConcedido = linhaTrailler.Substring(159, 12),
-                quantidadeRegistrosOcorrencia19ConfirmacaoInstrucaoProtesto = linhaTrailler.Substring(171, 5),
-                valorRegistrosOcorrencia19ConfirmacaoInstrucaoProtesto = linhaTrailler.Substring(176, 12),
-                brancos3 = linhaTrailler.Substring(188, 174),
-                valorTotalRateiosEfetuados = linhaTrailler.Substring(362, 15),
-                quantidadeTotalRateiosEfetuados = linhaTrailler.Substring(377, 8),
-                brancos4 = linhaTrailler.Substring(385, 9),
-                numSequencialRegistro = linhaTrailler.Substring(394, 6)
+                IdentificacaoRegistro = linhaTrailler.Substring(0, 1),
+                IdentificacaoDoRetorno = linhaTrailler.Substring(1, 1),
+                IdentificacaoTipoRegistro = linhaTrailler.Substring(2, 2),
+                CodigoBanco = linhaTrailler.Substring(4, 3),
+                Brancos = linhaTrailler.Substring(7, 10),
+                QuantidadeTitulosCobranca = linhaTrailler.Substring(17, 8),
+                ValorTotalCobranca = linhaTrailler.Substring(25, 14),
+                NumAvisoBancario = linhaTrailler.Substring(39, 8),
+                Brancos2 = linhaTrailler.Substring(47, 10),
+                QuantidadeRegistrosOcorrencia2ConfirmacaoEntradas = linhaTrailler.Substring(57, 5),
+                ValorRegistrosOcorrencia2ConfirmacaoEntradas = linhaTrailler.Substring(62, 12),
+                ValorRegistrosOcorrencia6Liquidacao = linhaTrailler.Substring(74, 12),
+                QuantidadeRegistrosOcorrencia6Liquidacao = linhaTrailler.Substring(86, 5),
+                ValorRegistrosOcorrencia6 = linhaTrailler.Substring(91, 12),
+                QuantidadeRegistrosOcorrencia9E10TitulosBaixados = linhaTrailler.Substring(103, 5),
+                ValorDosRegistrosOcorrencia9E10TitulosBaixados = linhaTrailler.Substring(108, 12),
+                QuantidadeRegistrosOcorrencia13AbatimentoCancelado = linhaTrailler.Substring(120, 5),
+                ValorRegistrosOcorrencia13AbatimentoCancelado = linhaTrailler.Substring(125, 12),
+                QuantidadeRegistrosOcorrencia14VencimentoAlterado = linhaTrailler.Substring(137, 5),
+                ValorRegistrosOcorrencia14VencimentoAlterado = linhaTrailler.Substring(142, 12),
+                QuantidadeRegistrosOcorrencia12AbatimentoConcedido = linhaTrailler.Substring(154, 5),
+                ValorRegistrosOcorrencia12AbatimentoConcedido = linhaTrailler.Substring(159, 12),
+                QuantidadeRegistrosOcorrencia19ConfirmacaoInstrucaoProtesto = linhaTrailler.Substring(171, 5),
+                ValorRegistrosOcorrencia19ConfirmacaoInstrucaoProtesto = linhaTrailler.Substring(176, 12),
+                Brancos3 = linhaTrailler.Substring(188, 174),
+                ValorTotalRateiosEfetuados = linhaTrailler.Substring(362, 15),
+                QuantidadeTotalRateiosEfetuados = linhaTrailler.Substring(377, 8),
+                Brancos4 = linhaTrailler.Substring(385, 9),
+                NumSequencialRegistro = linhaTrailler.Substring(394, 6)
             };
 
             return trailler;

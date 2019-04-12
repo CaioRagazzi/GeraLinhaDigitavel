@@ -83,7 +83,7 @@ namespace ArquivoRemessa
                 PrimeiraMensagem = "Gerãndo arquivo reméss@",
                 Cep = "04679345",
                 //SufixoCep = "345",
-                SegundaMensagem = "Remessa gerada no dia 29/03 as 11:00"
+                SegundaMensagem = "Remessa gerada no dia 29/03 as 11:00 posição"
             };
                 listaTransacoes.Add(tr1.GetTransacao());
             }

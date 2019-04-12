@@ -3,6 +3,7 @@ using System.Text;
 using ArquivoRemessa;
 using Xunit;
 using System.Numerics;
+using System.Globalization;
 
 namespace XUnitTestProject1
 {
@@ -104,6 +105,13 @@ namespace XUnitTestProject1
         {
             decimal money = 20.50m;
             var moneystring = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(money.ToString().Replace(",",""), 10);
+        }
+
+        [Fact]
+        public void TestConvertStringToDecimal()
+        {
+            string valorString = "0000000130020";
+            decimal d = decimal.Parse(valorString, CultureInfo.InvariantCulture);
         }
     }
 }

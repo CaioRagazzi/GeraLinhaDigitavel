@@ -8,22 +8,22 @@ namespace ArquivoRetorno
 {
     public class Header
     {
-        private string tipoRegistro;
-        private string identificacaoArquivoRemessa;
-        private string literalRemessa;
-        private string codigoServico;
-        private string literalServico;
-        private string codEmpresa;
-        private string nomeEmpresa;
-        private string numeroBradesco;
-        private string nomeBanco;
-        private string dataGravacaoArquivo;
-        private string densidadeDeGravacao;
-        private string numAvisoBancario;
-        private string branco;
-        private string dataDoCredito;
-        private string branco2;
-        private string numSequencialRegistro;
+        private string TipoRegistro { get; set; }
+        private string IdentificacaoArquivoRemessa { get; set; }
+        private string LiteralRemessa { get; set; }
+        private string CodigoServico { get; set; }
+        private string LiteralServico { get; set; }
+        private string CodEmpresa { get; set; }
+        private string NomeEmpresa { get; set; }
+        private string NumeroBradesco { get; set; }
+        private string NomeBanco { get; set; }
+        private string DataGravacaoArquivo { get; set; }
+        private string DensidadeDeGravacao { get; set; }
+        private string NumAvisoBancario { get; set; }
+        private string Branco { get; set; }
+        private string DataDoCredito { get; set; }
+        private string Branco2 { get; set; }
+        private string NumSequencialRegistro { get; set; }
 
 
         public Header GeraHeader(string path)
@@ -33,22 +33,22 @@ namespace ArquivoRetorno
 
             Header header =  new Header
             {
-                tipoRegistro = linhaHeader.Substring(0, 1),
-                identificacaoArquivoRemessa = linhaHeader.Substring(1, 1),
-                literalRemessa = linhaHeader.Substring(2, 7),
-                codigoServico = linhaHeader.Substring(9, 2),
-                literalServico = linhaHeader.Substring(11, 15),
-                codEmpresa = linhaHeader.Substring(26, 20),
-                nomeEmpresa = linhaHeader.Substring(46, 30),
-                numeroBradesco = linhaHeader.Substring(76, 3),
-                nomeBanco = linhaHeader.Substring(79, 15),
-                dataGravacaoArquivo = linhaHeader.Substring(94, 6),
-                densidadeDeGravacao= linhaHeader.Substring(100, 8),
-                numAvisoBancario = linhaHeader.Substring(108, 5),
-                branco = linhaHeader.Substring(113, 266),
-                dataDoCredito = linhaHeader.Substring(379, 6),
-                branco2 = linhaHeader.Substring(385, 9),
-                numSequencialRegistro = linhaHeader.Substring(394, 6)
+                TipoRegistro = linhaHeader.Substring(0, 1),
+                IdentificacaoArquivoRemessa = linhaHeader.Substring(1, 1),
+                LiteralRemessa = linhaHeader.Substring(2, 7),
+                CodigoServico = linhaHeader.Substring(9, 2),
+                LiteralServico = linhaHeader.Substring(11, 15),
+                CodEmpresa = linhaHeader.Substring(26, 20),
+                NomeEmpresa = linhaHeader.Substring(46, 30),
+                NumeroBradesco = linhaHeader.Substring(76, 3),
+                NomeBanco = linhaHeader.Substring(79, 15),
+                DataGravacaoArquivo = linhaHeader.Substring(94, 6),
+                DensidadeDeGravacao= linhaHeader.Substring(100, 8),
+                NumAvisoBancario = linhaHeader.Substring(108, 5),
+                Branco = linhaHeader.Substring(113, 266),
+                DataDoCredito = linhaHeader.Substring(379, 6),
+                Branco2 = linhaHeader.Substring(385, 9),
+                NumSequencialRegistro = linhaHeader.Substring(394, 6)
             };
 
             return header;

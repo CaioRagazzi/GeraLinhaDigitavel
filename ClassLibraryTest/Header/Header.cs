@@ -114,7 +114,7 @@ namespace ArquivoRemessa
             header.Insert(110, numSeqRemessa);
             header.Insert(117, this.branco2);
 
-            var transacaoSemCaractereEspecial = UtilRemessa.FormataArquivo.FormataCampoCaracteresEspeciais(Convert.ToString(header));
+            var transacaoSemCaractereEspecial = UtilRemessa.FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(header));
 
             header.Clear();
             header.Insert(0, transacaoSemCaractereEspecial);

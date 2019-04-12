@@ -22,17 +22,17 @@ namespace UtilRemessa
             return campo.PadLeft(tamanho, '0').Substring(0, tamanho);
         }
 
-        public static string FormataCampoCaracteresEspeciais(string campo)
-        {
-            StringBuilder sbReturn = new StringBuilder();
-            var arrayText = campo.Normalize(NormalizationForm.FormD).ToCharArray();
-            foreach (char letter in arrayText)
-            {
-                if (CharUnicodeInfo.GetUnicodeCategory(letter) != UnicodeCategory.NonSpacingMark)
-                    sbReturn.Append(letter);
-            }
-            return sbReturn.ToString();
-        }
+        //public static string FormataCampoCaracteresEspeciais(string campo)
+        //{
+        //    StringBuilder sbReturn = new StringBuilder();
+        //    var arrayText = campo.Normalize(NormalizationForm.FormD).ToCharArray();
+        //    foreach (char letter in arrayText)
+        //    {
+        //        if (CharUnicodeInfo.GetUnicodeCategory(letter) != UnicodeCategory.NonSpacingMark)
+        //            sbReturn.Append(letter);
+        //    }
+        //    return sbReturn.ToString();
+        //}
 
         public static string SubstituiCaracteresEspeciais(string text)
         {
@@ -152,6 +152,27 @@ namespace UtilRemessa
                 Console.WriteLine(e.Message);
                 return null;
             }
+        }
+
+        public static DateTime? ConverteETrataData(string dataString)
+        {
+            if (string.IsNullOrEmpty(dataString))
+            {
+                return null;
+            }
+            else
+            {
+                return DateTime.ParseExact(dataString, "ddMMyy", System.Globalization.CultureInfo.InvariantCulture);
+            }
+        }
+
+        public static decimal ConverteETrataDecimal(string valor)
+        {
+            var novoValor = valor.Insert((valor.Length - 2), ".");
+            var valorConvertido = decimal.Parse(novoValor, CultureInfo.InvariantCulture);
+
+            return valorConvertido;
+
         }
     }
 }

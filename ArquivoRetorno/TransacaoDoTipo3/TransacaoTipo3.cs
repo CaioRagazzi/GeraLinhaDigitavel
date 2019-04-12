@@ -6,49 +6,49 @@ namespace ArquivoRetorno
 {
     public class TransacaoTipo3
     {
-        private string identificacaoRegistro;
-        private string identificacaoEmpresaBanco;
-        private string identificacaiTituloBanco;
-        private string codigoCalculoRateio;
-        private string tipoValorInformado;
-        private string filler1;
-        private string codigoBancoCreditoPrimeiroBeneficiario;
-        private string codigoAgenciaCreditoPrimeiroBeneficiario;
-        private string digitoAgenciaCreditoPrimeiroBeneficiario;
-        private string numeroContaCorrenteCreditoPrimeiroBeneficiario;
-        private string digitoContaCorrenteCreditoPrimeiroBeneficiario;
-        private string valorEfetivoRateioQuandoPagamento;
-        private string nomePrimeiroBeneficiario;
-        private string filler2;
-        private string parcela1;
-        private string floatingParaPrimeiroBeneficiario;
-        private string dataCreditoPrimeiroBeneficiario;
-        private string statusMotivoOcorrenciaRateio;
-        private string codigoBancoCreditoSegundoBeneficiarioQuandoPagamento;
-        private string codigoAgenciaCreditoSegundoBeneficiario;
-        private string digitoAgenciaCreditoSegundoBeneficiario;
-        private string numeroContaCorrenteCreditoSegundoBeneficiario;
-        private string digitoContaCorrenteCreditoSegundoBeneficiario;
-        private string valorEfetivoRateioQuandoPagamento2;
-        private string nomeSegundoBeneficiario;
-        private string filler3;
-        private string parcela2;
-        private string floatingParaSegundoBeneficiario;
-        private string dataCreditoSegundoBeneficiarioQuandoPagamento;
-        private string statusMotivoOcorrenciaRateio2;
-        private string codigoBancoCreditoTerceiroBeneficiarioQuandoPagamento;
-        private string codigoAgenciaCreditoTerceiroBeneficiario;
-        private string digitoAgenciaCreditoTerceiroBeneficiario;
-        private string numeroContaCorrenteCreditoTerceiroBeneficiario;
-        private string digitoContaCorrenteCreditoTerceiroBeneficiario;
-        private string valorEfetivoRateioQuandoPagamento3;
-        private string nomeTerceiroBeneficiario;
-        private string filler4;
-        private string parcela3;
-        private string floatingParaTerceiroBeneficiario;
-        private string dataCreditoTerceiroBeneficiarioQuandoPagamento;
-        private string statusMotivoOcorrenciaRateio3;
-        private string numSequencialRegistro;
+        private string IdentificacaoRegistro { get; set; }
+        private string IdentificacaoEmpresaBanco { get; set; }
+        private string IdentificacaiTituloBanco { get; set; }
+        private string CodigoCalculoRateio { get; set; }
+        private string TipoValorInformado { get; set; }
+        private string Filler1 { get; set; }
+        private string CodigoBancoCreditoPrimeiroBeneficiario { get; set; }
+        private string CodigoAgenciaCreditoPrimeiroBeneficiario { get; set; }
+        private string DigitoAgenciaCreditoPrimeiroBeneficiario { get; set; }
+        private string NumeroContaCorrenteCreditoPrimeiroBeneficiario { get; set; }
+        private string DigitoContaCorrenteCreditoPrimeiroBeneficiario { get; set; }
+        private string ValorEfetivoRateioQuandoPagamento { get; set; }
+        private string NomePrimeiroBeneficiario { get; set; }
+        private string Filler2 { get; set; }
+        private string Parcela1 { get; set; }
+        private string FloatingParaPrimeiroBeneficiario { get; set; }
+        private string DataCreditoPrimeiroBeneficiario { get; set; }
+        private string StatusMotivoOcorrenciaRateio { get; set; }
+        private string CodigoBancoCreditoSegundoBeneficiarioQuandoPagamento { get; set; }
+        private string CodigoAgenciaCreditoSegundoBeneficiario { get; set; }
+        private string DigitoAgenciaCreditoSegundoBeneficiario { get; set; }
+        private string NumeroContaCorrenteCreditoSegundoBeneficiario { get; set; }
+        private string DigitoContaCorrenteCreditoSegundoBeneficiario { get; set; }
+        private string ValorEfetivoRateioQuandoPagamento2 { get; set; }
+        private string NomeSegundoBeneficiario { get; set; }
+        private string Filler3 { get; set; }
+        private string Parcela2 { get; set; }
+        private string FloatingParaSegundoBeneficiario { get; set; }
+        private string DataCreditoSegundoBeneficiarioQuandoPagamento { get; set; }
+        private string StatusMotivoOcorrenciaRateio2 { get; set; }
+        private string CodigoBancoCreditoTerceiroBeneficiarioQuandoPagamento { get; set; }
+        private string CodigoAgenciaCreditoTerceiroBeneficiario { get; set; }
+        private string DigitoAgenciaCreditoTerceiroBeneficiario { get; set; }
+        private string NumeroContaCorrenteCreditoTerceiroBeneficiario { get; set; }
+        private string DigitoContaCorrenteCreditoTerceiroBeneficiario { get; set; }
+        private string ValorEfetivoRateioQuandoPagamento3 { get; set; }
+        private string NomeTerceiroBeneficiario { get; set; }
+        private string Filler4 { get; set; }
+        private string Parcela3 { get; set; }
+        private string FloatingParaTerceiroBeneficiario { get; set; }
+        private string DataCreditoTerceiroBeneficiarioQuandoPagamento { get; set; }
+        private string StatusMotivoOcorrenciaRateio3 { get; set; }
+        private string NumSequencialRegistro { get; set; }
 
 
 
@@ -63,49 +63,49 @@ namespace ArquivoRetorno
                 {
                     transacoesTipo3.Add(new TransacaoTipo3
                     {
-                        identificacaoRegistro = item.Substring(0, 1),
-                        identificacaoEmpresaBanco = item.Substring(1, 16),
-                        identificacaiTituloBanco = item.Substring(17, 12),
-                        codigoCalculoRateio = item.Substring(29, 1),
-                        tipoValorInformado = item.Substring(30, 1),
-                        filler1 = item.Substring(31, 12),
-                        codigoBancoCreditoPrimeiroBeneficiario = item.Substring(43, 3),
-                        codigoAgenciaCreditoPrimeiroBeneficiario = item.Substring(46, 5),
-                        digitoAgenciaCreditoPrimeiroBeneficiario = item.Substring(51, 1),
-                        numeroContaCorrenteCreditoPrimeiroBeneficiario = item.Substring(52, 12),
-                        digitoContaCorrenteCreditoPrimeiroBeneficiario = item.Substring(64, 1),
-                        valorEfetivoRateioQuandoPagamento = item.Substring(65, 15),
-                        nomePrimeiroBeneficiario = item.Substring(80, 40),
-                        filler2 = item.Substring(120, 21),
-                        parcela1 = item.Substring(141, 6),
-                        floatingParaPrimeiroBeneficiario = item.Substring(147, 3),
-                        dataCreditoPrimeiroBeneficiario = item.Substring(147, 3),
-                        statusMotivoOcorrenciaRateio = item.Substring(150, 8),
-                        codigoBancoCreditoSegundoBeneficiarioQuandoPagamento = item.Substring(160, 3),
-                        codigoAgenciaCreditoSegundoBeneficiario = item.Substring(163, 5),
-                        digitoAgenciaCreditoSegundoBeneficiario = item.Substring(168, 1),
-                        numeroContaCorrenteCreditoSegundoBeneficiario = item.Substring(169, 12),
-                        digitoContaCorrenteCreditoSegundoBeneficiario = item.Substring(181, 1),
-                        valorEfetivoRateioQuandoPagamento2 = item.Substring(182, 15),
-                        nomeSegundoBeneficiario = item.Substring(197, 40),
-                        filler3 = item.Substring(237, 21),
-                        parcela2 = item.Substring(258, 6),
-                        floatingParaSegundoBeneficiario = item.Substring(264, 3),
-                        dataCreditoSegundoBeneficiarioQuandoPagamento = item.Substring(267, 8),
-                        statusMotivoOcorrenciaRateio2 = item.Substring(257, 2),
-                        codigoBancoCreditoTerceiroBeneficiarioQuandoPagamento = item.Substring(277, 3),
-                        codigoAgenciaCreditoTerceiroBeneficiario = item.Substring(280, 5),
-                        digitoAgenciaCreditoTerceiroBeneficiario = item.Substring(285, 1),
-                        numeroContaCorrenteCreditoTerceiroBeneficiario = item.Substring(286, 12),
-                        digitoContaCorrenteCreditoTerceiroBeneficiario = item.Substring(298, 1),
-                        valorEfetivoRateioQuandoPagamento3 = item.Substring(299, 15),
-                        nomeTerceiroBeneficiario = item.Substring(314, 40),
-                        filler4 = item.Substring(354, 21),
-                        parcela3 = item.Substring(375, 6),
-                        floatingParaTerceiroBeneficiario = item.Substring(381, 3),
-                        dataCreditoTerceiroBeneficiarioQuandoPagamento = item.Substring(384, 8),
-                        statusMotivoOcorrenciaRateio3 = item.Substring(392, 2),
-                        numSequencialRegistro = item.Substring(394, 6)
+                        IdentificacaoRegistro = item.Substring(0, 1),
+                        IdentificacaoEmpresaBanco = item.Substring(1, 16),
+                        IdentificacaiTituloBanco = item.Substring(17, 12),
+                        CodigoCalculoRateio = item.Substring(29, 1),
+                        TipoValorInformado = item.Substring(30, 1),
+                        Filler1 = item.Substring(31, 12),
+                        CodigoBancoCreditoPrimeiroBeneficiario = item.Substring(43, 3),
+                        CodigoAgenciaCreditoPrimeiroBeneficiario = item.Substring(46, 5),
+                        DigitoAgenciaCreditoPrimeiroBeneficiario = item.Substring(51, 1),
+                        NumeroContaCorrenteCreditoPrimeiroBeneficiario = item.Substring(52, 12),
+                        DigitoContaCorrenteCreditoPrimeiroBeneficiario = item.Substring(64, 1),
+                        ValorEfetivoRateioQuandoPagamento = item.Substring(65, 15),
+                        NomePrimeiroBeneficiario = item.Substring(80, 40),
+                        Filler2 = item.Substring(120, 21),
+                        Parcela1 = item.Substring(141, 6),
+                        FloatingParaPrimeiroBeneficiario = item.Substring(147, 3),
+                        DataCreditoPrimeiroBeneficiario = item.Substring(147, 3),
+                        StatusMotivoOcorrenciaRateio = item.Substring(150, 8),
+                        CodigoBancoCreditoSegundoBeneficiarioQuandoPagamento = item.Substring(160, 3),
+                        CodigoAgenciaCreditoSegundoBeneficiario = item.Substring(163, 5),
+                        DigitoAgenciaCreditoSegundoBeneficiario = item.Substring(168, 1),
+                        NumeroContaCorrenteCreditoSegundoBeneficiario = item.Substring(169, 12),
+                        DigitoContaCorrenteCreditoSegundoBeneficiario = item.Substring(181, 1),
+                        ValorEfetivoRateioQuandoPagamento2 = item.Substring(182, 15),
+                        NomeSegundoBeneficiario = item.Substring(197, 40),
+                        Filler3 = item.Substring(237, 21),
+                        Parcela2 = item.Substring(258, 6),
+                        FloatingParaSegundoBeneficiario = item.Substring(264, 3),
+                        DataCreditoSegundoBeneficiarioQuandoPagamento = item.Substring(267, 8),
+                        StatusMotivoOcorrenciaRateio2 = item.Substring(257, 2),
+                        CodigoBancoCreditoTerceiroBeneficiarioQuandoPagamento = item.Substring(277, 3),
+                        CodigoAgenciaCreditoTerceiroBeneficiario = item.Substring(280, 5),
+                        DigitoAgenciaCreditoTerceiroBeneficiario = item.Substring(285, 1),
+                        NumeroContaCorrenteCreditoTerceiroBeneficiario = item.Substring(286, 12),
+                        DigitoContaCorrenteCreditoTerceiroBeneficiario = item.Substring(298, 1),
+                        ValorEfetivoRateioQuandoPagamento3 = item.Substring(299, 15),
+                        NomeTerceiroBeneficiario = item.Substring(314, 40),
+                        Filler4 = item.Substring(354, 21),
+                        Parcela3 = item.Substring(375, 6),
+                        FloatingParaTerceiroBeneficiario = item.Substring(381, 3),
+                        DataCreditoTerceiroBeneficiarioQuandoPagamento = item.Substring(384, 8),
+                        StatusMotivoOcorrenciaRateio3 = item.Substring(392, 2),
+                        NumSequencialRegistro = item.Substring(394, 6)
                     });
                 }
             }
