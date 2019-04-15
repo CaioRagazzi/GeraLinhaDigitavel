@@ -8,15 +8,15 @@
     ".NETCoreApp,Version=v2.2": {
       "ConsoleAppTest/1.0.0": {
         "dependencies": {
-          "ArquivoRemessa": "1.0.24",
-          "ArquivoRetorno": "1.0.0",
+          "ArquivoRemessa": "1.0.25",
+          "ArquivoRetorno": "1.0.1",
           "UtilRemessa": "1.0.5"
         },
         "runtime": {
           "ConsoleAppTest.dll": {}
         }
       },
-      "ArquivoRemessa/1.0.24": {
+      "ArquivoRemessa/1.0.25": {
         "dependencies": {
           "UtilRemessa": "1.0.5"
         },
@@ -24,7 +24,7 @@
           "ArquivoRemessa.dll": {}
         }
       },
-      "ArquivoRetorno/1.0.0": {
+      "ArquivoRetorno/1.0.1": {
         "dependencies": {
           "UtilRemessa": "1.0.5"
         },
@@ -45,12 +45,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ArquivoRemessa/1.0.24": {
+    "ArquivoRemessa/1.0.25": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ArquivoRetorno/1.0.0": {
+    "ArquivoRetorno/1.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

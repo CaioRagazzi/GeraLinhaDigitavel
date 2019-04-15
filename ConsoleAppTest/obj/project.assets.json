@@ -208,7 +208,7 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "ArquivoRemessa/1.0.24": {
+      "ArquivoRemessa/1.0.25": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
@@ -221,7 +221,7 @@
           "bin/placeholder/ArquivoRemessa.dll": {}
         }
       },
-      "ArquivoRetorno/1.0.0": {
+      "ArquivoRetorno/1.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
@@ -715,12 +715,12 @@
         "netstandard.library.nuspec"
       ]
     },
-    "ArquivoRemessa/1.0.24": {
+    "ArquivoRemessa/1.0.25": {
       "type": "project",
       "path": "../ClassLibraryTest/ArquivoRemessa.csproj",
       "msbuildProject": "../ClassLibraryTest/ArquivoRemessa.csproj"
     },
-    "ArquivoRetorno/1.0.0": {
+    "ArquivoRetorno/1.0.1": {
       "type": "project",
       "path": "../ArquivoRetorno/ArquivoRetorno.csproj",
       "msbuildProject": "../ArquivoRetorno/ArquivoRetorno.csproj"
@@ -733,14 +733,15 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "ArquivoRemessa >= 1.0.24",
-      "ArquivoRetorno >= 1.0.0",
+      "ArquivoRemessa >= 1.0.25",
+      "ArquivoRetorno >= 1.0.1",
       "Microsoft.NETCore.App >= 2.2.0",
       "UtilRemessa >= 1.0.5"
     ]
   },
   "packageFolders": {
     "C:\\Users\\Int6\\.nuget\\packages\\": {},
+    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -753,11 +754,13 @@
       "outputPath": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ConsoleAppTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\ProgramData\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\Int6\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

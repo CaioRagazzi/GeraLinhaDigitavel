@@ -22,7 +22,7 @@ namespace ArquivoRetorno
         private string IndicadorRateioCredito { get; set; }
         private string PagamentoParcial { get; set; }
         private string Carteira { get; set; }
-        private string IdentificacaoDeOcorrencia { get; set; }
+        private IdentificacoesDeOcorrencia IdentificacaoDeOcorrencia { get; set; }
         private DateTime? DataOcorrenciaNoBanco { get; set; }
         private string NumeroDocumento { get; set; }
         private string IdentificacaoTituloBanco2 { get; set; }
@@ -31,22 +31,22 @@ namespace ArquivoRetorno
         private string BancoCobrador { get; set; }
         private string AgenciaCobradora { get; set; }
         private string EspeciaTitulo { get; set; }
-        private string DespesasCobrancaCodigosOcorrencia { get; set; }
-        private string OutrasDespesasCustasProtesto { get; set; }
+        private decimal DespesasCobrancaCodigosOcorrencia { get; set; }
+        private decimal OutrasDespesasCustasProtesto { get; set; }
         private string JurosOperacaoAtraso { get; set; }
-        private string IOFDevido { get; set; }
-        private string AbatimentoConcedidoSobreTitulo { get; set; }
-        private string DescontoConcedido { get; set; }
+        private decimal IOFDevido { get; set; }
+        private decimal AbatimentoConcedidoSobreTitulo { get; set; }
+        private decimal DescontoConcedido { get; set; }
         private decimal ValorPago { get; set; }
-        private string JurosMora { get; set; }
-        private string OutrosCreditos { get; set; }
+        private decimal JurosMora { get; set; }
+        private decimal OutrosCreditos { get; set; }
         private string Brancos { get; set; }
         private string MotivoCodigoOcorrencia25 { get; set; }
         private DateTime? DataCredito { get; set; }
         private string OrigemPagamento { get; set; }
         private string Brancos2 { get; set; }
         private string QuandoChequeBradesco { get; set; }
-        private string MotivosRejeicoesCodigosOcorrencia { get; set; }
+        private List<CodigosOcorrencia> MotivoRejeicoesCodigosOcorrencia { get; set; }
         private string Brancos3 { get; set; }
         private string NumeroCartorio { get; set; }
         private string NumoerProtocolo { get; set; }
@@ -77,7 +77,7 @@ namespace ArquivoRetorno
                         IndicadorRateioCredito = item.Substring(104, 1),
                         PagamentoParcial = item.Substring(105, 2),
                         Carteira = item.Substring(107, 1),
-                        IdentificacaoDeOcorrencia = item.Substring(108, 2),
+                        IdentificacaoDeOcorrencia = (IdentificacoesDeOcorrencia)Convert.ToInt32(item.Substring(108, 2)),
                         DataOcorrenciaNoBanco = FormataArquivo.ConverteETrataData(item.Substring(110, 6).Trim()),
                         NumeroDocumento = item.Substring(116, 10),
                         IdentificacaoTituloBanco2 = item.Substring(126, 20),
@@ -86,22 +86,29 @@ namespace ArquivoRetorno
                         BancoCobrador = item.Substring(165, 3),
                         AgenciaCobradora = item.Substring(168, 5),
                         EspeciaTitulo = item.Substring(173, 2),
-                        DespesasCobrancaCodigosOcorrencia = item.Substring(175, 13),
-                        OutrasDespesasCustasProtesto = item.Substring(188, 13),
+                        DespesasCobrancaCodigosOcorrencia = FormataArquivo.ConverteETrataDecimal(item.Substring(175, 13)),
+                        OutrasDespesasCustasProtesto = FormataArquivo.ConverteETrataDecimal(item.Substring(188, 13)),
                         JurosOperacaoAtraso = item.Substring(201, 13),
-                        IOFDevido = item.Substring(214, 13),
-                        AbatimentoConcedidoSobreTitulo = item.Substring(227, 13),
-                        DescontoConcedido = item.Substring(240, 13),
+                        IOFDevido = FormataArquivo.ConverteETrataDecimal(item.Substring(214, 13)),
+                        AbatimentoConcedidoSobreTitulo = FormataArquivo.ConverteETrataDecimal(item.Substring(227, 13)),
+                        DescontoConcedido = FormataArquivo.ConverteETrataDecimal(item.Substring(240, 13)),
                         ValorPago = FormataArquivo.ConverteETrataDecimal(item.Substring(253, 13)),
-                        JurosMora = item.Substring(266, 13),
-                        OutrosCreditos = item.Substring(279, 13),
+                        JurosMora = FormataArquivo.ConverteETrataDecimal(item.Substring(266, 13)),
+                        OutrosCreditos = FormataArquivo.ConverteETrataDecimal(item.Substring(279, 13)),
                         Brancos = item.Substring(292, 2).Trim(),
                         MotivoCodigoOcorrencia25 = item.Substring(294, 1),
                         DataCredito = FormataArquivo.ConverteETrataData(item.Substring(295, 6).Trim()),
                         OrigemPagamento = item.Substring(301, 3),
                         Brancos2 = item.Substring(304, 10).Trim(),
                         QuandoChequeBradesco = item.Substring(314, 4),
-                        MotivosRejeicoesCodigosOcorrencia = item.Substring(318, 10),
+                        MotivoRejeicoesCodigosOcorrencia = new List<CodigosOcorrencia>()
+                        {
+                            (CodigosOcorrencia)Convert.ToInt32(item.Substring(318, 2)),
+                            (CodigosOcorrencia)Convert.ToInt32(item.Substring(320, 2)),
+                            (CodigosOcorrencia)Convert.ToInt32(item.Substring(322, 2)),
+                            (CodigosOcorrencia)Convert.ToInt32(item.Substring(324, 2)),
+                            (CodigosOcorrencia)Convert.ToInt32(item.Substring(326, 2))
+                        },
                         Brancos3 = item.Substring(328, 40).Trim(),
                         NumeroCartorio = item.Substring(368, 2),
                         NumoerProtocolo = item.Substring(370, 10),
