@@ -1,8 +1,7 @@
 ﻿using ArquivoRetorno.TransacaoDoTipo1;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
+using System.Linq;
 using UtilRemessa;
 
 namespace ArquivoRetorno
@@ -46,14 +45,14 @@ namespace ArquivoRetorno
         private string OrigemPagamento { get; set; }
         private string Brancos2 { get; set; }
         private string QuandoChequeBradesco { get; set; }
-        private List<CodigosOcorrencia> MotivoRejeicoesCodigosOcorrencia { get; set; }
+        private List<string> MotivoCodigosOcorrencia { get; set; }
         private string Brancos3 { get; set; }
         private string NumeroCartorio { get; set; }
         private string NumoerProtocolo { get; set; }
         private string Brancos4 { get; set; }
         private string NumSequencialRegistro { get; set; }
 
-        public List<TransacaoTipo1> GeraTransacaoTipo1(string path)
+        public List<TransacaoTipo1> GetTransacaoTipo1(string path)
         {
             List<String> lista = UtilRemessa.FormataArquivo.LeArquivoRetorno(path);
             List<TransacaoTipo1> transacoesTipo1 = new List<TransacaoTipo1>();
@@ -101,14 +100,7 @@ namespace ArquivoRetorno
                         OrigemPagamento = item.Substring(301, 3),
                         Brancos2 = item.Substring(304, 10).Trim(),
                         QuandoChequeBradesco = item.Substring(314, 4),
-                        MotivoRejeicoesCodigosOcorrencia = new List<CodigosOcorrencia>()
-                        {
-                            (CodigosOcorrencia)Convert.ToInt32(item.Substring(318, 2)),
-                            (CodigosOcorrencia)Convert.ToInt32(item.Substring(320, 2)),
-                            (CodigosOcorrencia)Convert.ToInt32(item.Substring(322, 2)),
-                            (CodigosOcorrencia)Convert.ToInt32(item.Substring(324, 2)),
-                            (CodigosOcorrencia)Convert.ToInt32(item.Substring(326, 2))
-                        },
+                        MotivoCodigosOcorrencia = FormataMotivo(item.Substring(318, 10), item.Substring(108, 2)),
                         Brancos3 = item.Substring(328, 40).Trim(),
                         NumeroCartorio = item.Substring(368, 2),
                         NumoerProtocolo = item.Substring(370, 10),
@@ -120,6 +112,103 @@ namespace ArquivoRetorno
 
             return transacoesTipo1;
 
+        }
+
+        public List<string> FormataMotivo(string codigoMotivo, string codigoOcorrencia)
+        {
+            List<string> codigosOcorrencia = new List<string>
+            {
+                codigoMotivo.Substring(0, 2),
+                codigoMotivo.Substring(2, 2),
+                codigoMotivo.Substring(4, 2),
+                codigoMotivo.Substring(6, 2),
+                codigoMotivo.Substring(8, 2)
+            }.Distinct().ToList();
+
+            if (codigosOcorrencia.Count() > 1 && codigosOcorrencia.Last().Equals("00"))
+            {
+                codigosOcorrencia.RemoveAt(codigosOcorrencia.Count() -1);
+            }
+
+            List<string> motivos = new List<string>();
+
+            foreach (var item in codigosOcorrencia)
+            {
+                switch (codigoOcorrencia)
+                {
+                    case "02":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia2)Convert.ToInt32(item)));
+                        continue;
+                    case "03":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia3)Convert.ToInt32(item)));
+                        continue;
+                    case "06":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia6)Convert.ToInt32(item)));
+                        continue;
+                    case "09":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia9)Convert.ToInt32(item)));
+                        continue;
+                    case "10":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia10)Convert.ToInt32(item)));
+                        continue;
+                    case "15":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia15)Convert.ToInt32(item)));
+                        continue;
+                    case "17":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia17)Convert.ToInt32(item)));
+                        continue;
+                    case "19":
+                        if (codigoMotivo.Equals("A"))
+                        {
+                            motivos.Add(Convert.ToString(CodigoOcorrencia19.Aceito));
+                            continue;
+                        }
+                        else
+                        {
+                            motivos.Add(Convert.ToString(CodigoOcorrencia19.Desprezado));
+                            continue;
+                        }
+                    case "24":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia24)Convert.ToInt32(item)));
+                        continue;
+                    case "25":
+                        if (codigoMotivo.Equals("A"))
+                        {
+                            motivos.Add(Convert.ToString(CodigoOcorrencia25.Aceito));
+                            continue;
+                        }
+                        else
+                        {
+                            motivos.Add(Convert.ToString(CodigoOcorrencia25.Desprezado));
+                            continue;
+                        }
+                    case "27":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia27)Convert.ToInt32(item)));
+                        continue;
+                    case "28":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia28)Convert.ToInt32(item)));
+                        continue;
+                    case "29":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia29)Convert.ToInt32(item)));
+                        continue;
+                    case "30":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia30)Convert.ToInt32(item)));
+                        continue;
+                    case "32":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia32)Convert.ToInt32(item)));
+                        continue;
+                    case "35":
+                        motivos.Add(Convert.ToString((CodigoOcorrencia35)Convert.ToInt32(item)));
+                        continue;
+                    default:
+                        motivos.Add("SemMotivo");
+                        continue;
+                }
+            }
+
+            var retorno = motivos.Distinct().ToList();
+
+            return retorno;
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ArquivoRetorno.TransacaoDoTipo1
 {
-    public enum CodigosOcorrencia
+    public enum CodigoOcorrencia2
     {
         OcorrenciaAceita = 0,
         CodigoDoBancoInvalido = 1,
@@ -35,6 +35,6 @@ namespace ArquivoRetorno.TransacaoDoTipo1
         DebitoEletronicoDDA = 76,
         SeuNumeroDoDocumentoInvalido = 86,
         EmailPagadorNaoEnviadoTituloComDebitoAutomatico = 89,
-        EmailpagadorNaoEnviadoTituloDeCobrancaSemregistro = 90
+        EmailpagadorNaoEnviadoTituloDeCobrancaSemregistro = 90,
     }
 }

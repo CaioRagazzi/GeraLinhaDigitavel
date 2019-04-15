@@ -707,7 +707,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.1",
+    "version": "1.0.4",
     "restore": {
       "projectUniqueName": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ArquivoRetorno\\ArquivoRetorno.csproj",
       "projectName": "ArquivoRetorno",

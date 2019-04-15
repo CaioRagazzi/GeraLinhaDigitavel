@@ -26,7 +26,7 @@ namespace ArquivoRetorno
         private string NumSequencialRegistro { get; set; }
 
 
-        public Header GeraHeader(string path)
+        public Header GetHeader(string path)
         {
             List<String> lista = UtilRemessa.FormataArquivo.LeArquivoRetorno(path);
             String linhaHeader = lista[0];

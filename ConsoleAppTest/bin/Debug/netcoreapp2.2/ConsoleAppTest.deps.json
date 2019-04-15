@@ -9,7 +9,7 @@
       "ConsoleAppTest/1.0.0": {
         "dependencies": {
           "ArquivoRemessa": "1.0.25",
-          "ArquivoRetorno": "1.0.1",
+          "ArquivoRetorno": "1.0.4",
           "UtilRemessa": "1.0.5"
         },
         "runtime": {
@@ -24,7 +24,7 @@
           "ArquivoRemessa.dll": {}
         }
       },
-      "ArquivoRetorno/1.0.1": {
+      "ArquivoRetorno/1.0.4": {
         "dependencies": {
           "UtilRemessa": "1.0.5"
         },
@@ -50,7 +50,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ArquivoRetorno/1.0.1": {
+    "ArquivoRetorno/1.0.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
