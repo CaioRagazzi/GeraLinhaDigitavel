@@ -104,7 +104,6 @@ namespace ArquivoRetorno
             };
 
             return tr1;
-
         }
 
         public List<string> FormataMotivo(string codigoMotivo, string codigoOcorrencia)
@@ -198,9 +197,6 @@ namespace ArquivoRetorno
                         continue;
                 }
             }
-
-            //var retorno = motivos.Distinct().ToList();
-
             return motivos;
         }
     }

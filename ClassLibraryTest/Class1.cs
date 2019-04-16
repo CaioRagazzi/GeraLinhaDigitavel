@@ -45,7 +45,7 @@ namespace ArquivoRemessa
                 //stringTrailler.GetTrailler()
             };
 
-            for (int i = 0; i < 1000000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 //string nomeVariavel = "stringTransacaoTipo" + Convert.ToString(num);
                 TransacaoTipo1 tr1 = new TransacaoTipo1
@@ -78,7 +78,7 @@ namespace ArquivoRemessa
                 ValorAbatimento = 0.00m,
                 identificacaoTipoInscricao = IdentificacaoTipoInscricaoPagador.CPF,
                 NumeroInscricaoPagador = "36190841813",
-                NomePagador = "Cáio Edu@rdo Ragazzi! Gemign@ni",
+                NomePagador = "Cáio édu@rdo Ragazzi! Gemign@ni",
                 EnderecoCompleto = "Ru@ monleváde, 128",
                 PrimeiraMensagem = "Gerãndo arquivo reméss@",
                 Cep = "04679345",

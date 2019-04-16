@@ -40,7 +40,6 @@ namespace UtilRemessa
             var valorConvertido = decimal.Parse(novoValor, CultureInfo.InvariantCulture);
 
             return valorConvertido;
-
         }
 
         public static string SubstituiCaracteresEspeciais(string text)
