@@ -27,23 +27,20 @@ namespace ArquivoRetorno
                 string linha = "";
                 while ((linha = reader.ReadLine()) != null)
                 {
-                    if (linha != null)
+                    switch (linha[0].ToString())
                     {
-                        switch (linha[0].ToString())
-                        {
-                            case "0":
-                                objRet.Header = new Header().GetHeader(linha);
-                                continue;
-                            case "1":
-                                objRet.TransacaoTipo1.Add(new TransacaoTipo1().GetTransacaoTipo1(linha));
-                                continue;
-                            case "3":
-                                objRet.TransacaoTipo3.Add(new TransacaoTipo3().GetTransacaoTipo3(linha));
-                                continue;
-                            case "9":
-                                objRet.Trailler = new Trailler().GetTrailler(linha);
-                                continue;
-                        }
+                        case "0":
+                            objRet.Header = new Header().GetHeader(linha);
+                            continue;
+                        case "1":
+                            objRet.TransacaoTipo1.Add(new TransacaoTipo1().GetTransacaoTipo1(linha));
+                            continue;
+                        case "3":
+                            objRet.TransacaoTipo3.Add(new TransacaoTipo3().GetTransacaoTipo3(linha));
+                            continue;
+                        case "9":
+                            objRet.Trailler = new Trailler().GetTrailler(linha);
+                            continue;
                     }
                 }
                 return objRet;

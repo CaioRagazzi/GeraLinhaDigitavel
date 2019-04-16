@@ -208,11 +208,11 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "ArquivoRemessa/1.0.25": {
+      "ArquivoRemessa/1.0.26": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "UtilRemessa": "1.0.5"
+          "UtilRemessa": "1.0.7"
         },
         "compile": {
           "bin/placeholder/ArquivoRemessa.dll": {}
@@ -221,11 +221,11 @@
           "bin/placeholder/ArquivoRemessa.dll": {}
         }
       },
-      "ArquivoRetorno/1.0.6": {
+      "ArquivoRetorno/1.0.8": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "UtilRemessa": "1.0.5"
+          "UtilRemessa": "1.0.7"
         },
         "compile": {
           "bin/placeholder/ArquivoRetorno.dll": {}
@@ -234,7 +234,7 @@
           "bin/placeholder/ArquivoRetorno.dll": {}
         }
       },
-      "UtilRemessa/1.0.5": {
+      "UtilRemessa/1.0.7": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
@@ -715,17 +715,17 @@
         "netstandard.library.nuspec"
       ]
     },
-    "ArquivoRemessa/1.0.25": {
+    "ArquivoRemessa/1.0.26": {
       "type": "project",
       "path": "../ClassLibraryTest/ArquivoRemessa.csproj",
       "msbuildProject": "../ClassLibraryTest/ArquivoRemessa.csproj"
     },
-    "ArquivoRetorno/1.0.6": {
+    "ArquivoRetorno/1.0.8": {
       "type": "project",
       "path": "../ArquivoRetorno/ArquivoRetorno.csproj",
       "msbuildProject": "../ArquivoRetorno/ArquivoRetorno.csproj"
     },
-    "UtilRemessa/1.0.5": {
+    "UtilRemessa/1.0.7": {
       "type": "project",
       "path": "../Util/UtilRemessa.csproj",
       "msbuildProject": "../Util/UtilRemessa.csproj"
@@ -733,10 +733,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "ArquivoRemessa >= 1.0.25",
-      "ArquivoRetorno >= 1.0.6",
+      "ArquivoRemessa >= 1.0.26",
+      "ArquivoRetorno >= 1.0.8",
       "Microsoft.NETCore.App >= 2.2.0",
-      "UtilRemessa >= 1.0.5"
+      "UtilRemessa >= 1.0.7"
     ]
   },
   "packageFolders": {

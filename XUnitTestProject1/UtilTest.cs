@@ -4,6 +4,7 @@ using ArquivoRemessa;
 using Xunit;
 using System.Numerics;
 using System.Globalization;
+using UtilRemessa;
 
 namespace XUnitTestProject1
 {

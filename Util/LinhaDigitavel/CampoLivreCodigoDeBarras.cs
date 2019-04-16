@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ArquivoRemessa
+namespace UtilRemessa
 {
     public class CampoLivreCodigoDeBarras
     {

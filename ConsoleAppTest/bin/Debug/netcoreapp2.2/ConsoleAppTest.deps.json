@@ -8,31 +8,31 @@
     ".NETCoreApp,Version=v2.2": {
       "ConsoleAppTest/1.0.0": {
         "dependencies": {
-          "ArquivoRemessa": "1.0.25",
-          "ArquivoRetorno": "1.0.6",
-          "UtilRemessa": "1.0.5"
+          "ArquivoRemessa": "1.0.26",
+          "ArquivoRetorno": "1.0.8",
+          "UtilRemessa": "1.0.7"
         },
         "runtime": {
           "ConsoleAppTest.dll": {}
         }
       },
-      "ArquivoRemessa/1.0.25": {
+      "ArquivoRemessa/1.0.26": {
         "dependencies": {
-          "UtilRemessa": "1.0.5"
+          "UtilRemessa": "1.0.7"
         },
         "runtime": {
           "ArquivoRemessa.dll": {}
         }
       },
-      "ArquivoRetorno/1.0.6": {
+      "ArquivoRetorno/1.0.8": {
         "dependencies": {
-          "UtilRemessa": "1.0.5"
+          "UtilRemessa": "1.0.7"
         },
         "runtime": {
           "ArquivoRetorno.dll": {}
         }
       },
-      "UtilRemessa/1.0.5": {
+      "UtilRemessa/1.0.7": {
         "runtime": {
           "UtilRemessa.dll": {}
         }
@@ -45,17 +45,17 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ArquivoRemessa/1.0.25": {
+    "ArquivoRemessa/1.0.26": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ArquivoRetorno/1.0.6": {
+    "ArquivoRetorno/1.0.8": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "UtilRemessa/1.0.5": {
+    "UtilRemessa/1.0.7": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
