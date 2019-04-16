@@ -22,17 +22,26 @@ namespace UtilRemessa
             return campo.PadLeft(tamanho, '0').Substring(0, tamanho);
         }
 
-        //public static string FormataCampoCaracteresEspeciais(string campo)
-        //{
-        //    StringBuilder sbReturn = new StringBuilder();
-        //    var arrayText = campo.Normalize(NormalizationForm.FormD).ToCharArray();
-        //    foreach (char letter in arrayText)
-        //    {
-        //        if (CharUnicodeInfo.GetUnicodeCategory(letter) != UnicodeCategory.NonSpacingMark)
-        //            sbReturn.Append(letter);
-        //    }
-        //    return sbReturn.ToString();
-        //}
+        public static DateTime? ConverteETrataData(string dataString)
+        {
+            if (string.IsNullOrEmpty(dataString))
+            {
+                return null;
+            }
+            else
+            {
+                return DateTime.ParseExact(dataString, "ddMMyy", System.Globalization.CultureInfo.InvariantCulture);
+            }
+        }
+
+        public static decimal ConverteETrataDecimal(string valor)
+        {
+            var novoValor = valor.Insert((valor.Length - 2), ".");
+            var valorConvertido = decimal.Parse(novoValor, CultureInfo.InvariantCulture);
+
+            return valorConvertido;
+
+        }
 
         public static string SubstituiCaracteresEspeciais(string text)
         {
@@ -128,51 +137,5 @@ namespace UtilRemessa
             return true;
         }
 
-        public static List<String> LeArquivoRetorno(string path)
-        {
-            try
-            {
-                // Create an instance of StreamReader to read from a file.
-                // The using statement also closes the StreamReader.
-                using (StreamReader sr = new StreamReader(path))
-                {
-                    string line;
-                    List<String> listaString = new List<string>();
-                    // Read and display lines from the file until the end of 
-                    // the file is reached.
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        listaString.Add(line);
-                    }
-                    return listaString;
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
-        }
-
-        public static DateTime? ConverteETrataData(string dataString)
-        {
-            if (string.IsNullOrEmpty(dataString))
-            {
-                return null;
-            }
-            else
-            {
-                return DateTime.ParseExact(dataString, "ddMMyy", System.Globalization.CultureInfo.InvariantCulture);
-            }
-        }
-
-        public static decimal ConverteETrataDecimal(string valor)
-        {
-            var novoValor = valor.Insert((valor.Length - 2), ".");
-            var valorConvertido = decimal.Parse(novoValor, CultureInfo.InvariantCulture);
-
-            return valorConvertido;
-
-        }
     }
 }
