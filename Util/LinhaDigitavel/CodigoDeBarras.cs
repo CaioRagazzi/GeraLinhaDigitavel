@@ -6,24 +6,24 @@ namespace UtilRemessa
 {
     public class CodigoDeBarras
     {
-        private readonly string codigoDoBanco;
-        private readonly string codigoDaMoeda;
-        public readonly string digitoVerificadorCodigoDeBarras;
-        public readonly string fatorVencimento;
-        public readonly string valor;
-        private readonly CampoLivreCodigoDeBarras campoLivre;
+        internal readonly string codigoDoBanco;
+        internal readonly string codigoDaMoeda;
+        internal readonly string digitoVerificadorCodigoDeBarras;
+        internal readonly string fatorVencimento;
+        internal readonly string valor;
+        internal readonly CampoLivreCodigoDeBarras campoLivre;
 
-        public CodigoDeBarras(string codigoDoBanco, string codigoDaMoeda, DateTime fatorVencimento, string valor, CampoLivreCodigoDeBarras campoLivre)
+        public CodigoDeBarras(Banco codigoDoBanco, Moeda codigoDaMoeda, DateTime fatorVencimento, decimal valor, CampoLivreCodigoDeBarras campoLivre)
         {
-            this.codigoDoBanco = codigoDoBanco;
-            this.codigoDaMoeda = codigoDaMoeda;
+            this.codigoDoBanco = Convert.ToString((int)codigoDoBanco);
+            this.codigoDaMoeda = Convert.ToString((int)codigoDaMoeda);
             this.fatorVencimento = GetFatorVencimento(fatorVencimento);
-            this.valor = valor;
+            this.valor = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(valor.ToString().Replace(",", ""), 10);
             this.campoLivre = campoLivre;
             this.digitoVerificadorCodigoDeBarras = GetDigitoVerificadorCodigoDeBarras();
         }
 
-        public StringBuilder GetStringCodigoDeBarras()
+        public string GetStringCodigoDeBarras()
         {
             StringBuilder stringDadosCodigoDeBarras = new StringBuilder(43);
 
@@ -34,10 +34,10 @@ namespace UtilRemessa
             stringDadosCodigoDeBarras.Insert(9, valor); //Valor
             stringDadosCodigoDeBarras.Insert(19, campoLivre); //Campo Livre
 
-            return stringDadosCodigoDeBarras;
+            return stringDadosCodigoDeBarras.ToString();
         }
 
-        public string GetFatorVencimento(DateTime dataDeVencimento)
+        private string GetFatorVencimento(DateTime dataDeVencimento)
         {
             DateTime data2 = new DateTime(1997, 10, 07);
 

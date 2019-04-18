@@ -221,7 +221,7 @@
           "bin/placeholder/ArquivoRemessa.dll": {}
         }
       },
-      "ArquivoRetorno/1.0.8": {
+      "ArquivoRetorno/1.0.9": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
@@ -720,7 +720,7 @@
       "path": "../ClassLibraryTest/ArquivoRemessa.csproj",
       "msbuildProject": "../ClassLibraryTest/ArquivoRemessa.csproj"
     },
-    "ArquivoRetorno/1.0.8": {
+    "ArquivoRetorno/1.0.9": {
       "type": "project",
       "path": "../ArquivoRetorno/ArquivoRetorno.csproj",
       "msbuildProject": "../ArquivoRetorno/ArquivoRetorno.csproj"
@@ -734,7 +734,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "ArquivoRemessa >= 1.0.26",
-      "ArquivoRetorno >= 1.0.8",
+      "ArquivoRetorno >= 1.0.9",
       "Microsoft.NETCore.App >= 2.2.0",
       "UtilRemessa >= 1.0.7"
     ]
@@ -767,6 +767,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://apiintermeio.azurewebsites.net/nuget/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

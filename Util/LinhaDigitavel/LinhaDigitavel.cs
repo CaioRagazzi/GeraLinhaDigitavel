@@ -6,21 +6,21 @@ namespace UtilRemessa
 {
     public class LinhaDigitavel
     {
-        private readonly Moeda moeda;
-        private readonly Banco banco;
+        private readonly string codigoMoeda;
+        private readonly string codigoBanco;
         private readonly CampoLivreCodigoDeBarras campoLivre;
         private readonly string fatorVencimento;
         private readonly string valor;
         private readonly CodigoDeBarras codigoDeBarras;
 
 
-        public LinhaDigitavel(Moeda moeda, Banco banco, CampoLivreCodigoDeBarras campoLivre, CodigoDeBarras codigoDeBarras)
+        public LinhaDigitavel(CodigoDeBarras codigoDeBarras)
         {
-            this.moeda = moeda;
-            this.banco = banco;
-            this.campoLivre = campoLivre;
+            this.codigoMoeda = codigoDeBarras.codigoDaMoeda;
+            this.codigoBanco = codigoDeBarras.codigoDoBanco;
+            this.campoLivre = codigoDeBarras.campoLivre;
             this.fatorVencimento = codigoDeBarras.fatorVencimento;
-            this.valor = codigoDeBarras.valor;
+            this.valor = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(codigoDeBarras.valor.ToString().Replace(",", ""), 10);
             this.codigoDeBarras = codigoDeBarras;
         }
 
@@ -33,8 +33,8 @@ namespace UtilRemessa
             StringBuilder quintoCampo = new StringBuilder(5);
             StringBuilder linhaDigitavel = new StringBuilder();
 
-            primeiroCampo.Insert(0, banco.Codigo); //Código do banco
-            primeiroCampo.Insert(3, moeda.Codigo); //Código da moeda
+            primeiroCampo.Insert(0, codigoBanco); //Código do banco
+            primeiroCampo.Insert(3, codigoMoeda); //Código da moeda
             primeiroCampo.Insert(4, campoLivre.GetStringCampoLivre().ToString().Substring(0, 5)); //Cinco primeira posições do campo livre
             primeiroCampo.Insert(9, GetDigitoVerificadorLinhaDigitavelNoveDigitos(primeiroCampo)); //Digito verificador
 
@@ -54,7 +54,7 @@ namespace UtilRemessa
             return linhaDigitavel.ToString();
         }
 
-        public string GetDigitoVerificadorLinhaDigitavelNoveDigitos(StringBuilder campo)
+        private string GetDigitoVerificadorLinhaDigitavelNoveDigitos(StringBuilder campo)
         {
             string campoParaCalculo = campo.ToString();
             int somatoria = 0;
@@ -83,7 +83,7 @@ namespace UtilRemessa
             return (sub - somatoria).ToString();
         }
 
-        public string GetDigitoVerificadorLinhaDigitavelDezDigitos(StringBuilder campo)
+        private string GetDigitoVerificadorLinhaDigitavelDezDigitos(StringBuilder campo)
         {
             string campoParaCalculo = campo.ToString();
             int somatoria = 0;

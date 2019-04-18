@@ -53,26 +53,26 @@ namespace XUnitTestProject1
         [Fact]
         public void TestaGeraLinhaDigitavel()
         {
-            Banco banco = new Banco()
-            {
-                Codigo = "237",
-                Nome = "Bradesco"
-            };
+            //Banco banco = new Banco()
+            //{
+            //    Codigo = "237",
+            //    Nome = "Bradesco"
+            //};
 
-            Moeda moeda = new Moeda()
-            {
-                Codigo = "9",
-                Nome = "Real"
-            };
+            //Moeda moeda = new Moeda()
+            //{
+            //    Codigo = "9",
+            //    Nome = "Real"
+            //};
 
-            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "90740000039", "0000340", "0");
+            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "90740000039", "0000340");
 
-            CodigoDeBarras codigoDeBarras = new CodigoDeBarras(banco.Codigo, moeda.Codigo, new DateTime(2025, 02, 21), "0000001809", campoLivre);
+            CodigoDeBarras codigoDeBarras = new CodigoDeBarras(Banco.Bradesco, Moeda.Real, new DateTime(2010, 11, 17), 18.09M, campoLivre);
 
-            LinhaDigitavel linha = new LinhaDigitavel(moeda, banco, campoLivre, codigoDeBarras);
+            LinhaDigitavel linha = new LinhaDigitavel(codigoDeBarras);
 
             var resultado = linha.GetLinhaDigitavel();
-            var stringEsperada = "23793392099907400000339000034007578430000001809";
+            var stringEsperada = "23793392099907400000339000034007547890000001809";
 
             Assert.Equal(resultado, stringEsperada);
 
@@ -81,10 +81,10 @@ namespace XUnitTestProject1
         [Fact]
         public void TestaFatorVencimento()
         {
-            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "90740000039", "0000340", "0");
-            CodigoDeBarras cd = new CodigoDeBarras("237", "9", new DateTime(2019, 03, 23), "0000009000", campoLivre) ;
+            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "90740000039", "0000340");
+            CodigoDeBarras cd = new CodigoDeBarras(Banco.Bradesco, Moeda.Real, new DateTime(2019, 03, 23), 90.00M, campoLivre) ;
 
-            var teste = cd.GetFatorVencimento(new DateTime(2019, 03, 23));
+            //var teste = cd.GetFatorVencimento(new DateTime(2019, 03, 23));
         }
 
         [Fact]
@@ -113,6 +113,16 @@ namespace XUnitTestProject1
         {
             string valorString = "0000000130020";
             decimal d = decimal.Parse(valorString, CultureInfo.InvariantCulture);
+        }
+
+        [Fact]
+        public void TestaLinhaDigitavel()
+        {
+            CampoLivreCodigoDeBarras clcb = new CampoLivreCodigoDeBarras("", "", "", "");
+            CodigoDeBarras cdb = new CodigoDeBarras(Banco.Bradesco, Moeda.Real, new DateTime(2019, 04, 18), 12M, clcb);
+            LinhaDigitavel ld = new LinhaDigitavel(cdb);
+
+            var teste = cdb.GetStringCodigoDeBarras();
         }
     }
 }

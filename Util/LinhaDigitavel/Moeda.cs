@@ -4,22 +4,8 @@ using System.Text;
 
 namespace UtilRemessa
 {
-    public class Moeda
+    public enum Moeda
     {
-        private string nome;
-
-        public string Nome
-        {
-            get { return nome; }
-            set { nome = value; }
-        }
-
-        private string codigo;
-
-        public string Codigo
-        {
-            get { return codigo; }
-            set { codigo = value; }
-        }
+        Real = 9
     }
 }
