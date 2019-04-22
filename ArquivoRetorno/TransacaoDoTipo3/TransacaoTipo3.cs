@@ -7,6 +7,7 @@ namespace ArquivoRetorno
 {
     public class TransacaoTipo3
     {
+        #region propriedades
         public string IdentificacaoRegistro { get; set; }
         public string IdentificacaoEmpresaBanco { get; set; }
         public string IdentificacaiTituloBanco { get; set; }
@@ -50,7 +51,7 @@ namespace ArquivoRetorno
         public DateTime? DataCreditoTerceiroBeneficiarioQuandoPagamento { get; set; }
         public string StatusMotivoOcorrenciaRateio3 { get; set; }
         public string NumSequencialRegistro { get; set; }
-
+        #endregion
 
 
         public TransacaoTipo3 GetTransacaoTipo3(string stringTransacao3)

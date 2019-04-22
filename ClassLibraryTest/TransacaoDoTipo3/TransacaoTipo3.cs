@@ -6,6 +6,8 @@ namespace ArquivoRemessa
 {
     public class TransacaoTipo3
     {
+
+        #region propriedades
         private const string tipoRegistro = "3";
 
         private EmpresaBeneficiariaBanco IdentificacaoEmpresaBanco { get; set; }
@@ -336,6 +338,7 @@ namespace ArquivoRemessa
             get { return floatingTerceiroBeneficiario; }
             set { floatingTerceiroBeneficiario =UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
         }
+        #endregion
 
         public TransacaoTipo3()
         {

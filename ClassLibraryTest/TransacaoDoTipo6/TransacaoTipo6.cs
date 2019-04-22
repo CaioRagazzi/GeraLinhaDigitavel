@@ -6,6 +6,8 @@ namespace ArquivoRemessa
 {
     public class TransacaoTipo6
     {
+        
+        #region propriedades
         private const string tipoRegistro = "6";
 
         public EmpresaBeneficiariaBanco empresaBeneficiariaBanco { get; set; }
@@ -28,6 +30,7 @@ namespace ArquivoRemessa
         }
 
         private string brancos = new string(' ', 365);
+        #endregion
 
         public TransacaoTipo6()
         {

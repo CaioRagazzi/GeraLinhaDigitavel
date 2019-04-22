@@ -1678,7 +1678,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "UtilRemessa": "1.0.7"
+          "UtilRemessa": "1.0.8"
         },
         "compile": {
           "bin/placeholder/ArquivoRemessa.dll": {}
@@ -1687,7 +1687,7 @@
           "bin/placeholder/ArquivoRemessa.dll": {}
         }
       },
-      "UtilRemessa/1.0.7": {
+      "UtilRemessa/1.0.8": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
@@ -5872,7 +5872,7 @@
       "path": "../ClassLibraryTest/ArquivoRemessa.csproj",
       "msbuildProject": "../ClassLibraryTest/ArquivoRemessa.csproj"
     },
-    "UtilRemessa/1.0.7": {
+    "UtilRemessa/1.0.8": {
       "type": "project",
       "path": "../Util/UtilRemessa.csproj",
       "msbuildProject": "../Util/UtilRemessa.csproj"

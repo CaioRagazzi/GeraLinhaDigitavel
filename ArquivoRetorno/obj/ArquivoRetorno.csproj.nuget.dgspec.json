@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ArquivoRetorno\\ArquivoRetorno.csproj": {
-      "version": "1.0.9",
+      "version": "1.0.10",
       "restore": {
         "projectUniqueName": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ArquivoRetorno\\ArquivoRetorno.csproj",
         "projectName": "ArquivoRetorno",
@@ -64,7 +64,7 @@
       }
     },
     "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\Util\\UtilRemessa.csproj": {
-      "version": "1.0.7",
+      "version": "1.0.8",
       "restore": {
         "projectUniqueName": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\Util\\UtilRemessa.csproj",
         "projectName": "UtilRemessa",

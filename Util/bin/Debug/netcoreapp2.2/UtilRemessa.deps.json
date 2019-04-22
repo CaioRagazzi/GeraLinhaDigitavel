@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "UtilRemessa/1.0.7": {
+      "UtilRemessa/1.0.8": {
         "runtime": {
           "UtilRemessa.dll": {}
         }
@@ -14,7 +14,7 @@
     }
   },
   "libraries": {
-    "UtilRemessa/1.0.7": {
+    "UtilRemessa/1.0.8": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

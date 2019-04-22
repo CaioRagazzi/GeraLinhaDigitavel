@@ -8,6 +8,7 @@ namespace ArquivoRetorno
 {
     public class Header
     {
+        #region propriedades
         public string TipoRegistro { get; set; }
         public string IdentificacaoArquivoRemessa { get; set; }
         public string LiteralRemessa { get; set; }
@@ -24,7 +25,7 @@ namespace ArquivoRetorno
         public string DataDoCredito { get; set; }
         public string Branco2 { get; set; }
         public string NumSequencialRegistro { get; set; }
-
+        #endregion
 
         public Header GetHeader(string stringHeader)
         {

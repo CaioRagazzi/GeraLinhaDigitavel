@@ -11,7 +11,7 @@ namespace UtilRemessa
         private readonly string nossoNumero;
         private readonly string contaBeneficiario;
         private readonly string zero = "0";
-
+        
         public CampoLivreCodigoDeBarras(string agenciaBeneficiaria, string carteira, string nossoNumero, string contaBeneficiario)
         {
             this.agenciaBeneficiaria = agenciaBeneficiaria;

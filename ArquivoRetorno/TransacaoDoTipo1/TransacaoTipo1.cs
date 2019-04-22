@@ -8,6 +8,7 @@ namespace ArquivoRetorno
 {
     public class TransacaoTipo1
     {
+        #region propriedades
         public string IdentificacaoRegistro { get; set; }
         public TipoInscricaoEmpresa TipoInscricaoEmpresa { get; set; }
         public string NumInscricaoEmpresa { get; set; }
@@ -51,6 +52,7 @@ namespace ArquivoRetorno
         public string NumoerProtocolo { get; set; }
         public string Brancos4 { get; set; }
         public string NumSequencialRegistro { get; set; }
+        #endregion
 
         public TransacaoTipo1 GetTransacaoTipo1(string stringTransacao1)
         {

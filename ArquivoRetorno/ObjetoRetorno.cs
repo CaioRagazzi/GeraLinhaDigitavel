@@ -7,10 +7,12 @@ namespace ArquivoRetorno
 {
     public class ObjetoRetorno
     {
+        #region propriedades
         public Header Header { get; set; }
         public Trailler Trailler { get; set; }
         public List<TransacaoTipo1> TransacaoTipo1 { get; set; }
         public List<TransacaoTipo3> TransacaoTipo3 { get; set; }
+        #endregion
 
         public ObjetoRetorno()
         {

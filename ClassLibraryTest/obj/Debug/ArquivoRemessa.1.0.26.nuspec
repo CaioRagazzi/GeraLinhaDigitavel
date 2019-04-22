@@ -9,7 +9,7 @@
     <description>Package Description</description>
     <dependencies>
       <group targetFramework=".NETCoreApp2.2">
-        <dependency id="UtilRemessa" version="1.0.7" exclude="Build,Analyzers" />
+        <dependency id="UtilRemessa" version="1.0.8" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>

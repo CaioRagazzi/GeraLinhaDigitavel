@@ -5,6 +5,7 @@ namespace ArquivoRemessa
 {
     public class Header
     {
+        #region Propriedades
         private const string tipoRegistro = "0";
 
         private const string identificacaoArquivoRemessa = "1";
@@ -88,6 +89,7 @@ namespace ArquivoRemessa
         }
 
         private string branco2 = new string(' ', 277);
+        #endregion
 
         /// <summary>
         /// Método responsável por montar a linha do Header do arquivo de remessa.

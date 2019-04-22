@@ -6,6 +6,7 @@ namespace ArquivoRetorno
 {
     public class Trailler
     {
+        #region propriedades
         public string IdentificacaoRegistro { get; set; }
         public string IdentificacaoDoRetorno { get; set; }
         public string IdentificacaoTipoRegistro { get; set; }
@@ -35,6 +36,7 @@ namespace ArquivoRetorno
         public string QuantidadeTotalRateiosEfetuados { get; set; }
         public string Brancos4 { get; set; }
         public string NumSequencialRegistro { get; set; }
+        #endregion
 
         public Trailler GetTrailler(string stringTrailler)
         {

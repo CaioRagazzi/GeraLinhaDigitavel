@@ -6,6 +6,8 @@ namespace ArquivoRemessa
 {
     public class TransacaoTipo7
     {
+
+        #region propriedades
         private const string tipoRegistro = "7";
 
         private string enderecoSacadorAvalista;
@@ -82,6 +84,7 @@ namespace ArquivoRemessa
             get { return dacNossoNumero; }
             set { dacNossoNumero = UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 1); }
         }
+        #endregion
 
         public TransacaoTipo7()
         {

@@ -7,6 +7,8 @@ namespace ArquivoRemessa
 {
     public class TransacaoTipo2
     {
+
+        #region propriedades
         private const string tipoRegistro = "2";
 
         private string mensagem1;
@@ -97,6 +99,7 @@ namespace ArquivoRemessa
                 nossoNumero = UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 11);
             }
         }
+        #endregion
 
         public TransacaoTipo2()
         {
