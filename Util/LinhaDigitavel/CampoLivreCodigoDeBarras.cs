@@ -14,10 +14,10 @@ namespace UtilRemessa
         
         public CampoLivreCodigoDeBarras(string agenciaBeneficiaria, string carteira, string nossoNumero, string contaBeneficiario)
         {
-            this.agenciaBeneficiaria = agenciaBeneficiaria;
-            this.carteira = carteira;
+            this.agenciaBeneficiaria = agenciaBeneficiaria.PadLeft(4, '0');
+            this.carteira = carteira.PadLeft(2, '0');
             this.nossoNumero = nossoNumero;
-            this.contaBeneficiario = contaBeneficiario;
+            this.contaBeneficiario = contaBeneficiario.PadLeft(7, '0');
         }
 
         public StringBuilder GetStringCampoLivre()

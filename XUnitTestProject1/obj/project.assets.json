@@ -1674,11 +1674,11 @@
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "ArquivoRemessa/1.0.26": {
+      "ArquivoRemessa/1.0.30": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "UtilRemessa": "1.0.8"
+          "UtilRemessa": "1.0.10"
         },
         "compile": {
           "bin/placeholder/ArquivoRemessa.dll": {}
@@ -1687,7 +1687,7 @@
           "bin/placeholder/ArquivoRemessa.dll": {}
         }
       },
-      "UtilRemessa/1.0.8": {
+      "UtilRemessa/1.0.10": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
@@ -5867,12 +5867,12 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "ArquivoRemessa/1.0.26": {
+    "ArquivoRemessa/1.0.30": {
       "type": "project",
       "path": "../ClassLibraryTest/ArquivoRemessa.csproj",
       "msbuildProject": "../ClassLibraryTest/ArquivoRemessa.csproj"
     },
-    "UtilRemessa/1.0.8": {
+    "UtilRemessa/1.0.10": {
       "type": "project",
       "path": "../Util/UtilRemessa.csproj",
       "msbuildProject": "../Util/UtilRemessa.csproj"
@@ -5880,7 +5880,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "ArquivoRemessa >= 1.0.26",
+      "ArquivoRemessa >= 1.0.30",
       "Microsoft.NET.Test.Sdk >= 15.9.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "xunit >= 2.4.0",

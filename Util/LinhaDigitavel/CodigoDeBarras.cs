@@ -41,7 +41,9 @@ namespace UtilRemessa
         {
             DateTime data2 = new DateTime(1997, 10, 07);
 
-            var data3 = dataDeVencimento.Subtract(data2).TotalDays.ToString();
+            var dataTratada = new DateTime(dataDeVencimento.Year, dataDeVencimento.Month, dataDeVencimento.Day);
+
+            var data3 = dataTratada.Subtract(data2).TotalDays.ToString();
 
             if (data3.Length > 4)
             {

@@ -23,7 +23,7 @@ namespace ArquivoRemessa
         public string NumeroControleParticipante
         {
             get { return numeroControleParticipante; }
-            set { numeroControleParticipante = FormataArquivo.FormataCampoComZerosEsquerda(value, 25); }
+            set { numeroControleParticipante = value; }
         }
 
         private string codigoBancoDebito;
@@ -371,7 +371,7 @@ namespace ArquivoRemessa
             transacao.Insert(12, this.DebitoAutomatico.ContaCorrente);
             transacao.Insert(19, this.DebitoAutomatico.DigitoContaCorrente);
             transacao.Insert(20, this.BeneficiariaBanco.ToStringTransacaoTipo1());
-            transacao.Insert(37, this.numeroControleParticipante);
+            transacao.Insert(37, "                         ");
             transacao.Insert(62, this.codigoBancoDebito);
             transacao.Insert(65, (int)this.multa);
             transacao.Insert(66, FormataArquivo.FormataCampoComZerosEsquerda(this.percentualMulta.ToString().Replace(",", ""), 4));
@@ -421,10 +421,15 @@ namespace ArquivoRemessa
             //transacao.Insert(331, this.sufixoCep);
             transacao.Insert(334, this.segundaMensagem);
 
+            
             var transacaoSemCaractereEspecial = FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+            var teste = this.numeroControleParticipante;
+
+            //Adicionado após a retirada do método de formatar caracteres especiais, pois estavam quebranco a chave do controle participante.
+            var transacaoCompleta = transacaoSemCaractereEspecial.Remove(37, 25).Insert(37, this.numeroControleParticipante + " ");
 
             transacao.Clear();
-            transacao.Insert(0, transacaoSemCaractereEspecial);
+            transacao.Insert(0, transacaoCompleta);
 
             return transacao;
         }

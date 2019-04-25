@@ -12,7 +12,7 @@ namespace ConsoleAppTest
         static void Main(string[] args)
         {
             //new Class1().WriteFile(true);
-            var arquivo = File.ReadAllText(@"C:\testeretorno\CB090400.RET");
+            var arquivo = File.ReadAllText(@"C:\testeretorno\CB020400.RET");
             ObjetoRetorno objRet = new ObjetoRetorno().GeraObjetoRetorno(arquivo);
         }
 

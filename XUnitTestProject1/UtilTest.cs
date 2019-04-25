@@ -65,9 +65,11 @@ namespace XUnitTestProject1
             //    Nome = "Real"
             //};
 
-            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "90740000039", "0000340");
+            //CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "90740000039", "0000340");
+            CampoLivreCodigoDeBarras campoLivre = new CampoLivreCodigoDeBarras("3392", "09", "91090000046", "0000340");
 
-            CodigoDeBarras codigoDeBarras = new CodigoDeBarras(Banco.Bradesco, Moeda.Real, new DateTime(2010, 11, 17), 18.09M, campoLivre);
+            //CodigoDeBarras codigoDeBarras = new CodigoDeBarras(Banco.Bradesco, Moeda.Real, new DateTime(2025, 04, 17), 18.09M, campoLivre);
+            CodigoDeBarras codigoDeBarras = new CodigoDeBarras(Banco.Bradesco, Moeda.Real, new DateTime(2019, 04, 17, 13, 22, 46), 6.48M, campoLivre);
 
             LinhaDigitavel linha = new LinhaDigitavel(codigoDeBarras);
 

@@ -6,7 +6,7 @@ namespace UtilRemessa
 {
     public class EmpresaBeneficiariaBanco
     {
-
+        #region propriedades
         public string Zero { get; } = "0";
         public string CodigoCarteira { get; } = "009";
         /// <summary>
@@ -16,6 +16,7 @@ namespace UtilRemessa
         public string DigitoAgencia { get; } = "0";
         public string ContaCorrente { get; } = "0000340";
         public string DigitoContaCorrente { get; } = "9";
+        #endregion
 
         public EmpresaBeneficiariaBanco()
         {
