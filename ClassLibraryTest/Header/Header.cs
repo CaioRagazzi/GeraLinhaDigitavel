@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using UtilRemessa;
 
 namespace ArquivoRemessa
 {
@@ -97,8 +98,20 @@ namespace ArquivoRemessa
         /// <param name="stringHeader">Objeto do tipo Header</param>
         /// <param name="numSequencial">Numero sequencial para colocar na linha do boleto.</param>
         /// <returns>Retorna um StringBuilder com a linha do Header completa.</returns>
-        public StringBuilder GetHeader()
+        public DefaultOfPagination GetHeader()
         {
+
+            var retorno = new ArquivoRemessa.ValidaHeader().Validate(this);
+
+            if (retorno.Errors.Count > 0)
+            {
+                return new DefaultOfPagination()
+                {
+                    Status = false,
+                    Resultado = retorno.Errors
+                };
+            }
+
             StringBuilder header = new StringBuilder(400);
 
             header.Insert(0, tipoRegistro);
@@ -121,7 +134,11 @@ namespace ArquivoRemessa
             header.Clear();
             header.Insert(0, transacaoSemCaractereEspecial);
 
-            return header;
+            return new DefaultOfPagination()
+            {
+                Status = true,
+                Resultado = header
+            };
         }
     }
 }

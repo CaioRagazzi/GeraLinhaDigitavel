@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using TransacaoDoTipo1;
+using UtilRemessa;
 
 namespace ArquivoRemessa
 {
@@ -40,15 +41,13 @@ namespace ArquivoRemessa
 
             List<StringBuilder> listaTransacoes = new List<StringBuilder>
             {
-                stringHeader.GetHeader(),
+                stringHeader.GetHeader().Resultado,
                 //stringTransacaoTipo1.GetTransacao(),
                 //stringTrailler.GetTrailler()
             };
 
-            for (int i = 0; i < 100; i++)
-            {
-                //string nomeVariavel = "stringTransacaoTipo" + Convert.ToString(num);
-                TransacaoTipo1 tr1 = new TransacaoTipo1
+            //string nomeVariavel = "stringTransacaoTipo" + Convert.ToString(num);
+            TransacaoTipo1 tr1 = new TransacaoTipo1
             {
                 NumeroControleParticipante = Convert.ToBase64String(Guid.NewGuid().ToByteArray()),
                 CodigoBancoDebito = "000",
@@ -83,12 +82,51 @@ namespace ArquivoRemessa
                 PrimeiraMensagem = "Gerãndo arquivo reméss@",
                 Cep = "04679345",
                 //SufixoCep = "345",
-                SegundaMensagem = "Remessa gerada no dia 29/03 as 11:00 posição"
+                SegundaMensagem = "Remessa gerada no dia 29/03 as 11:00 posição",
+                BeneficiariaBanco = new EmpresaBeneficiariaBanco("09", "01234", "123", "321654", "654"),
+                DebitoAutomatico = new DebitoAutomaticoCC()
             };
-                listaTransacoes.Add(tr1.GetTransacao());
-            }
+
+            listaTransacoes.Add(tr1.GetTransacao().Resultado);
 
             listaTransacoes.Add(stringTrailler.GetTrailler());
+
+            TransacaoTipo2 tr2 = new TransacaoTipo2
+            {
+                BeneficiariaBanco = new EmpresaBeneficiariaBanco("09","01234", "123", "321654", "654"),
+                DataLimiteDesconto2 = new DateTime(2019,04,29),
+                DataLimiteDesconto3 = new DateTime(2019, 04, 29),
+                Mensagem1 = "Mensagem 1",
+                Mensagem2 = "Mensagem 2",
+                Mensagem3 = "Mensagem 3",
+                Mensagem4 = "Mensagem 4",
+                NossoNumero = "12345678912",
+                ValorDesconto2 = 10M,
+                ValorDesconto3 = 10M
+            };
+
+            listaTransacoes.Add(tr2.GetTransacao().Resultado);
+
+            TransacaoTipo3 tr3 = new TransacaoTipo3
+            {
+
+            };
+
+            listaTransacoes.Add(tr3.GetTransacao().Resultado);
+
+            TransacaoTipo6 tr6 = new TransacaoTipo6
+            {
+
+            };
+
+            listaTransacoes.Add(tr6.GetTransacao().Resultado);
+
+            TransacaoTipo7 tr7 = new TransacaoTipo7
+            {
+
+            };
+
+            listaTransacoes.Add(tr7.GetTransacao().Resultado);
 
             UtilRemessa.FormataArquivo.GravaArquivo(listaTransacoes, "C:\\TesteGravacao2\\" + GetFileName(false));
 

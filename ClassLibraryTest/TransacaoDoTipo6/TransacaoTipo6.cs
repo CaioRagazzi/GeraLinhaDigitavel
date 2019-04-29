@@ -6,7 +6,7 @@ namespace ArquivoRemessa
 {
     public class TransacaoTipo6
     {
-        
+
         #region propriedades
         private const string tipoRegistro = "6";
 
@@ -34,21 +34,32 @@ namespace ArquivoRemessa
 
         public TransacaoTipo6()
         {
-            empresaBeneficiariaBanco = new EmpresaBeneficiariaBanco();
+            //empresaBeneficiariaBanco = new EmpresaBeneficiariaBanco();
         }
 
-        public StringBuilder GetTransacao()
+        public DefaultOfPagination GetTransacao()
         {
+            var retorno = new TransacaoDoTipo6.Validacao.ValidaTransacaoTipo6().Validate(this);
+
+            if (retorno.Errors.Count > 0)
+            {
+                return new DefaultOfPagination()
+                {
+                    Status = false,
+                    Resultado = retorno.Errors
+                };
+            }
+
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
             transacao.Insert(1, empresaBeneficiariaBanco.ToStringTransacaoTipo6());
             transacao.Insert(16, this.nossoNumero);
-            NossoNumero NN = new NossoNumero
-            {
-                Carteira = empresaBeneficiariaBanco.CodigoCarteira.Substring(1, 2),
-                NossoNumeroSemDigito = this.nossoNumero
-            };
+            NossoNumero NN = new NossoNumero(this.nossoNumero, empresaBeneficiariaBanco.CodigoCarteira.Substring(1, 2));
+            //{
+            //    Carteira = empresaBeneficiariaBanco.CodigoCarteira.Substring(1, 2),
+            //    NossoNumeroSemDigito = this.nossoNumero
+            //};
             transacao.Insert(27, NN.GetDigitoNossoNumero());
             transacao.Insert(28, this.brancos);
 
@@ -57,7 +68,11 @@ namespace ArquivoRemessa
             transacao.Clear();
             transacao.Insert(0, transacaoSemCaractereEspecial);
 
-            return transacao;
+            return new DefaultOfPagination()
+            {
+                Status = true,
+                Resultado = transacao
+            };
         }
     }
 }

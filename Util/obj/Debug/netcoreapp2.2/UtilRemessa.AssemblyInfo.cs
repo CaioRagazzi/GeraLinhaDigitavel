@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("UtilRemessa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.10.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.10")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.12.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.12")]
 [assembly: System.Reflection.AssemblyProductAttribute("UtilRemessa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UtilRemessa")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.10.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.0.12.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
 

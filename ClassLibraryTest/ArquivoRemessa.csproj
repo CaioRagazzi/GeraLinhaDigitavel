@@ -5,9 +5,13 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>ArquivoRemessa</PackageId>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.30</Version>
+    <Version>1.0.31</Version>
     <PackageReleaseNotes></PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.3.0" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Util\UtilRemessa.csproj" />
@@ -17,6 +21,10 @@
     <Reference Include="System">
       <HintPath>System</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Trailler\Validacao\" />
   </ItemGroup>
 
 </Project>

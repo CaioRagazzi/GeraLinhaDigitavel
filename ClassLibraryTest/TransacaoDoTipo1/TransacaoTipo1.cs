@@ -354,14 +354,19 @@ namespace ArquivoRemessa
         }
         #endregion propriedades
 
-        public TransacaoTipo1()
+        public DefaultOfPagination GetTransacao()
         {
-            DebitoAutomatico = new DebitoAutomaticoCC();
-            BeneficiariaBanco = new EmpresaBeneficiariaBanco();
-        }
+            var retorno = new TransacaoDoTipo1.Validacao.ValidaTransacaoTipo1().Validate(this);
 
-        public StringBuilder GetTransacao()
-        {
+            if (retorno.Errors.Count > 0)
+            {
+                return new DefaultOfPagination()
+                {
+                    Status = false,
+                    Resultado = retorno.Errors
+                };
+            }
+
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
@@ -376,11 +381,7 @@ namespace ArquivoRemessa
             transacao.Insert(65, (int)this.multa);
             transacao.Insert(66, FormataArquivo.FormataCampoComZerosEsquerda(this.percentualMulta.ToString().Replace(",", ""), 4));
             transacao.Insert(70, this.identificacaoTituloBanco);
-            NossoNumero NN = new NossoNumero
-            {
-                Carteira = BeneficiariaBanco.CodigoCarteira.Substring(1, 2),
-                NossoNumeroSemDigito = this.IdentificacaoTituloBanco
-            };
+            NossoNumero NN = new NossoNumero(this.IdentificacaoTituloBanco,BeneficiariaBanco.CodigoCarteira.Substring(1, 2));
             transacao.Insert(81, NN.GetDigitoNossoNumero());
             transacao.Insert(82, FormataArquivo.FormataCampoComZerosEsquerda(this.descontoBonificacaoDia.ToString().Replace(",", ""), 10));
             transacao.Insert(92, (int)this.condicaoEmissaoBoletoCobranca);
@@ -420,18 +421,20 @@ namespace ArquivoRemessa
             transacao.Insert(326, this.cep);
             //transacao.Insert(331, this.sufixoCep);
             transacao.Insert(334, this.segundaMensagem);
-
-            
+                        
             var transacaoSemCaractereEspecial = FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
-            var teste = this.numeroControleParticipante;
 
-            //Adicionado após a retirada do método de formatar caracteres especiais, pois estavam quebranco a chave do controle participante.
+            //Adicionado após a retirada do método de formatar caracteres especiais, pois estavam quebrando a chave do controle participante.
             var transacaoCompleta = transacaoSemCaractereEspecial.Remove(37, 25).Insert(37, this.numeroControleParticipante + " ");
 
             transacao.Clear();
             transacao.Insert(0, transacaoCompleta);
 
-            return transacao;
+            return new DefaultOfPagination()
+            {
+                Status = true,
+                Resultado = transacao
+            };
         }
 
     }

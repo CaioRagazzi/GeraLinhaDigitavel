@@ -101,13 +101,20 @@ namespace ArquivoRemessa
         }
         #endregion
 
-        public TransacaoTipo2()
+        public DefaultOfPagination GetTransacao()
         {
-            BeneficiariaBanco = new EmpresaBeneficiariaBanco();
-        }
 
-        public StringBuilder GetTransacao()
-        {
+            var retorno = new TransacaoDoTipo2.Validacao.ValidaTransacaoTipo2().Validate(this);
+
+            if (retorno.Errors.Count > 0)
+            {
+                return new DefaultOfPagination()
+                {
+                    Status = false,
+                    Resultado = retorno.Errors
+                };
+            }
+
             StringBuilder transacao = new StringBuilder(400);
 
             transacao.Insert(0, tipoRegistro);
@@ -136,11 +143,7 @@ namespace ArquivoRemessa
             transacao.Insert(359, this.reserva);
             transacao.Insert(366, BeneficiariaBanco.ToStringTransacaoTipo2());
             transacao.Insert(382, this.nossoNumero);
-            NossoNumero NN = new NossoNumero
-            {
-                Carteira = "09",
-                NossoNumeroSemDigito = this.nossoNumero
-            };
+            NossoNumero NN = new NossoNumero(this.nossoNumero, BeneficiariaBanco.CodigoCarteira.Substring(1, 2));
             transacao.Insert(393, NN.GetDigitoNossoNumero());
 
             var transacaoSemCaractereEspecial = UtilRemessa.FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
@@ -148,7 +151,11 @@ namespace ArquivoRemessa
             transacao.Clear();
             transacao.Insert(0, transacaoSemCaractereEspecial);
 
-            return transacao;
+            return new DefaultOfPagination()
+            {
+                Status = true,
+                Resultado = transacao
+            };
         }
     }
 }

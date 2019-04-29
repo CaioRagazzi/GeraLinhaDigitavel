@@ -8,13 +8,13 @@
     ".NETCoreApp,Version=v2.2": {
       "ArquivoRetorno/1.0.11": {
         "dependencies": {
-          "UtilRemessa": "1.0.10"
+          "UtilRemessa": "1.0.12"
         },
         "runtime": {
           "ArquivoRetorno.dll": {}
         }
       },
-      "UtilRemessa/1.0.10": {
+      "UtilRemessa/1.0.12": {
         "runtime": {
           "UtilRemessa.dll": {}
         }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "UtilRemessa/1.0.10": {
+    "UtilRemessa/1.0.12": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

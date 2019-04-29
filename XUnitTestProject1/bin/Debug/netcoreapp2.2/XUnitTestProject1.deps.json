@@ -1,20 +1,31 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "93b5d6fa096726aa90619b72e309439934091475"
+    "signature": "e0c116dea1204cb8556e9977770f643b0c3f2726"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
       "XUnitTestProject1/1.0.0": {
         "dependencies": {
-          "ArquivoRemessa": "1.0.30",
+          "ArquivoRemessa": "1.0.31",
           "Microsoft.NET.Test.Sdk": "15.9.0",
           "xunit": "2.4.0",
           "xunit.runner.visualstudio": "2.4.0"
         },
         "runtime": {
           "XUnitTestProject1.dll": {}
+        }
+      },
+      "FluentValidation/8.3.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.4.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.3.0.0"
+          }
         }
       },
       "Microsoft.CodeCoverage/15.9.0": {
@@ -460,6 +471,7 @@
           "System.Runtime": "4.1.0"
         }
       },
+      "System.ComponentModel.Annotations/4.4.1": {},
       "System.ComponentModel.EventBasedAsync/4.0.11": {
         "dependencies": {
           "System.Resources.ResourceManager": "4.0.1",
@@ -1054,15 +1066,16 @@
           "Microsoft.NET.Test.Sdk": "15.9.0"
         }
       },
-      "ArquivoRemessa/1.0.30": {
+      "ArquivoRemessa/1.0.31": {
         "dependencies": {
-          "UtilRemessa": "1.0.10"
+          "FluentValidation": "8.3.0",
+          "UtilRemessa": "1.0.12"
         },
         "runtime": {
           "ArquivoRemessa.dll": {}
         }
       },
-      "UtilRemessa/1.0.10": {
+      "UtilRemessa/1.0.12": {
         "runtime": {
           "UtilRemessa.dll": {}
         }
@@ -1074,6 +1087,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FluentValidation/8.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tQULydqVfFi68qjEw4Y+P3wM1Xp7kppLpUqPVKI6u8NDwlPVTm6V96qnLWCTO4khn7WtQ1p3ysnrNTl98fdJpA==",
+      "path": "fluentvalidation/8.3.0",
+      "hashPath": "fluentvalidation.8.3.0.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/15.9.0": {
       "type": "package",
@@ -1200,6 +1220,13 @@
       "sha512": "sha512-oBZFnm7seFiVfugsIyOvQCWobNZs7FzqDV/B7tx20Ep/l3UUFCPDkdTnCNaJZTU27zjeODmy2C/cP60u3D4c9w==",
       "path": "system.componentmodel/4.0.1",
       "hashPath": "system.componentmodel.4.0.1.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/4.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ToiYqSCioqhtspq2O/jYKtyTC/T0uwWHBTYlzCi6PRbSSHArN1IaRWeHffDamvms5sye5FDUWCfNZgubQpNRsA==",
+      "path": "system.componentmodel.annotations/4.4.1",
+      "hashPath": "system.componentmodel.annotations.4.4.1.nupkg.sha512"
     },
     "System.ComponentModel.EventBasedAsync/4.0.11": {
       "type": "package",
@@ -1607,12 +1634,12 @@
       "path": "xunit.runner.visualstudio/2.4.0",
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
     },
-    "ArquivoRemessa/1.0.30": {
+    "ArquivoRemessa/1.0.31": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "UtilRemessa/1.0.10": {
+    "UtilRemessa/1.0.12": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

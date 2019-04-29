@@ -18,10 +18,10 @@ namespace UtilRemessa
         public string DigitoContaCorrente { get; } = "9";
         #endregion
 
-        public EmpresaBeneficiariaBanco()
-        {
+        //public EmpresaBeneficiariaBanco()
+        //{
 
-        }
+        //}
 
         public EmpresaBeneficiariaBanco(string codigoCarteira, string codigoAgenciaBeneficiario, string digitoAgencia, string contaCorrente, string digitoContaCorrente)
         {

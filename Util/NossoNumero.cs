@@ -22,6 +22,12 @@ namespace UtilRemessa
             set { carteira = value; }
         }
 
+        public NossoNumero(string nossoNumeroSemDigito, string carteira)
+        {
+            this.nossoNumeroSemDigito = nossoNumeroSemDigito;
+            this.carteira = carteira;
+        }
+
         public string GetDigitoNossoNumero()
         {
             string numeroCompleto = carteira + nossoNumeroSemDigito;

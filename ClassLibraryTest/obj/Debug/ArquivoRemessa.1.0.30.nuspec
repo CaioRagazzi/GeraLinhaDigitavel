@@ -10,6 +10,7 @@
     <dependencies>
       <group targetFramework=".NETCoreApp2.2">
         <dependency id="UtilRemessa" version="1.0.10" exclude="Build,Analyzers" />
+        <dependency id="FluentValidation" version="8.3.0" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>
