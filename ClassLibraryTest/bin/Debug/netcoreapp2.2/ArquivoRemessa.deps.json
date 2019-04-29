@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "ArquivoRemessa/1.0.31": {
+      "ArquivoRemessa/1.0.32": {
         "dependencies": {
           "FluentValidation": "8.3.0",
           "UtilRemessa": "1.0.12"
@@ -35,7 +35,7 @@
     }
   },
   "libraries": {
-    "ArquivoRemessa/1.0.31": {
+    "ArquivoRemessa/1.0.32": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

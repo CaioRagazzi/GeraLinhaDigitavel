@@ -101,7 +101,7 @@ namespace ArquivoRemessa
         public DefaultOfPagination GetHeader()
         {
 
-            var retorno = new ArquivoRemessa.ValidaHeader().Validate(this);
+            var retorno = new ValidaHeader().Validate(this);
 
             if (retorno.Errors.Count > 0)
             {
@@ -123,13 +123,13 @@ namespace ArquivoRemessa
             header.Insert(46, this.nomeEmpresa);
             header.Insert(76, this.numeroBradesco);
             header.Insert(79, this.nomeBanco);
-            header.Insert(94, UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(this.dataGravacaoArquivo.ToString("ddMMyy"), 6));
+            header.Insert(94, FormataArquivo.FormataCampoComZerosEsquerda(this.dataGravacaoArquivo.ToString("ddMMyy"), 6));
             header.Insert(100, this.branco);
             header.Insert(108, this.identSistema);
             header.Insert(110, numSeqRemessa);
             header.Insert(117, this.branco2);
 
-            var transacaoSemCaractereEspecial = UtilRemessa.FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(header));
+            var transacaoSemCaractereEspecial = FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(header));
 
             header.Clear();
             header.Insert(0, transacaoSemCaractereEspecial);

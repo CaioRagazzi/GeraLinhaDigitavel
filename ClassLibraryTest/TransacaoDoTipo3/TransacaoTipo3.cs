@@ -358,8 +358,8 @@ namespace ArquivoRemessa
             transacao.Insert(0, tipoRegistro);
             transacao.Insert(1, IdentificacaoEmpresaBanco.ToString().Substring(1, 16));
             transacao.Insert(17, this.identificacaoTituloBanco);
-            transacao.Insert(29, UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.codigoCalculoRateio), 2));
-            transacao.Insert(30, UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.tipoValorInformado), 2));
+            transacao.Insert(29, FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.codigoCalculoRateio), 2));
+            transacao.Insert(30, FormataArquivo.FormataCampoComZerosEsquerda(Convert.ToString((int)this.tipoValorInformado), 2));
             transacao.Insert(31, this.filler);
             transacao.Insert(43, this.codigoBancoCreditoPrimeiroBeneficiario);
             transacao.Insert(46, this.codigoAgenciaCreditoPrimeiroBeneficiario);
@@ -392,7 +392,7 @@ namespace ArquivoRemessa
             transacao.Insert(385, this.parcela3);
             transacao.Insert(391, this.floatingTerceiroBeneficiario);
 
-            var transacaoSemCaractereEspecial = UtilRemessa.FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
+            var transacaoSemCaractereEspecial = FormataArquivo.SubstituiCaracteresEspeciais(Convert.ToString(transacao));
 
             transacao.Clear();
             transacao.Insert(0, transacaoSemCaractereEspecial);

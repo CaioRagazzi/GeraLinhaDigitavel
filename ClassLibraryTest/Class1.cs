@@ -128,7 +128,7 @@ namespace ArquivoRemessa
 
             listaTransacoes.Add(tr7.GetTransacao().Resultado);
 
-            UtilRemessa.FormataArquivo.GravaArquivo(listaTransacoes, "C:\\TesteGravacao2\\" + GetFileName(false));
+            FormataArquivo.GravaArquivo(listaTransacoes, "C:\\TesteGravacao2\\" + GetFileName(false));
 
         }
     }

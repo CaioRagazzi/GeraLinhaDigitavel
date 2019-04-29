@@ -32,11 +32,6 @@ namespace ArquivoRemessa
         private string brancos = new string(' ', 365);
         #endregion
 
-        public TransacaoTipo6()
-        {
-            //empresaBeneficiariaBanco = new EmpresaBeneficiariaBanco();
-        }
-
         public DefaultOfPagination GetTransacao()
         {
             var retorno = new TransacaoDoTipo6.Validacao.ValidaTransacaoTipo6().Validate(this);

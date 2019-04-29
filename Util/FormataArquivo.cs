@@ -30,7 +30,7 @@ namespace UtilRemessa
             }
             else
             {
-                return DateTime.ParseExact(dataString, "ddMMyy", System.Globalization.CultureInfo.InvariantCulture);
+                return DateTime.ParseExact(dataString, "ddMMyy", CultureInfo.InvariantCulture);
             }
         }
 
