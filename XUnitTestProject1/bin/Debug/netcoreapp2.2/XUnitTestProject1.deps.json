@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v2.2": {
       "XUnitTestProject1/1.0.0": {
         "dependencies": {
-          "ArquivoRemessa": "1.0.31",
+          "ArquivoRemessa": "1.0.38",
           "Microsoft.NET.Test.Sdk": "15.9.0",
           "xunit": "2.4.0",
           "xunit.runner.visualstudio": "2.4.0"
@@ -1066,16 +1066,16 @@
           "Microsoft.NET.Test.Sdk": "15.9.0"
         }
       },
-      "ArquivoRemessa/1.0.31": {
+      "ArquivoRemessa/1.0.38": {
         "dependencies": {
           "FluentValidation": "8.3.0",
-          "UtilRemessa": "1.0.12"
+          "UtilRemessa": "1.0.14"
         },
         "runtime": {
           "ArquivoRemessa.dll": {}
         }
       },
-      "UtilRemessa/1.0.12": {
+      "UtilRemessa/1.0.14": {
         "runtime": {
           "UtilRemessa.dll": {}
         }
@@ -1634,12 +1634,12 @@
       "path": "xunit.runner.visualstudio/2.4.0",
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
     },
-    "ArquivoRemessa/1.0.31": {
+    "ArquivoRemessa/1.0.38": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "UtilRemessa/1.0.12": {
+    "UtilRemessa/1.0.14": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

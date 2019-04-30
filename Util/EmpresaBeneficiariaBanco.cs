@@ -18,33 +18,33 @@ namespace UtilRemessa
         public string DigitoContaCorrente { get; } = "9";
         #endregion
 
-        public EmpresaBeneficiariaBanco(string codigoCarteira, string codigoAgenciaBeneficiario, string digitoAgencia, string contaCorrente, string digitoContaCorrente)
+        public EmpresaBeneficiariaBanco(string codigoCarteira, int codigoAgenciaBeneficiario, int digitoAgencia, int contaCorrente, int digitoContaCorrente)
         {
-            this.CodigoCarteira = CodigoCarteira;
-            this.CodigoAgenciaBeneficiario = CodigoAgenciaBeneficiario;
-            this.DigitoAgencia = digitoAgencia;
-            this.ContaCorrente = contaCorrente;
-            this.DigitoContaCorrente = DigitoContaCorrente;
+            this.CodigoCarteira = codigoCarteira.PadLeft(3,'0');
+            this.CodigoAgenciaBeneficiario = codigoAgenciaBeneficiario.ToString().PadLeft(5,'0');
+            this.DigitoAgencia = digitoAgencia.ToString().PadLeft(1,'0');
+            this.ContaCorrente = contaCorrente.ToString().PadLeft(7,'0');
+            this.DigitoContaCorrente = digitoContaCorrente.ToString();
         }
 
         public override string ToString()
         {
-            return Zero + CodigoCarteira + CodigoAgenciaBeneficiario + ContaCorrente + DigitoContaCorrente;
+            return Zero + CodigoCarteira + CodigoAgenciaBeneficiario + ContaCorrente + DigitoContaCorrente.PadLeft(1, '0');
         }
 
         public string ToStringTransacaoTipo1()
         {
-            return Zero + CodigoCarteira.PadLeft(3, '0') + CodigoAgenciaBeneficiario.PadLeft(5, '0') + ContaCorrente.PadLeft(7, '0') + DigitoContaCorrente;
+            return Zero + CodigoCarteira + CodigoAgenciaBeneficiario + ContaCorrente + DigitoContaCorrente.PadLeft(1, '0');
         }
 
         public string ToStringTransacaoTipo2()
         {
-            return CodigoCarteira.PadLeft(3, '0') + CodigoAgenciaBeneficiario + ContaCorrente.PadLeft(7, '0') + DigitoContaCorrente;
+            return CodigoCarteira + CodigoAgenciaBeneficiario + ContaCorrente + DigitoContaCorrente.PadLeft(1, '0');
         }
 
         public string ToStringTransacaoTipo3()
         {
-            return CodigoAgenciaBeneficiario.PadLeft(5, '0') + DigitoAgencia + ContaCorrente.PadLeft(12, '0') + DigitoContaCorrente;
+            return CodigoAgenciaBeneficiario + DigitoAgencia + ContaCorrente + DigitoContaCorrente.PadLeft(1, '0');
         }
 
         public string ToStringTransacaoTipo6()
@@ -54,7 +54,7 @@ namespace UtilRemessa
 
         public string ToStringTransacaoTipo7()
         {
-            return CodigoCarteira + CodigoAgenciaBeneficiario + ContaCorrente + DigitoContaCorrente;
+            return CodigoCarteira + CodigoAgenciaBeneficiario + ContaCorrente + DigitoContaCorrente.PadLeft(1, '0');
         }
     }
 }

@@ -8,9 +8,9 @@
     ".NETCoreApp,Version=v2.2": {
       "ConsoleAppTest/1.0.0": {
         "dependencies": {
-          "ArquivoRemessa": "1.0.31",
+          "ArquivoRemessa": "1.0.38",
           "ArquivoRetorno": "1.0.11",
-          "UtilRemessa": "1.0.12"
+          "UtilRemessa": "1.0.14"
         },
         "runtime": {
           "ConsoleAppTest.dll": {}
@@ -28,10 +28,10 @@
         }
       },
       "System.ComponentModel.Annotations/4.4.1": {},
-      "ArquivoRemessa/1.0.31": {
+      "ArquivoRemessa/1.0.38": {
         "dependencies": {
           "FluentValidation": "8.3.0",
-          "UtilRemessa": "1.0.12"
+          "UtilRemessa": "1.0.14"
         },
         "runtime": {
           "ArquivoRemessa.dll": {}
@@ -39,13 +39,13 @@
       },
       "ArquivoRetorno/1.0.11": {
         "dependencies": {
-          "UtilRemessa": "1.0.12"
+          "UtilRemessa": "1.0.14"
         },
         "runtime": {
           "ArquivoRetorno.dll": {}
         }
       },
-      "UtilRemessa/1.0.12": {
+      "UtilRemessa/1.0.14": {
         "runtime": {
           "UtilRemessa.dll": {}
         }
@@ -72,7 +72,7 @@
       "path": "system.componentmodel.annotations/4.4.1",
       "hashPath": "system.componentmodel.annotations.4.4.1.nupkg.sha512"
     },
-    "ArquivoRemessa/1.0.31": {
+    "ArquivoRemessa/1.0.38": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -82,7 +82,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "UtilRemessa/1.0.12": {
+    "UtilRemessa/1.0.14": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

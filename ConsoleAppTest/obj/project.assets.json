@@ -229,12 +229,12 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "ArquivoRemessa/1.0.31": {
+      "ArquivoRemessa/1.0.38": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
           "FluentValidation": "8.3.0",
-          "UtilRemessa": "1.0.12"
+          "UtilRemessa": "1.0.14"
         },
         "compile": {
           "bin/placeholder/ArquivoRemessa.dll": {}
@@ -247,7 +247,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "UtilRemessa": "1.0.12"
+          "UtilRemessa": "1.0.14"
         },
         "compile": {
           "bin/placeholder/ArquivoRetorno.dll": {}
@@ -256,7 +256,7 @@
           "bin/placeholder/ArquivoRetorno.dll": {}
         }
       },
-      "UtilRemessa/1.0.12": {
+      "UtilRemessa/1.0.14": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
@@ -843,7 +843,7 @@
         "version.txt"
       ]
     },
-    "ArquivoRemessa/1.0.31": {
+    "ArquivoRemessa/1.0.38": {
       "type": "project",
       "path": "../ClassLibraryTest/ArquivoRemessa.csproj",
       "msbuildProject": "../ClassLibraryTest/ArquivoRemessa.csproj"
@@ -853,7 +853,7 @@
       "path": "../ArquivoRetorno/ArquivoRetorno.csproj",
       "msbuildProject": "../ArquivoRetorno/ArquivoRetorno.csproj"
     },
-    "UtilRemessa/1.0.12": {
+    "UtilRemessa/1.0.14": {
       "type": "project",
       "path": "../Util/UtilRemessa.csproj",
       "msbuildProject": "../Util/UtilRemessa.csproj"
@@ -861,10 +861,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
-      "ArquivoRemessa >= 1.0.31",
+      "ArquivoRemessa >= 1.0.38",
       "ArquivoRetorno >= 1.0.11",
       "Microsoft.NETCore.App >= 2.2.0",
-      "UtilRemessa >= 1.0.12"
+      "UtilRemessa >= 1.0.14"
     ]
   },
   "packageFolders": {

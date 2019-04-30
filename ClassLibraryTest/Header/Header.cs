@@ -17,14 +17,14 @@ namespace ArquivoRemessa
 
         private const string literalServico = "COBRANCA       ";
 
-        private string codEmpresa;
+        private int codEmpresa;
         /// <summary>
         /// Código da empresa. Será informado pelo Bradesco, quando do cadastramento da Conta beneficiário na sua Agência. Esse código deve ser alinhado à direita com Zeros à esquerda.
         /// </summary>
-        public string CodEmpresa
+        public int CodEmpresa
         {
             get { return codEmpresa; }
-            set { codEmpresa = UtilRemessa.FormataArquivo.FormataCampoComZerosEsquerda(value, 20); }
+            set { codEmpresa = value; }
         }
 
         private string nomeEmpresa;
@@ -38,14 +38,14 @@ namespace ArquivoRemessa
             set { nomeEmpresa = UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 30); }
         }
 
-        private string numeroBradesco;
+        private int numeroBradesco;
         /// <summary>
         /// Número do Bradesco na Câmara de Compensação
         /// </summary>
-        public string NumeroBradesco
+        public int NumeroBradesco
         {
             get { return numeroBradesco; }
-            set { numeroBradesco = UtilRemessa.FormataArquivo.FormataCampoComEspacosDireita(value, 3); }
+            set { numeroBradesco = value; }
         }
 
         private string nomeBanco;
@@ -119,9 +119,9 @@ namespace ArquivoRemessa
             header.Insert(2, literalRemessa);
             header.Insert(9, codigoServico);
             header.Insert(11, literalServico);
-            header.Insert(26, this.codEmpresa);
+            header.Insert(26, FormataArquivo.FormataCampoComZerosEsquerda(this.codEmpresa.ToString(), 20));
             header.Insert(46, this.nomeEmpresa);
-            header.Insert(76, this.numeroBradesco);
+            header.Insert(76, FormataArquivo.FormataCampoComZerosEsquerda(this.numeroBradesco.ToString(), 3));
             header.Insert(79, this.nomeBanco);
             header.Insert(94, FormataArquivo.FormataCampoComZerosEsquerda(this.dataGravacaoArquivo.ToString("ddMMyy"), 6));
             header.Insert(100, this.branco);

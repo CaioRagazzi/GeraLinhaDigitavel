@@ -28,9 +28,9 @@ namespace ArquivoRemessa
         {
             Header stringHeader = new Header
             {
-                CodEmpresa = "5118770",
+                CodEmpresa = 5118770,
                 NomeEmpresa = "INTERMEIO SOLUCOES EM PAGA",
-                NumeroBradesco = "237",
+                NumeroBradesco = 237,
                 NomeBanco = "BRADESCO",
                 DataGravacaoArquivo = DateTime.Now,
                 IdentSistema = "MX",
@@ -83,7 +83,7 @@ namespace ArquivoRemessa
                 Cep = "04679345",
                 //SufixoCep = "345",
                 SegundaMensagem = "Remessa gerada no dia 29/03 as 11:00 posição",
-                BeneficiariaBanco = new EmpresaBeneficiariaBanco("09", "01234", "123", "321654", "654"),
+                BeneficiariaBanco = new EmpresaBeneficiariaBanco("09", 0123, 0, 340, 9),
                 DebitoAutomatico = new DebitoAutomaticoCC()
             };
 
@@ -93,7 +93,7 @@ namespace ArquivoRemessa
 
             TransacaoTipo2 tr2 = new TransacaoTipo2
             {
-                BeneficiariaBanco = new EmpresaBeneficiariaBanco("09","01234", "123", "321654", "654"),
+                BeneficiariaBanco = new EmpresaBeneficiariaBanco("09", 01234, 123, 340, 654),
                 DataLimiteDesconto2 = new DateTime(2019,04,29),
                 DataLimiteDesconto3 = new DateTime(2019, 04, 29),
                 Mensagem1 = "Mensagem 1",
@@ -105,28 +105,28 @@ namespace ArquivoRemessa
                 ValorDesconto3 = 10M
             };
 
-            listaTransacoes.Add(tr2.GetTransacao().Resultado);
+            //listaTransacoes.Add(tr2.GetTransacao().Resultado);
 
             TransacaoTipo3 tr3 = new TransacaoTipo3
             {
 
             };
 
-            listaTransacoes.Add(tr3.GetTransacao().Resultado);
+            //listaTransacoes.Add(tr3.GetTransacao().Resultado);
 
             TransacaoTipo6 tr6 = new TransacaoTipo6
             {
 
             };
 
-            listaTransacoes.Add(tr6.GetTransacao().Resultado);
+            //listaTransacoes.Add(tr6.GetTransacao().Resultado);
 
             TransacaoTipo7 tr7 = new TransacaoTipo7
             {
 
             };
 
-            listaTransacoes.Add(tr7.GetTransacao().Resultado);
+            //listaTransacoes.Add(tr7.GetTransacao().Resultado);
 
             FormataArquivo.GravaArquivo(listaTransacoes, "C:\\TesteGravacao2\\" + GetFileName(false));
 

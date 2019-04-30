@@ -6,10 +6,10 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
-      "ArquivoRemessa/1.0.32": {
+      "ArquivoRemessa/1.0.38": {
         "dependencies": {
           "FluentValidation": "8.3.0",
-          "UtilRemessa": "1.0.12"
+          "UtilRemessa": "1.0.14"
         },
         "runtime": {
           "ArquivoRemessa.dll": {}
@@ -27,7 +27,7 @@
         }
       },
       "System.ComponentModel.Annotations/4.4.1": {},
-      "UtilRemessa/1.0.12": {
+      "UtilRemessa/1.0.14": {
         "runtime": {
           "UtilRemessa.dll": {}
         }
@@ -35,7 +35,7 @@
     }
   },
   "libraries": {
-    "ArquivoRemessa/1.0.32": {
+    "ArquivoRemessa/1.0.38": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -54,7 +54,7 @@
       "path": "system.componentmodel.annotations/4.4.1",
       "hashPath": "system.componentmodel.annotations.4.4.1.nupkg.sha512"
     },
-    "UtilRemessa/1.0.12": {
+    "UtilRemessa/1.0.14": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

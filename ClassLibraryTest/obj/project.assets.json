@@ -229,7 +229,7 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "UtilRemessa/1.0.12": {
+      "UtilRemessa/1.0.14": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
@@ -816,7 +816,7 @@
         "version.txt"
       ]
     },
-    "UtilRemessa/1.0.12": {
+    "UtilRemessa/1.0.14": {
       "type": "project",
       "path": "../Util/UtilRemessa.csproj",
       "msbuildProject": "../Util/UtilRemessa.csproj"
@@ -826,7 +826,7 @@
     ".NETCoreApp,Version=v2.2": [
       "FluentValidation >= 8.3.0",
       "Microsoft.NETCore.App >= 2.2.0",
-      "UtilRemessa >= 1.0.12"
+      "UtilRemessa >= 1.0.14"
     ]
   },
   "packageFolders": {
@@ -835,7 +835,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "1.0.31",
+    "version": "1.0.38",
     "restore": {
       "projectUniqueName": "C:\\Users\\Int6\\source\\repos\\ClassLibraryTest\\ClassLibraryTest\\ArquivoRemessa.csproj",
       "projectName": "ArquivoRemessa",

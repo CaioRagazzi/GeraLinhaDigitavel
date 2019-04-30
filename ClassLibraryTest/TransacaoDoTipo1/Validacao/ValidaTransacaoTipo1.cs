@@ -15,6 +15,36 @@ namespace ArquivoRemessa.TransacaoDoTipo1.Validacao
             RuleFor(x => x.BeneficiariaBanco)
                 .NotNull().WithMessage("É necessário ter um objeto do tipo EmpreBeneficiariaBanco");
 
+            When(x => x.BeneficiariaBanco != null, () =>
+            {
+                RuleFor(x => x.BeneficiariaBanco.DigitoContaCorrente)
+                .MaximumLength(1)
+                .WithMessage("O DigitoContaCorrente da BeneficiariaBanco deve ter no máximo 1 digito");
+
+                RuleFor(x => x.BeneficiariaBanco.DigitoAgencia)
+                .MaximumLength(1)
+                .WithMessage("O DigitoAgencia da BeneficiariaBanco deve ter no máximo 1 digito");
+
+                RuleFor(x => x.BeneficiariaBanco.CodigoAgenciaBeneficiario)
+                .NotEqual("00000")
+                .WithMessage("CodigoAgenciaBeneficiario da BeneficiariaBanco não pode ser zero")
+                .MaximumLength(5)
+                .WithMessage("O CodigoAgenciaBeneficiario da BeneficiariaBanco deve ter no máximo 5 digito");
+
+                RuleFor(x => x.BeneficiariaBanco.ContaCorrente)
+                .NotEqual("0000000")
+                .WithMessage("ContaCorrente da BeneficiariaBanco não pode ser zero")
+                .MaximumLength(7)
+                .WithMessage("O ContaCorrente da BeneficiariaBanco deve ter no máximo 7 digito");
+
+                RuleFor(x => x.BeneficiariaBanco.CodigoCarteira)
+                .NotEqual("000")
+                .WithMessage("CodigoCarteira da BeneficiariaBanco não pode ser zero")
+                .MaximumLength(3)
+                .WithMessage("O CodigoCarteira da BeneficiariaBanco deve ter no máximo 3 digito");
+
+            });
+
             RuleFor(x => x.CodigoBancoDebito)
                 .NotNull().WithMessage("É necessário ter um CodigoBancoDebito");
 

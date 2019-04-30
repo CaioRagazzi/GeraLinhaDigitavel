@@ -208,7 +208,7 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "UtilRemessa/1.0.12": {
+      "UtilRemessa/1.0.14": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "compile": {
@@ -689,7 +689,7 @@
         "netstandard.library.nuspec"
       ]
     },
-    "UtilRemessa/1.0.12": {
+    "UtilRemessa/1.0.14": {
       "type": "project",
       "path": "../Util/UtilRemessa.csproj",
       "msbuildProject": "../Util/UtilRemessa.csproj"
@@ -698,7 +698,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.NETCore.App >= 2.2.0",
-      "UtilRemessa >= 1.0.12"
+      "UtilRemessa >= 1.0.14"
     ]
   },
   "packageFolders": {
